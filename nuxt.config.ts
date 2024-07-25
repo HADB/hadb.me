@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content'],
   routeRules: {
-    '/': { prerender: true }
-  }
+    '/': { prerender: true },
+  },
+  compatibilityDate: '2024-07-25',
 })
