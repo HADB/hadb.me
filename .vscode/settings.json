@@ -1,0 +1,43 @@
+{
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "never",
+    "source.fixAll.stylelint": "never",
+    "source.organizeImports": "never"
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": false,
+  // Enable the ESlint flat config support
+  "eslint.useFlatConfig": true,
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" },
+    { "rule": "style/*", "severity": "off" }
+  ],
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "markdown",
+    "scss",
+    "tailwindcss",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "yaml"
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.md": "mdc"
+  }
+}
