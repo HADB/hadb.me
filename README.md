@@ -1,42 +1,11 @@
-# Content v2 Minimal Starter
+**[hadb.me](https://hadb.me)**
 
-Look at the [Content documentation](https://content.nuxt.com/) to learn more.
+我的个人网站 (第 4 代)（🚧 WIP）
 
-## Setup
+博客框架折腾历史：
 
-Make sure to install the dependencies:
+- 2012年（第 1 代）：[WordPress](https://wordpress.org/)
+- 2015年（第 2 代）：[Hexo](https://hexo.io/)，[《HADB.ME归来！》](https://hadb.me/hadb-me-back/)
+- 2017年（第 3 代）：[Ghost](https://ghost.org/)，[《开始使用Ghost啦！》](https://hadb.me/using-ghost/)
+- 2024年（第 4 代）：[Nuxt Content](https://content.nuxt.com/)，🚧 WIP
 
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
