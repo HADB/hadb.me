@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.23.2",
-    "@iconify-json/fa-brands": "^1.1.8",
+    "@iconify-json/fa6-brands": "^1.1.21",
     "@iconify-json/ph": "^1.1.13",
     "@iconify-json/simple-icons": "^1.1.110",
     "@iconify-json/uil": "^1.1.8",
@@ -23,8 +23,10 @@
     "@nuxtjs/color-mode": "^3.4.2",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tailwindcss/typography": "^0.5.13",
+    "@types/luxon": "^3.4.2",
     "eslint": "^9.7.0",
     "eslint-plugin-format": "^0.1.2",
+    "luxon": "^3.4.4",
     "nuxt": "^3.12.4",
     "remark-reading-time": "^2.0.1",
     "sass": "^1.77.8"
