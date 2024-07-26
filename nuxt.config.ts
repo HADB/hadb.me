@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   extends: 'content-wind',
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@nuxt/eslint', "@nuxt/image"],
+  modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/image'],
   routeRules: {
     '/': { prerender: true },
   },
