@@ -1,15 +1,46 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: 'content-wind',
+  compatibilityDate: '2024-07-25',
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/image'],
+  eslint: { config: { standalone: false } },
   routeRules: {
     '/': { prerender: true },
   },
-  eslint: {
-    config: {
-      standalone: false,
+  modules: [
+    '@nuxt/content',
+    '@nuxt/eslint',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
+  ],
+
+  content: {
+    documentDriven: true,
+    highlight: {
+      // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
+      theme: {
+        dark: 'github-dark',
+        default: 'github-light',
+      },
+    },
+    markdown: {
+      remarkPlugins: ['remark-reading-time'],
+    },
+
+  },
+  colorMode: {
+    classSuffix: '',
+  },
+  icon: {
+    serverBundle: 'auto',
+    clientBundle: {
+      icons: [
+        'uil:moon',
+        'uil:sun',
+        'uil:desktop',
+        'uil:github',
+      ],
     },
   },
-  compatibilityDate: '2024-07-25',
 })
