@@ -1,14 +1,13 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
-// console.log(navigation.value)
 const appConfig = useAppConfig()
 </script>
 
 <template>
   <div class="flex justify-between max-w-7xl py-4 mx-auto mb-4 px-4 md:px-8">
-    <div class="text-gray-700 dark:text-gray-200">
+    <div class="text-gray-700 dark:text-gray-200 prose-a:text-primary-400 prose-a:font-normal prose-a:no-underline hover:prose-a:border-b hover:prose-a:border-solid hover:prose-a:border-primary-400">
       <NuxtLink to="/" class="mr-6">
-        HADB.ME
+        <strong>HADB.ME</strong>
       </NuxtLink>
       <NuxtLink
         v-for="link of navigation"

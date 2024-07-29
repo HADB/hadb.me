@@ -40,7 +40,7 @@ const query: QueryBuilderParams = {
       <ContentList v-slot="{ list }" :query="query">
         <ul class="list-none ps-0">
           <li v-for="post in list" :key="post._path" class="ps-0">
-            <span class="mr-4 text-sm text-slate-500">{{ formatDateTime(post.date, 'yyyy-MM-dd') }}</span>
+            <span class="mr-4 text-sm text-slate-500 font-mono">{{ formatDateTime(post.date, 'yyyy-MM-dd') }}</span>
             <a :href="post._path">
               <span>{{ post.title }}</span>
             </a>
