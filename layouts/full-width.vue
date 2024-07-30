@@ -3,7 +3,7 @@ const { page } = useContent()
 </script>
 
 <template>
-  <div class="py-10 m-auto bg-white ring-1 ring-gray-200 dark:ring-gray-700 dark:bg-gray-800">
+  <div class="py-10 m-auto bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700">
     <main class="max-w-7xl px-4 md:px-8 mx-auto prose dark:prose-invert">
       <h1 v-if="page.title">
         {{ page.title }}
