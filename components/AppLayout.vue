@@ -10,6 +10,7 @@ const { cover } = useAppConfig()
     <NuxtLoadingIndicator />
     <AppNavbar />
     <slot />
+    <AppFooter />
   </div>
 </template>
 

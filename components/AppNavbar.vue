@@ -6,8 +6,8 @@ const appConfig = useAppConfig()
 <template>
   <div class="px-4 sm:px-8">
     <div class="flex justify-between max-w-7xl py-4 mx-auto mb-4">
-      <div class="hover:prose-a:text-primary-400">
-        <NuxtLink to="/" class="mr-6">
+      <div>
+        <NuxtLink to="/" class="mr-6 hover:text-primary-400">
           <strong>HADB.ME</strong>
         </NuxtLink>
         <NuxtLink
@@ -15,7 +15,7 @@ const appConfig = useAppConfig()
           :key="link._path"
           :to="link._path"
           active-class="font-bold text-primary-400"
-          class="mr-6"
+          class="mr-6 hover:text-primary-400"
         >
           {{ link.title }}
         </NuxtLink>
