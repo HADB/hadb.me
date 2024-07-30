@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '/shanghai-luohu': { redirect: { to: '/posts/shanghai-luohu', statusCode: 301 } },
     '/timedrotatingfilehandler-backupcount-problem': { redirect: { to: '/posts/timedrotatingfilehandler-backupcount-problem', statusCode: 301 } },
     '/gitlab-ci-auto-deploy-python-lib': { redirect: { to: '/posts/gitlab-ci-auto-deploy-python-lib', statusCode: 301 } },
+    '/upgrade-ghost-5-0-to-5-42': { redirect: { to: '/posts/upgrade-ghost-5-0-to-5-42', statusCode: 301 } },
   },
   modules: [
     '@nuxt/content',
@@ -25,7 +26,7 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
     highlight: {
-      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'python'],
+      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'python', 'log'],
       // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
       theme: {
         dark: 'github-dark',
