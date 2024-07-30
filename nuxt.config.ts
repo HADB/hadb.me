@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '/thoughts-about-growth': { redirect: { to: '/posts/thoughts-about-growth', statusCode: 301 } },
     '/shanghai-luohu': { redirect: { to: '/posts/shanghai-luohu', statusCode: 301 } },
     '/timedrotatingfilehandler-backupcount-problem': { redirect: { to: '/posts/timedrotatingfilehandler-backupcount-problem', statusCode: 301 } },
+    '/gitlab-ci-auto-deploy-python-lib': { redirect: { to: '/posts/gitlab-ci-auto-deploy-python-lib', statusCode: 301 } },
   },
   modules: [
     '@nuxt/content',
