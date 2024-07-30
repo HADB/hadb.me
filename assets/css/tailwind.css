@@ -14,7 +14,7 @@
   }
   .prose img {
     @apply rounded-md outline outline-1 outline-slate-200 dark:outline-slate-700 w-full mx-auto;
-    &:not([alt='cover']) {
+    &[alt=''] {
       @apply sm:w-1/2;
     }
   }
