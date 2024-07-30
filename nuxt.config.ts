@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '/how_to_delete_web_service_of_synology_dsm_7_2': { redirect: { to: '/posts/how-to-delete-web-service-of-synology-dsm-7-2', statusCode: 301 } },
     '/three-small-things': { redirect: { to: '/posts/three-small-things', statusCode: 301 } },
     '/thoughts-about-growth': { redirect: { to: '/posts/thoughts-about-growth', statusCode: 301 } },
+    '/shanghai-luohu': { redirect: { to: '/posts/shanghai-luohu', statusCode: 301 } },
   },
   modules: [
     '@nuxt/content',
