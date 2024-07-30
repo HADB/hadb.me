@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '/three-small-things': { redirect: { to: '/posts/three-small-things', statusCode: 301 } },
     '/thoughts-about-growth': { redirect: { to: '/posts/thoughts-about-growth', statusCode: 301 } },
     '/shanghai-luohu': { redirect: { to: '/posts/shanghai-luohu', statusCode: 301 } },
+    '/timedrotatingfilehandler-backupcount-problem': { redirect: { to: '/posts/timedrotatingfilehandler-backupcount-problem', statusCode: 301 } },
   },
   modules: [
     '@nuxt/content',
@@ -23,6 +24,7 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
     highlight: {
+      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'python'],
       // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
       theme: {
         dark: 'github-dark',
