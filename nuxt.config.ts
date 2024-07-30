@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '/timedrotatingfilehandler-backupcount-problem': { redirect: { to: '/posts/timedrotatingfilehandler-backupcount-problem', statusCode: 301 } },
     '/gitlab-ci-auto-deploy-python-lib': { redirect: { to: '/posts/gitlab-ci-auto-deploy-python-lib', statusCode: 301 } },
     '/upgrade-ghost-5-0-to-5-42': { redirect: { to: '/posts/upgrade-ghost-5-0-to-5-42', statusCode: 301 } },
+    '/use-gitlab-to-deploy-ghost-theme-automatically': { redirect: { to: '/posts/use-gitlab-to-deploy-ghost-theme-automatically', statusCode: 301 } },
   },
   modules: [
     '@nuxt/content',
