@@ -1,31 +1,12 @@
-<script lang="ts" setup>
-defineProps({
-  image: {
-    type: String,
-    default: null,
-  },
-  imageAlt: {
-    type: String,
-    default: 'Hero Image',
-  },
-  imagePosition: {
-    type: String,
-    default: 'right',
-  },
-})
-</script>
-
 <template>
-  <div class="grid gap-12 grid-cols-1 lg:grid-cols-2">
-    <div>
+  <div class="grid gap-8 grid-cols-1 lg:grid-cols-6">
+    <div class="-mt-5 lg:col-span-4">
       <ContentSlot :use="$slots.content" />
     </div>
     <img
-      v-if="image"
-      :class=" imagePosition === 'left' ? '-order-1' : '' "
-      class="m-0 w-full object-cover"
-      :src="image"
-      :alt="imageAlt"
+      class="m-0 w-full object-cover lg:col-span-2"
+      src="/images/about_me.jpg"
+      alt="Bean"
     >
   </div>
 </template>
