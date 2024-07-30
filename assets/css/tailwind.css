@@ -12,4 +12,7 @@
   .prose h2 > a {
     @apply font-bold border-0;
   }
+  .prose img {
+    @apply rounded-md outline outline-1 outline-slate-200 dark:outline-slate-700;
+  }
 }

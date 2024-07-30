@@ -20,12 +20,12 @@ defineProps({
     <div>
       <ContentSlot :use="$slots.content" />
     </div>
-    <NuxtImg
+    <img
       v-if="image"
       :class=" imagePosition === 'left' ? '-order-1' : '' "
       class="m-0 w-full object-cover"
       :src="image"
       :alt="imageAlt"
-    />
+    >
   </div>
 </template>
