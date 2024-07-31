@@ -3,19 +3,36 @@
 @tailwind utilities;
 
 @layer components {
-  .prose a {
-    @apply font-normal no-underline border-b border-solid text-current;
-    &:hover {
-      @apply text-primary-400 border-primary-400;
+  .prose {
+    @apply text-slate-900 dark:text-slate-100;
+    a {
+      @apply font-normal no-underline border-b border-solid text-current;
+      &:hover {
+        @apply text-primary-400 border-primary-400;
+      }
     }
-  }
-  .prose h2 > a {
-    @apply font-bold border-0;
-  }
-  .prose img {
-    @apply rounded-md outline outline-1 outline-slate-200 dark:outline-slate-700 max-w-full mx-auto;
-    &[alt='cover'] {
-      @apply w-full;
+
+    h2 > a {
+      @apply font-bold border-0;
+    }
+
+    img {
+      @apply rounded-md outline outline-1 outline-slate-200 dark:outline-slate-700 max-w-full mx-auto;
+      &[alt='cover'] {
+        @apply w-full;
+      }
+    }
+
+    .contains-task-list {
+      .task-list-item {
+        @apply relative pl-8;
+        input[type='checkbox'] {
+          @apply appearance-none absolute top-1/2 left-2 -mt-2;
+          @apply before:content-['_'] before:cursor-pointer before:block before:w-4 before:h-4 before:leading-4 before:text-center before:rounded before:bg-transparent before:ring-1 before:ring-slate-500 before:text-primary-400;
+          @apply checked:before:content-['✓'] enabled:hover:before:ring-primary-500 checked:enabled:before:bg-primary-500 checked:enabled:before:ring-primary-500 checked:enabled:before:text-white;
+          @apply disabled:before:cursor-default;
+        }
+      }
     }
   }
 }
