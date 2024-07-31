@@ -16,6 +16,9 @@ export default defineNuxtConfig({
     '/use-gitlab-to-deploy-ghost-theme-automatically': { redirect: { to: '/posts/use-gitlab-to-deploy-ghost-theme-automatically', statusCode: 301 } },
     '/review-2021-and-look-forward-to-2022': { redirect: { to: '/posts/review-2021-and-look-forward-to-2022', statusCode: 301 } },
     '/synology-letsencrypt-multiple-domain-cert-configuration': { redirect: { to: '/posts/synology-letsencrypt-multiple-domain-cert-configuration', statusCode: 301 } },
+    '/fastboot-failed-remote-operation-not-permitted': { redirect: { to: '/posts/fastboot-failed-remote-operation-not-permitted', statusCode: 301 } },
+    '/beginning-of-2021': { redirect: { to: '/posts/beginning-of-2021', statusCode: 301 } },
+    '/devops-gitlab-ci-aliyun-k8s': { redirect: { to: '/posts/devops-gitlab-ci-aliyun-k8s', statusCode: 301 } },
   },
   modules: [
     '@nuxt/content',
@@ -29,7 +32,22 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
     highlight: {
-      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'python', 'log'],
+      langs: [
+        'css',
+        'dockerfile',
+        'html',
+        'js',
+        'json',
+        'log',
+        'md',
+        'mdc',
+        'python',
+        'shell',
+        'toml',
+        'ts',
+        'vue',
+        'yaml',
+      ],
       // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
       theme: {
         dark: 'github-dark',
