@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '/upgrade-ghost-5-0-to-5-42': { redirect: { to: '/posts/upgrade-ghost-5-0-to-5-42', statusCode: 301 } },
     '/use-gitlab-to-deploy-ghost-theme-automatically': { redirect: { to: '/posts/use-gitlab-to-deploy-ghost-theme-automatically', statusCode: 301 } },
     '/review-2021-and-look-forward-to-2022': { redirect: { to: '/posts/review-2021-and-look-forward-to-2022', statusCode: 301 } },
+    '/synology-letsencrypt-multiple-domain-cert-configuration': { redirect: { to: '/posts/synology-letsencrypt-multiple-domain-cert-configuration', statusCode: 301 } },
   },
   modules: [
     '@nuxt/content',
