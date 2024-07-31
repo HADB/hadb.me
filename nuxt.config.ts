@@ -19,6 +19,8 @@ export default defineNuxtConfig({
     '/fastboot-failed-remote-operation-not-permitted': { redirect: { to: '/posts/fastboot-failed-remote-operation-not-permitted', statusCode: 301 } },
     '/beginning-of-2021': { redirect: { to: '/posts/beginning-of-2021', statusCode: 301 } },
     '/devops-gitlab-ci-aliyun-k8s': { redirect: { to: '/posts/devops-gitlab-ci-aliyun-k8s', statusCode: 301 } },
+    '/android-webview-picture-cache': { redirect: { to: '/posts/android-webview-picture-cache', statusCode: 301 } },
+    '/baixiang-poems': { redirect: { to: '/posts/baixiang-poems', statusCode: 301 } },
   },
   modules: [
     '@nuxt/content',
@@ -38,6 +40,7 @@ export default defineNuxtConfig({
         'html',
         'js',
         'json',
+        'kotlin',
         'log',
         'md',
         'mdc',
