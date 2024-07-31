@@ -3,7 +3,7 @@ const { cover } = useAppConfig()
 </script>
 
 <template>
-  <div class="py-4">
+  <div class="py-4 sm:py-12">
     <Html lang="en" />
     <Meta property="og:image" :content="cover" />
     <Meta name="twitter:card" content="summary_large_image" />

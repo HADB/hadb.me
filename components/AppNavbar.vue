@@ -1,33 +1,32 @@
 <script lang="ts" setup>
 const { navigation } = useContent()
-const appConfig = useAppConfig()
 </script>
 
 <template>
-  <div class="px-4 sm:px-8">
-    <div class="flex justify-between max-w-7xl py-4 mx-auto mb-4">
-      <div>
-        <NuxtLink to="/" class="mr-6 hover:text-primary-400">
-          <strong>HADB.ME</strong>
-        </NuxtLink>
+  <div class="px-4 sm:px-12">
+    <div class="flex justify-between items-center max-w-7xl mx-auto flex-wrap">
+      <NuxtLink to="/" class="text-lg">
+        <strong>HADB.ME</strong>
+      </NuxtLink>
+      <div class="flex items-center justify-start order-last sm:order-none w-full sm:w-auto pt-2 sm:pt-0 space-x-6 overflow-x-auto">
         <NuxtLink
           v-for="link of navigation"
           :key="link._path"
           :to="link._path"
-          active-class="font-bold text-primary-400"
-          class="mr-6 hover:text-primary-400"
+          active-class="text-primary-400"
+          class="hover:text-primary-400 text-lg shrink-0"
         >
           {{ link.title }}
         </NuxtLink>
       </div>
-      <div class="space-x-3 transition text-gray-500">
-        <a v-if="appConfig.socials?.x" :href="`https://x.com/${appConfig.socials?.x}`" title="X" class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300">
+      <div class="flex items-center space-x-3 transition">
+        <a href="https://x.com/beandeng" target="_blank" title="X" class="w-5 h-5">
           <Icon name="fa6-brands:x-twitter" class="w-5 h-5" />
         </a>
-        <a v-if="appConfig.socials?.github" :href="`https://github.com/${appConfig.socials?.github}`" title="GitHub" class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300">
+        <a href="https://github.com/HADB" target="_blank" title="GitHub" class="w-5 h-5">
           <Icon name="fa6-brands:github" class="w-5 h-5" />
         </a>
-        <ColorModeSwitch class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300" />
+        <ColorModeSwitch />
       </div>
     </div>
   </div>

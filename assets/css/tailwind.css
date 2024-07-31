@@ -6,10 +6,7 @@
   .prose {
     @apply text-slate-900 dark:text-slate-100;
     a {
-      @apply font-normal no-underline border-b border-solid text-current;
-      &:hover {
-        @apply text-primary-400 border-primary-400;
-      }
+      @apply font-normal no-underline border-b border-solid text-current border-current hover:text-primary-400 hover:border-primary-400;
     }
 
     h2 > a {
