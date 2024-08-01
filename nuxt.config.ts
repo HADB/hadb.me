@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     '/devops-gitlab-ci-aliyun-k8s': { redirect: { to: '/posts/devops-gitlab-ci-aliyun-k8s', statusCode: 301 } },
     '/android-webview-picture-cache': { redirect: { to: '/posts/android-webview-picture-cache', statusCode: 301 } },
     '/baixiang-poems': { redirect: { to: '/posts/baixiang-poems', statusCode: 301 } },
+    '/how-to-become-a-fullstack-developer': { redirect: { to: '/posts/how-to-become-a-fullstack-developer', statusCode: 301 } },
   },
   modules: [
     '@nuxt/content',
