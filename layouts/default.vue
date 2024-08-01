@@ -15,7 +15,9 @@ useHead({
           {{ page.title }}
         </h1>
         <PostInfo v-if="page?._dir === 'posts'" :page="page" />
-        <slot />
+        <div :class="page.class">
+          <slot />
+        </div>
       </main>
     </div>
   </div>

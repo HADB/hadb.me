@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .font-fangsong {
+    font-family: 'LXGW WenKai GB', 'LXGW WenKai', '仿宋', 'FangSong',
+      'STFangsong', 'serif';
+  }
+}
+
 @layer components {
   .prose {
     @apply text-slate-900 dark:text-slate-100;
