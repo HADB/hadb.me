@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { page } = useContent()
+
 useHead({
   titleTemplate: (title) => {
     return title ? `${title} | HADB.ME` : 'HADB.ME'
@@ -15,7 +16,7 @@ useHead({
           {{ page.title }}
         </h1>
         <PostInfo v-if="page?._dir === 'posts'" :page="page" />
-        <div :class="page.class">
+        <div :class="page?.class">
           <slot />
         </div>
       </main>

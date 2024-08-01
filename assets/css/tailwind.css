@@ -12,6 +12,11 @@
 @layer components {
   .prose {
     @apply text-slate-900 dark:text-slate-100;
+
+    p {
+      @apply text-justify;
+    }
+
     a {
       @apply font-normal no-underline border-b border-solid text-current border-current hover:text-primary-400 hover:border-primary-400;
     }
