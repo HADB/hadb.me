@@ -20,5 +20,13 @@ defineProps({
     <span>共 {{ page.readingTime.words }} 字</span>
     <span class="mx-2">·</span>
     <span>约 {{ getReadingMinutes(page.readingTime.time) }} 分钟</span>
+    <template v-if="page.tags">
+      <span class="mx-2">·</span>
+      <template v-for="tag in page.tags" :key="tag">
+        <NuxtLink :to="`/tags/${encodeURIComponent(tag)}`" class="mr-1 !border-b-0 after:content-[','] last:after:content-none">
+          {{ tag }}
+        </NuxtLink>
+      </template>
+    </template>
   </div>
 </template>

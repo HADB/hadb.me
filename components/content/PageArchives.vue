@@ -14,6 +14,7 @@ for (let year = currentYear; year >= startYear; year--) {
 
 <template>
   <div class="page-archives">
+    <TagList />
     <div class="years">
       <div v-for="year in years" :key="year">
         <h3>{{ year }} 年</h3>
