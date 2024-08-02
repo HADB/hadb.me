@@ -8,9 +8,9 @@ const route = useRoute()
 
 if (!(page as any).value) {
   // 支持旧路径 301 跳转至 /posts/下
-  const fallbackPost = await queryContent(`posts/${route.params.slug[0]}`).findOne()
-  if (fallbackPost) {
-    navigateTo(fallbackPost._path, { redirectCode: 301 })
+  const { data: fallbackPost } = await useAsyncData(`fallbackPost-${route.params.slug[0]}`, () => queryContent(`posts/${route.params.slug[0]}`).only('_path').findOne())
+  if (fallbackPost.value) {
+    navigateTo(fallbackPost.value._path, { redirectCode: 301 })
   }
 
   // Page not found, set correct status code on SSR

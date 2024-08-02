@@ -4,8 +4,9 @@ interface Tag {
   count: number
 }
 
-const postTags = await queryContent('posts').where({ tags: { $exists: true } }).only(['tags']).find()
-const tags = postTags.map((p) => p.tags).flat().reduce((acc, curr) => {
+const { data: postTags } = await useAsyncData('post-tags', () => queryContent('posts').where({ tags: { $exists: true } }).only(['tags']).find())
+
+const tags = postTags.value?.map((p) => p.tags).flat().reduce((acc, curr) => {
   const found = acc.find((tag: Tag) => tag.name === curr)
   if (found) {
     found.count += 1
