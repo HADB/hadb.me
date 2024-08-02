@@ -12,13 +12,11 @@ for (let year = currentYear; year >= startYear; year--) {
 </script>
 
 <template>
-  <div class="page-archives">
-    <TagList />
-    <div class="years">
-      <div v-for="year in years" :key="year">
-        <h3>{{ year }} 年</h3>
-        <PostList :year="year" />
-      </div>
+  <TagList />
+  <div class="years">
+    <div v-for="year in years" :key="year">
+      <h3>{{ year }} 年</h3>
+      <PostList :year="year" />
     </div>
   </div>
 </template>
