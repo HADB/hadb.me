@@ -1,5 +1,15 @@
 <script setup lang="ts">
 const { page } = useContent()
+
+useHead({
+  titleTemplate: (title) => {
+    return seoTitle(title)
+  },
+  meta: [{
+    property: 'og:title',
+    content: seoTitle(page.value.title),
+  }],
+})
 </script>
 
 <template>

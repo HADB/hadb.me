@@ -3,8 +3,12 @@ const { page } = useContent()
 
 useHead({
   titleTemplate: (title) => {
-    return title ? `${title} | HADB.ME` : 'HADB.ME'
+    return seoTitle(title)
   },
+  meta: [{
+    property: 'og:title',
+    content: seoTitle(page.value?.title),
+  }],
 })
 </script>
 
@@ -16,6 +20,7 @@ useHead({
           {{ page.title }}
         </h1>
         <PostInfo v-if="page?._dir === 'posts'" :page="page" />
+        <NuxtImg v-if="page?.cover" :src="`/images/${page._path}-cover.${page.cover}`" :alt="page.title" class="w-full" :width="1920" :height="900" />
         <div :class="page?.class">
           <slot />
         </div>

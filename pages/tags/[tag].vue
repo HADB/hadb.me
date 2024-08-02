@@ -8,6 +8,13 @@ definePageMeta({
 
 useHead({
   title: tag,
+  titleTemplate: (title) => {
+    return seoTitle(title)
+  },
+  meta: [{
+    property: 'og:title',
+    content: seoTitle(tag),
+  }],
 })
 </script>
 
