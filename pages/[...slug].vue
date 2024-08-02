@@ -1,0 +1,41 @@
+<script setup lang="ts">
+import { useContent, useContentHead, useRequestEvent, useRuntimeConfig } from '#imports'
+import type { LayoutKey } from '#build/types/layouts'
+
+const { contentHead } = useRuntimeConfig().public.content
+const { page, layout } = useContent()
+const route = useRoute()
+
+if (!(page as any).value) {
+  // 支持旧路径 301 跳转至 /posts/下
+  const fallbackPost = await queryContent(`posts/${route.params.slug[0]}`).findOne()
+  if (fallbackPost) {
+    navigateTo(fallbackPost._path, { redirectCode: 301 })
+  }
+
+  // Page not found, set correct status code on SSR
+  if (import.meta.server) {
+    const event = useRequestEvent()
+    if (event) {
+      event.node.res.statusCode = 404
+    }
+  }
+}
+
+if (contentHead) {
+  useContentHead(page)
+}
+</script>
+
+<template>
+  <div class="document-driven-page">
+    <NuxtLayout :name="layout as LayoutKey || 'default'">
+      <ContentRenderer v-if="page" :key="(page as any)._id" :value="page">
+        <template #empty="{ value }">
+          <DocumentDrivenEmpty :value="value" />
+        </template>
+      </ContentRenderer>
+      <DocumentDrivenNotFound v-else />
+    </NuxtLayout>
+  </div>
+</template>
