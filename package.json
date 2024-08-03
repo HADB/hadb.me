@@ -21,6 +21,7 @@
     "@nuxt/icon": "^1.4.0",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/color-mode": "^3.4.2",
+    "@nuxtjs/sitemap": "6.0.0-beta.1",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tailwindcss/typography": "^0.5.13",
     "@types/luxon": "^3.4.2",
@@ -33,8 +34,15 @@
   },
   "pnpm": {
     "supportedArchitectures": {
-      "os": ["win32", "darwin", "current"],
-      "cpu": ["x64", "arm64"]
+      "os": [
+        "win32",
+        "darwin",
+        "current"
+      ],
+      "cpu": [
+        "x64",
+        "arm64"
+      ]
     },
     "overrides": {
       "sharp": "0.33.4"

@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   eslint: { config: { standalone: false } },
   routeRules: {
     '/': { prerender: true },
+    '/sitemap.xml': { prerender: true },
     '/how_to_delete_web_service_of_synology_dsm_7_2': { redirect: { to: '/posts/how-to-delete-web-service-of-synology-dsm-7-2', statusCode: 301 } },
   },
   modules: [
@@ -14,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/sitemap',
   ],
 
   content: {
@@ -46,7 +48,6 @@ export default defineNuxtConfig({
       remarkPlugins: ['remark-reading-time'],
       anchorLinks: false,
     },
-
   },
 
   icon: {
@@ -63,5 +64,28 @@ export default defineNuxtConfig({
 
   colorMode: {
     classSuffix: '',
+  },
+
+  sitemap: {
+    sitemaps: {
+      pages: {
+        includeAppSources: true,
+        exclude: [
+          '/posts/**',
+          '/test',
+        ],
+      },
+      posts: {
+        includeAppSources: true,
+        include: [
+          '/posts/**',
+        ],
+      },
+      tags: {
+        sources: [
+          '/api/__sitemap__/tags',
+        ],
+      },
+    },
   },
 })

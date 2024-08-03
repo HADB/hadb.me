@@ -1,26 +1,6 @@
 <script lang="ts" setup>
-interface Tag {
-  name: string
-  count: number
-}
-
 const { data: postTags } = await useAsyncData('post-tags', () => queryContent('posts').where({ tags: { $exists: true } }).only(['tags']).find())
-
-const tags = postTags.value?.map((p) => p.tags).flat().reduce((acc, curr) => {
-  const found = acc.find((tag: Tag) => tag.name === curr)
-  if (found) {
-    found.count += 1
-  }
-  else {
-    acc.push({ name: curr, count: 1 })
-  }
-  return acc
-}, []).sort((a: Tag, b: Tag) => {
-  if (a.count === b.count) {
-    return a.name.localeCompare(b.name, 'zh-CN')
-  }
-  return b.count - a.count
-})
+const tags = flatTags(postTags.value)
 </script>
 
 <template>
