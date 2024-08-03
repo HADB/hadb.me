@@ -2,11 +2,7 @@ import colors from 'tailwindcss/colors'
 import type { Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography'
 
-const round = (num: number) =>
-  num
-    .toFixed(7)
-    .replace(/(\.\d+?)0+$/, '$1')
-    .replace(/\.0$/, '')
+const round = (num: number) => num.toFixed(2)
 const em = (px: number, base: number) => `${round(px / base)}em`
 
 export default <Partial<Config>> {
@@ -28,12 +24,17 @@ export default <Partial<Config>> {
         primary: colors.emerald,
       },
       typography: ({ theme }: { theme: (k: string) => string }) => ({
+        slate: {
+          css: {
+            '--tw-prose-pre-bg': theme('colors.slate.100'),
+            '--tw-prose-invert-pre-bg': theme('colors.slate.900'),
+          },
+
+        },
         DEFAULT: {
           css: {
             'blockquote p:first-of-type::before': false,
             'blockquote p:first-of-type::after': false,
-            '--tw-prose-pre-bg': theme('colors.slate.100'),
-            '--tw-prose-invert-pre-bg': theme('colors.slate.900'),
             'h1': {
               fontSize: em(24, 16),
               marginTop: '0',

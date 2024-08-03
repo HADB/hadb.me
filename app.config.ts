@@ -1,3 +1,1 @@
-export default defineAppConfig({
-  cover: '/cover.jpg',
-})
+export default defineAppConfig({})
