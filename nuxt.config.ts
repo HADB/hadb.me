@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   eslint: { config: { standalone: false } },
   routeRules: {
     '/': { prerender: true },
+    '/atom': { prerender: true },
     '/sitemap.xml': { prerender: true },
     '/how_to_delete_web_service_of_synology_dsm_7_2': { redirect: { to: '/posts/how-to-delete-web-service-of-synology-dsm-7-2', statusCode: 301 } },
   },

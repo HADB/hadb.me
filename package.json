@@ -27,6 +27,7 @@
     "@types/luxon": "^3.4.2",
     "eslint": "^9.8.0",
     "eslint-plugin-format": "^0.1.2",
+    "feed": "^4.2.2",
     "luxon": "^3.4.4",
     "nuxt": "^3.12.4",
     "remark-reading-time": "^2.0.1",
