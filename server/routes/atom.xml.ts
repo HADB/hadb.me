@@ -1,10 +1,13 @@
 import process from 'node:process'
 import { Feed } from 'feed'
+import { setHeader } from 'h3'
 import { getCoverPath } from '@/utils/posts'
 import { serverQueryContent } from '#content/server'
+import { useSiteConfig } from '#imports'
 
 export default defineEventHandler(async (event) => {
-  const baseUrl = process.env.NODE_ENV === 'production' ? process.env.SITE_URL ?? '' : event.context.siteConfigNitroOrigin
+  const siteConfig = useSiteConfig(event)
+  const baseUrl = process.env.NODE_ENV === 'production' ? siteConfig.url : event.context.siteConfigNitroOrigin
   const author = 'Bean'
   const feed = new Feed({
     title: 'HADB.ME',
@@ -25,7 +28,6 @@ export default defineEventHandler(async (event) => {
   })
 
   const posts = await serverQueryContent(event).where({ _path: /^\/posts/, date: { $exists: true } }).find()
-
   posts.forEach(async (post) => {
     if (post._path) {
       feed.addItem({
@@ -33,7 +35,7 @@ export default defineEventHandler(async (event) => {
         title: post.title ? post.title : 'Untitled',
         link: new URL(post._path, baseUrl).toString(),
         description: post.description,
-        content: post.description,
+        content: post.description, // TODO: use post HTML content
         author: [{ name: author }],
         date: new Date(post.date),
         image: post?.cover ? new URL(getCoverPath(post._path, post.cover), baseUrl).toString() : undefined,
@@ -41,5 +43,6 @@ export default defineEventHandler(async (event) => {
     }
   })
 
+  setHeader(event, 'Content-Type', 'text/xml; charset=UTF-8')
   return feed.atom1()
 })
