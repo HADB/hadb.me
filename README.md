@@ -14,6 +14,6 @@ TODO：
 - [x] 生成 Sitemap 和 Feed 订阅
 - [ ] 生成 Feed 订阅的时候，如何更好的生成文章的 content
 - [ ] 导入全部历史文章
-- [ ] 接入评论系统
-- [ ] 接入 GitHub Actions
+- [x] 接入评论系统
+- [x] 接入 Cloudflare Pages
 - [ ] 接入 Plausible
