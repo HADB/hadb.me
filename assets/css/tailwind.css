@@ -4,8 +4,7 @@
 
 @layer base {
   .font-fangsong {
-    font-family: 'LXGW WenKai GB', 'LXGW WenKai', '仿宋', 'FangSong',
-      'STFangsong', 'serif';
+    font-family: 'LXGW WenKai GB', 'LXGW WenKai', '仿宋', 'FangSong', 'STFangsong', 'serif';
   }
 }
 
@@ -24,7 +23,7 @@
     }
 
     a {
-      @apply font-normal no-underline border-b border-solid text-current border-current hover:text-primary-400 hover:border-primary-400;
+      @apply font-normal no-underline border-b border-solid text-current border-current hover:text-primary-500 hover:border-primary-500;
     }
 
     h2 > a {
@@ -43,7 +42,7 @@
         @apply relative pl-8;
         input[type='checkbox'] {
           @apply appearance-none absolute top-1/2 left-2 -mt-2;
-          @apply before:cursor-pointer before:block before:w-4 before:h-4 before:leading-4 before:text-center before:rounded before:bg-transparent before:ring-1 before:ring-slate-300 dark:before:ring-slate-600 before:text-primary-400;
+          @apply before:cursor-pointer before:block before:w-4 before:h-4 before:leading-4 before:text-center before:rounded before:bg-transparent before:ring-1 before:ring-slate-300 dark:before:ring-slate-600 before:text-primary-500;
           @apply checked:before:content-['✓'] enabled:hover:before:ring-primary-500 checked:enabled:before:bg-primary-500 checked:enabled:before:ring-primary-500 checked:enabled:before:text-white;
           @apply disabled:before:cursor-default;
         }

@@ -13,8 +13,8 @@ const { navigation } = useContent()
           v-for="link of navigation"
           :key="link._path"
           :to="link._path"
-          active-class="text-primary-400"
-          class="hover:text-primary-400 text-lg shrink-0"
+          active-class="text-primary-500"
+          class="hover:text-primary-500 text-lg shrink-0"
         >
           {{ link.title }}
         </NuxtLink>

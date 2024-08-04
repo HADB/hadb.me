@@ -21,7 +21,7 @@ export default <Partial<Config>> {
   theme: {
     extend: {
       colors: {
-        primary: colors.emerald,
+        primary: colors.blue,
       },
       typography: ({ theme }: { theme: (k: string) => string }) => ({
         slate: {

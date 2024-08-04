@@ -12,6 +12,15 @@ export default withNuxt(
     formatters: {
       css: true,
       html: true,
+      prettierOptions: {
+        printWidth: 160,
+        endOfLine: 'auto',
+        semi: false,
+        singleQuote: true,
+        tabWidth: 2,
+        trailingComma: 'all',
+        useTabs: false,
+      },
     },
   }),
 )
