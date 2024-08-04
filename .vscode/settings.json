@@ -41,8 +41,5 @@
   },
   "editor.quickSuggestions": {
     "strings": true
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
