@@ -18,6 +18,7 @@
   }
 
   .prose {
+    @apply text-sm sm:text-base;
     p {
       @apply text-justify;
     }
