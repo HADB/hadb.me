@@ -18,6 +18,8 @@ defineProps({
     </template>
     <span>共 {{ page.readingTime.words }} 字</span>
     <span>约 {{ getReadingMinutes(page.readingTime.time) }} 分钟</span>
+    <span><span class="artalk-pv-count">...</span> 阅读</span>
+    <span><span class="artalk-comment-count">...</span> 评论</span>
     <div v-if="page.tags">
       <span>标签：</span>
       <template v-for="tag in page.tags" :key="tag">

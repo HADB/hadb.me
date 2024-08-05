@@ -58,7 +58,7 @@ export default <Partial<Config>> {
             'p': {
               textAlign: 'justify',
             },
-            'img': {
+            'img:not(.artalk img)': {
               'borderRadius': rem(6),
               'outlineStyle': 'solid',
               'outlineWidth': '1px',

@@ -29,7 +29,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="artalkEl" class="artalk p-4 sm:p-6 rounded-lg bg-slate-50 dark:bg-slate-900 outline outline-1 outline-slate-200 dark:outline-slate-700" />
+  <div ref="artalkEl" class="artalk" />
 </template>
 
 <style lang="scss">
@@ -42,8 +42,8 @@ onBeforeUnmount(() => {
   --at-color-meta: theme('colors.slate.600');
   --at-color-border: theme('colors.slate.200');
   --at-color-light: theme('colors.primary.400');
-  --at-color-bg: theme('colors.white');
-  --at-color-bg-transl: rgba(255, 255, 255, 0.95); // white, 0.95
+  --at-color-bg: theme('colors.slate.50');
+  --at-color-bg-transl: rgba(248, 250, 252, 0.95); // slate.50, 0.95
   --at-color-bg-grey: theme('colors.slate.200');
   --at-color-bg-grey-transl: rgba(226, 232, 240, 0.75); // slate.200, 0.75
   --at-color-bg-light: rgba(96, 165, 250, 0.1); // primary.400, 0.1
@@ -62,8 +62,8 @@ onBeforeUnmount(() => {
     --at-color-meta: theme('colors.slate.400');
     --at-color-border: theme('colors.slate.700');
     --at-color-light: theme('colors.primary.600');
-    --at-color-bg: theme('colors.slate.800');
-    --at-color-bg-transl: rgba(30, 41, 59, 0.95); // slate.800, 0.95
+    --at-color-bg: theme('colors.slate.900');
+    --at-color-bg-transl: rgba(15, 23, 42, 0.95); // slate.900, 0.95
     --at-color-bg-grey: theme('colors.slate.700');
     --at-color-bg-grey-transl: rgba(51, 65, 85, 0.75); // slate.700, 0.75
     --at-color-bg-light: rgba(96, 165, 250, 0.1); // primary.400, 0.1
@@ -79,6 +79,7 @@ onBeforeUnmount(() => {
     color: theme('colors.white');
     margin: 5px;
   }
+
   .atk-auth-plugin-dialog {
     border: 1px solid var(--at-color-border);
   }
@@ -106,6 +107,11 @@ onBeforeUnmount(() => {
     line-height: 18px;
     border-radius: 4px;
   }
+  .atk-comment > .atk-avatar img {
+    margin: 0;
+    border-radius: 6px;
+  }
+
   .atk-comment-wrap {
     border-bottom: 1px solid var(--at-color-border);
     &:first-child {
@@ -122,12 +128,34 @@ onBeforeUnmount(() => {
   .atk-comment-children > .atk-comment-wrap > .atk-comment {
     padding: 10px 0;
   }
-  .atk-list > .atk-list-footer .atk-copyright a {
-    color: inherit;
-    &:hover {
-      color: var(--tw-prose-links);
-      border-color: var(--tw-prose-links);
+  .atk-list-no-comment {
+    font-size: inherit;
+  }
+  .atk-list {
+    > .atk-list-header {
+      .atk-comment-count {
+        font-size: inherit;
+        .atk-comment-count-num {
+          font-size: inherit;
+        }
+        .atk-dropdown {
+          .atk-dropdown-item {
+            padding-inline-start: 0;
+            margin: 0;
+          }
+        }
+      }
     }
+    > .atk-list-footer .atk-copyright a {
+      color: inherit;
+      &:hover {
+        color: var(--tw-prose-links);
+        border-color: var(--tw-prose-links);
+      }
+    }
+  }
+  .atk-loading {
+    background: none;
   }
 }
 </style>
