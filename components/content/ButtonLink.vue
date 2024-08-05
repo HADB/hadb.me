@@ -2,7 +2,7 @@
 defineProps({
   href: {
     type: String,
-    required: true,
+    required: false,
   },
   external: {
     type: Boolean,
@@ -17,9 +17,19 @@ defineProps({
 
 <template>
   <span class="not-prose">
-    <NuxtLink :to="href" :external="external" class="inline-flex items-center gap-1 text-white bg-gray-800 dark:bg-gray-200 dark:text-gray-950 px-3 py-1 rounded no-underline">
-      <Icon v-if="icon" :name="icon" class="w-4 h-4" />
-      <ContentSlot :use="$slots.default" unwrap="p" />
+    <NuxtLink
+      :to="href"
+      :external="external"
+      active-class="bg-slate-200 dark:bg-slate-800"
+      class="inline-flex items-center font-medium text-base leading-4 sm:text-lg sm:leading-7 gap-1 cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-800 p-2 rounded no-underline shrink-0"
+    >
+      <template v-if="icon">
+        <Icon :name="icon" class="w-5 h-5" />
+        <ContentSlot :use="$slots.default" unwrap="p" />
+      </template>
+      <span v-else class="px-2">
+        <ContentSlot :use="$slots.default" unwrap="p" />
+      </span>
     </NuxtLink>
   </span>
 </template>

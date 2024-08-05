@@ -17,6 +17,9 @@ importers:
       '@iconify-json/fa6-brands':
         specifier: ^1.1.21
         version: 1.1.21
+      '@iconify-json/material-symbols':
+        specifier: ^1.1.86
+        version: 1.1.86
       '@iconify-json/ph':
         specifier: ^1.1.13
         version: 1.1.13
@@ -816,6 +819,9 @@ packages:
 
   '@iconify-json/fa6-brands@1.1.21':
     resolution: {integrity: sha512-NS/BszVo8fUVpzA7/5b9tmkHzisZSUlm8kjdznk1Bux5p5QH3BxHZXrZUM5QsT90/7+omQC0EKukwf7H7nujZg==}
+
+  '@iconify-json/material-symbols@1.1.86':
+    resolution: {integrity: sha512-04voxGvCH+12ca6vGYU6lpjwvXcEiWaOHfEHGPqUzMKywkybBi/mHUmpTcxnSbOn/iiEkVvB5o4gdnyX8cFvJA==}
 
   '@iconify-json/ph@1.1.13':
     resolution: {integrity: sha512-xtM4JJ63HCKj09WRqrBswXiHrpliBlqboWSZH8odcmqYXbvIFceU9/Til4V+MQr6+MoUC+KB72cxhky2+A6r/g==}
@@ -5984,6 +5990,10 @@ snapshots:
   '@humanwhocodes/retry@0.3.0': {}
 
   '@iconify-json/fa6-brands@1.1.21':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/material-symbols@1.1.86':
     dependencies:
       '@iconify/types': 2.0.0
 

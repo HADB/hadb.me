@@ -29,7 +29,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="artalkEl" class="artalk" />
+  <div ref="artalkEl" class="artalk not-prose" />
 </template>
 
 <style lang="scss">

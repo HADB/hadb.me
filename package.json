@@ -13,6 +13,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
     "@iconify-json/fa6-brands": "^1.1.21",
+    "@iconify-json/material-symbols": "^1.1.86",
     "@iconify-json/ph": "^1.1.13",
     "@iconify-json/simple-icons": "^1.1.111",
     "@iconify-json/uil": "^1.1.8",
