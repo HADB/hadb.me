@@ -29,12 +29,14 @@ export default <Partial<Config>> {
             '--tw-prose-pre-bg': theme('colors.slate.100'),
             '--tw-prose-invert-pre-bg': theme('colors.slate.900'),
           },
-
         },
         DEFAULT: {
           css: {
             'blockquote p:first-of-type::before': false,
             'blockquote p:first-of-type::after': false,
+            'p': {
+              textAlign: 'justify',
+            },
             'h1': {
               fontSize: em(24, 16),
               marginTop: '0',

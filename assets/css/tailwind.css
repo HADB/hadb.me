@@ -19,9 +19,6 @@
 
   .prose {
     @apply text-sm sm:text-base;
-    p {
-      @apply text-justify;
-    }
 
     a {
       @apply font-normal no-underline border-b border-solid text-current border-current hover:text-primary-500 hover:border-primary-500;
