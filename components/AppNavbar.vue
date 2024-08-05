@@ -8,7 +8,7 @@ const { navigation } = useContent()
       <NuxtLink to="/">
         <AppLogo class="w-24 sm:w-32" />
       </NuxtLink>
-      <div class="flex justify-between items-center order-last sm:order-none w-full sm:w-auto pt-2 sm:pt-0 space-x-6 overflow-x-auto">
+      <div class="flex justify-center items-center order-last sm:order-none w-full sm:w-auto pt-2 sm:pt-0 space-x-6 overflow-x-auto">
         <NuxtLink
           v-for="link of navigation"
           :key="link._path"
