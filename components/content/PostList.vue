@@ -49,7 +49,7 @@ const query: QueryBuilderParams = {
       <ContentList :query="query">
         <template #default="{ list }">
           <ul class="list-none ps-0">
-            <li v-for="post in list" :key="post._path" class="ps-0 my-2 sm:my-4 flex">
+            <li v-for="post in list" :key="post._path" class="ps-0 my-4 flex">
               <span class="mr-4 text-sm text-slate-500 font-mono flex-shrink-0 leading-6">
                 {{ formatDateTime(post.date, 'yyyy-MM-dd') }}
               </span>
