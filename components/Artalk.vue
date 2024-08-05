@@ -53,6 +53,7 @@ onBeforeUnmount(() => {
   --at-color-yellow: theme('colors.yellow.500');
   --at-color-green: theme('colors.green.500');
   --at-color-gradient: linear-gradient(180deg, transparent, theme('colors.slate.50'));
+  margin-top: 1.25em;
 
   &:is(.dark *) {
     --at-color-font: theme('colors.slate.300');
