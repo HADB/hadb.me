@@ -122,5 +122,12 @@ onBeforeUnmount(() => {
   .atk-comment-children > .atk-comment-wrap > .atk-comment {
     padding: 10px 0;
   }
+  .atk-list > .atk-list-footer .atk-copyright a {
+    color: inherit;
+    &:hover {
+      color: var(--tw-prose-links);
+      border-color: var(--tw-prose-links);
+    }
+  }
 }
 </style>

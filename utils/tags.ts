@@ -1,7 +1,7 @@
 import type { ParsedContent } from '@nuxt/content'
 import type { Tag } from '@/types/Tag'
 
-export function flatTags(postTags: Pick<ParsedContent, 'tags'>[]) {
+export function flatTags(postTags: Pick<ParsedContent, 'tags'>[] | null) {
   const tags = postTags?.map((p) => p.tags).flat().reduce((acc: Tag[], curr) => {
     const found = acc.find((tag: Tag) => tag.name === curr)
     if (found) {

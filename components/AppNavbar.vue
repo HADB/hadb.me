@@ -3,7 +3,7 @@ const { navigation } = useContent()
 </script>
 
 <template>
-  <div class="px-4 sm:px-12">
+  <div class="app-navbar px-4 sm:px-12">
     <div class="flex justify-between items-center max-w-7xl mx-auto flex-wrap">
       <NuxtLink to="/">
         <AppLogo class="w-24 sm:w-32" />
@@ -14,7 +14,7 @@ const { navigation } = useContent()
           :key="link._path"
           :to="link._path"
           active-class="text-primary-500"
-          class="hover:text-primary-500 text-md sm:text-lg shrink-0"
+          class="font-medium text-md hover:text-primary-600 dark:hover:text-primary-400 sm:text-lg shrink-0"
         >
           {{ link.title }}
         </NuxtLink>

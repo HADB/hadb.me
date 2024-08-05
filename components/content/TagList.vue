@@ -5,7 +5,7 @@ const tags = flatTags(postTags.value)
 
 <template>
   <div class="flex flex-wrap">
-    <div v-for="tag in tags" :key="tag.name" class="mr-6">
+    <div v-for="tag in tags" :key="tag.name" class="mr-6 my-2">
       <NuxtLink :to="`/tags/${encodeURIComponent(tag.name)}`" class="!border-b-0">
         {{ tag.name }}
       </NuxtLink>
