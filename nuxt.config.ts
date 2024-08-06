@@ -41,6 +41,7 @@ export default defineNuxtConfig({
         'md',
         'mdc',
         'nginx',
+        'php',
         'python',
         'shell',
         'toml',
