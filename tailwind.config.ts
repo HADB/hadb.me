@@ -22,14 +22,14 @@ export default <Partial<Config>> {
   theme: {
     extend: {
       colors: {
-        primary: colors.blue,
+        primary: colors.emerald,
       },
       typography: ({ theme }: { theme: (k: string) => string }) => ({
         slate: {
           css: {
             '--tw-prose-pre-bg': theme('colors.slate.100'),
             '--tw-prose-invert-pre-bg': theme('colors.slate.900'),
-            '--tw-prose-links': theme('colors.primary.600'),
+            '--tw-prose-links': theme('colors.primary.500'),
             '--tw-prose-invert-links': theme('colors.primary.400'),
             '--tw-prose-borders': theme('colors.slate.200'),
             '--tw-prose-invert-borders': theme('colors.slate.700'),

@@ -10,7 +10,7 @@
     @apply bg-slate-50 text-slate-700 dark:bg-slate-900 dark:text-slate-300;
   }
   a:not(.prose a, .app-navbar a) {
-    @apply no-underline text-current border-solid border-primary-600 dark:border-primary-400 hover:border-b hover:text-primary-600 dark:hover:text-primary-400;
+    @apply no-underline text-current border-solid border-primary-500 dark:border-primary-400 hover:border-b hover:text-primary-500 dark:hover:text-primary-400;
   }
 }
 

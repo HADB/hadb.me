@@ -20,8 +20,8 @@ defineProps({
     <NuxtLink
       :to="href"
       :external="external"
-      active-class="bg-slate-200 dark:bg-slate-800"
-      class="inline-flex items-center font-medium text-base leading-4 sm:text-lg sm:leading-7 gap-1 cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-800 p-2 rounded no-underline shrink-0"
+      active-class="bg-slate-100 dark:bg-slate-700/30 outline"
+      class="inline-flex items-center font-medium text-base leading-4 sm:text-lg sm:leading-7 gap-1 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700/30 p-2 rounded no-underline hover:outline outline-1 outline-slate-200 dark:outline-slate-700 shrink-0"
     >
       <template v-if="icon">
         <Icon :name="icon" class="w-5 h-5" />

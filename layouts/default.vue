@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { page } = useContent()
+import SurroundPostLink from '~/components/SurroundPostLink.vue'
+
+const { page, prev, next } = useContent()
 const isPost = page.value?._dir === 'posts'
 const coverPath = page.value?.cover ? getCoverPath(page.value._path, page.value.cover) : ''
 
@@ -30,6 +32,10 @@ useHead({
             </div>
             <TextHr>正文完</TextHr>
             <Artalk :path="page._path" :title="page.title" />
+            <div class="grid gap-4 sm:gap-12 sm:grid-cols-2 mt-4">
+              <SurroundPostLink :post="next" type="next" />
+              <SurroundPostLink :post="prev" type="prev" />
+            </div>
           </template>
           <slot v-else />
         </template>
