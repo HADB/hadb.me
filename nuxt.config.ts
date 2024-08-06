@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
   ],
   nitro: {
+    preset: 'cloudflare-pages',
     prerender: {
       routes: ['/'],
       crawlLinks: true,
@@ -36,7 +37,6 @@ export default defineNuxtConfig({
     highlight: {
       langs: [
         'c#',
-        'cpp',
         'css',
         'dockerfile',
         'html',
