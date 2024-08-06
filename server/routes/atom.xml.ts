@@ -1,28 +1,33 @@
-import process from 'node:process'
 import { Feed } from 'feed'
-import { setHeader } from 'h3'
+import { getQuery, setHeader } from 'h3'
 import { getCoverPath } from '@/utils/posts'
 import { serverQueryContent } from '#content/server'
+import { createSitePathResolver } from '#imports'
 
 export default defineEventHandler(async (event) => {
-  console.log(event)
-  const siteConfig = useSiteConfig(event)
-  console.log(siteConfig)
-  console.log(process.env)
-  const baseUrl = process.env.NODE_ENV === 'production' ? siteConfig.url : event.context.siteConfigNitroOrigin
+  const canonicalQuery = getQuery(event).canonical
+  const isShowingCanonical = typeof canonicalQuery !== 'undefined' && canonicalQuery !== 'false'
+
+  const resolvePath = createSitePathResolver(event, {
+    canonical: isShowingCanonical || !import.meta.dev,
+    absolute: true,
+    withBase: true,
+  })
+
   const author = 'Bean'
   const feed = new Feed({
     title: 'HADB.ME',
     description: 'Bean 的个人网站',
-    id: baseUrl,
-    link: baseUrl,
+    id: resolvePath(''),
+    link: resolvePath(''),
     language: 'zh-CN',
-    image: new URL('favicon.svg', baseUrl).toString(),
-    favicon: new URL('favicon.svg', baseUrl).toString(),
+    image: resolvePath('favicon/favicon-1024x1024.png'),
+    favicon: resolvePath('favicon/favicon-32x32.png'),
     copyright: `Copyright © 2012-${new Date().getFullYear()}, ${author}, CC BY-NC-SA 4.0`,
     updated: new Date(),
+    generator: 'HADB.ME',
     feedLinks: {
-      rss: new URL('rss', baseUrl).toString(),
+      atom: resolvePath('atom.xml'),
     },
     author: {
       name: author,
@@ -35,12 +40,12 @@ export default defineEventHandler(async (event) => {
       feed.addItem({
         id: post._path,
         title: post.title ? post.title : 'Untitled',
-        link: new URL(post._path, baseUrl).toString(),
+        link: resolvePath(post._path),
         description: post.description, // TODO: bug: 如果开头有引用，则不会输出内容
-        content: post.description, // TODO: use post HTML content
+        // content: post.description, // TODO: use post HTML content
         author: [{ name: author }],
         date: new Date(post.date),
-        image: post?.cover ? new URL(getCoverPath(post._path, post.cover), baseUrl).toString() : undefined,
+        image: post?.cover ? resolvePath(getCoverPath(post._path, post.cover)) : undefined,
       })
     }
   })
