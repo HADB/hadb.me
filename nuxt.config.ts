@@ -29,6 +29,8 @@ export default defineNuxtConfig({
     documentDriven: true,
     highlight: {
       langs: [
+        'c#',
+        'cpp',
         'css',
         'dockerfile',
         'html',
@@ -38,11 +40,13 @@ export default defineNuxtConfig({
         'log',
         'md',
         'mdc',
+        'nginx',
         'python',
         'shell',
         'toml',
         'ts',
         'vue',
+        'xml',
         'yaml',
       ],
       // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
