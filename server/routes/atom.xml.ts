@@ -6,7 +6,10 @@ import { serverQueryContent } from '#content/server'
 import { useSiteConfig } from '#imports'
 
 export default defineEventHandler(async (event) => {
+  console.log(event)
   const siteConfig = useSiteConfig(event)
+  consolle.log(siteConfig)
+  console.log(process.env)
   const baseUrl = process.env.NODE_ENV === 'production' ? siteConfig.url : event.context.siteConfigNitroOrigin
   const author = 'Bean'
   const feed = new Feed({
@@ -34,7 +37,7 @@ export default defineEventHandler(async (event) => {
         id: post._path,
         title: post.title ? post.title : 'Untitled',
         link: new URL(post._path, baseUrl).toString(),
-        description: post.description,
+        description: post.description, // TODO: bug: 如果开头有引用，则不会输出内容
         content: post.description, // TODO: use post HTML content
         author: [{ name: author }],
         date: new Date(post.date),
