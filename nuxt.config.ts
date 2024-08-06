@@ -23,6 +23,12 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/sitemap',
   ],
+  nitro: {
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true,
+    },
+  },
 
   // module configs
   content: {
@@ -72,6 +78,10 @@ export default defineNuxtConfig({
         'uil:github',
       ],
     },
+  },
+
+  image: {
+    provider: 'ipxStatic',
   },
 
   colorMode: {
