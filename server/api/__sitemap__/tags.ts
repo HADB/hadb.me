@@ -1,5 +1,4 @@
 import { serverQueryContent } from '#content/server'
-import { asSitemapUrl, defineSitemapEventHandler } from '#imports'
 import { flatTags } from '@/utils/tags'
 import type { Tag } from '@/types/Tag'
 

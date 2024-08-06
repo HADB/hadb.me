@@ -3,7 +3,6 @@ import { Feed } from 'feed'
 import { setHeader } from 'h3'
 import { getCoverPath } from '@/utils/posts'
 import { serverQueryContent } from '#content/server'
-import { useSiteConfig } from '#imports'
 
 export default defineEventHandler(async (event) => {
   console.log(event)
