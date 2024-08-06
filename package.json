@@ -4,7 +4,7 @@
   "packageManager": "pnpm@9.6.0",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --open",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "lint": "eslint --ignore-pattern '/.nuxt/*' --ignore-pattern '/public/*' .",
