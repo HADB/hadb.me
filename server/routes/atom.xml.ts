@@ -8,7 +8,7 @@ import { useSiteConfig } from '#imports'
 export default defineEventHandler(async (event) => {
   console.log(event)
   const siteConfig = useSiteConfig(event)
-  consolle.log(siteConfig)
+  console.log(siteConfig)
   console.log(process.env)
   const baseUrl = process.env.NODE_ENV === 'production' ? siteConfig.url : event.context.siteConfigNitroOrigin
   const author = 'Bean'
