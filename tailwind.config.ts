@@ -57,6 +57,14 @@ export default <Partial<Config>> {
             },
             'p': {
               textAlign: 'justify',
+              overflowWrap: 'break-word',
+            },
+            'code': {
+              overflowWrap: 'break-word',
+            },
+            'li': {
+              textAlign: 'justify',
+              overflowWrap: 'break-word',
             },
             'img': {
               'borderRadius': rem(6),
