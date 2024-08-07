@@ -2,7 +2,7 @@
 import type { ParsedContent } from '@nuxt/content'
 
 interface Props {
-  post?: ParsedContent
+  post?: Omit<ParsedContent, 'body'> | null
   type: 'prev' | 'next'
 }
 

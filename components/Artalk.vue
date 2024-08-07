@@ -2,8 +2,8 @@
 import Artalk from 'artalk'
 
 interface Props {
-  path: string
-  title: string
+  path?: string
+  title?: string
 }
 
 const props = defineProps<Props>()

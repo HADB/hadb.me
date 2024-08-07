@@ -22,5 +22,9 @@ useHead({
   <NuxtLayout name="tag">
     <h1>{{ tag }}</h1>
     <PostList :tag="tag" />
+    <TextHr class="hidden">
+      评论区
+    </TextHr>
+    <Artalk :path="`/tags/${tag}`" :title="tag" class="hidden" />
   </NuxtLayout>
 </template>

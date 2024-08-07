@@ -20,6 +20,10 @@ useHead({
           {{ page.title }}
         </h1>
         <slot />
+        <TextHr :class="{ hidden: page.hideComments }">
+          评论区
+        </TextHr>
+        <Artalk :path="page._path" :title="page.title" :class="{ hidden: page.hideComments }" />
       </main>
     </div>
   </div>

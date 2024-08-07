@@ -30,14 +30,22 @@ useHead({
             <div :class="page.class">
               <slot />
             </div>
-            <TextHr>正文完</TextHr>
-            <Artalk :path="page._path" :title="page.title" />
+            <TextHr :class="{ hidden: page.hideComments }">
+              评论区
+            </TextHr>
+            <Artalk :path="page._path" :title="page.title" :class="{ hidden: page.hideComments }" />
             <div class="grid gap-4 sm:gap-12 sm:grid-cols-2 mt-4">
               <SurroundPostLink :post="next" type="next" />
               <SurroundPostLink :post="prev" type="prev" />
             </div>
           </template>
-          <slot v-else />
+          <template v-else>
+            <slot />
+            <TextHr :class="{ hidden: page.hideComments }">
+              评论区
+            </TextHr>
+            <Artalk :path="page._path" :title="page.title" :class="{ hidden: page.hideComments }" />
+          </template>
         </template>
         <slot v-else />
       </main>
