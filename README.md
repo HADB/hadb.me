@@ -17,6 +17,6 @@ TODO：
 - [x] 接入评论系统
 - [x] 接入 Cloudflare Pages
 - [x] 接入 Plausible
-- [ ] 导入 Disqus 评论至 Artalk
+- [x] 导入 Disqus 评论至 Artalk
 - [ ] 导入 Google Analytics 统计数据至 Plausible
-- [ ] 导入 Google Analytics PV 数据至 Artalk
+- [x] 导入 Google Analytics PV 数据至 Artalk
