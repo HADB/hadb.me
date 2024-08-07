@@ -1,14 +1,12 @@
 <script lang="ts" setup>
-defineProps({
-  post: {
-    type: Object,
-    required: false,
-  },
-  type: {
-    type: String,
-    required: true,
-  },
-})
+import type { ParsedContent } from '@nuxt/content'
+
+interface Props {
+  post?: ParsedContent
+  type: 'prev' | 'next'
+}
+
+defineProps<Props>()
 </script>
 
 <template>

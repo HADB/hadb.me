@@ -1,14 +1,12 @@
 <script lang="ts" setup>
 import Artalk from 'artalk'
 
-const props = defineProps({
-  path: {
-    type: String,
-  },
-  title: {
-    type: String,
-  },
-})
+interface Props {
+  path: string
+  title: string
+}
+
+const props = defineProps<Props>()
 const siteConfig = useSiteConfig()
 let artalk: Artalk
 const artalkEl = ref<HTMLElement>()

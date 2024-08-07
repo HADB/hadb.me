@@ -1,23 +1,18 @@
 <script lang="ts" setup>
 import type { QueryBuilderParams } from '@nuxt/content'
 
-const props = defineProps({
-  year: {
-    type: Number,
-    required: false,
-  },
-  tag: {
-    type: String,
-    required: false,
-  },
-  limit: {
-    type: Number,
-    default: undefined,
-  },
-  skip: {
-    type: Number,
-    default: 0,
-  },
+interface Props {
+  year?: number
+  tag?: string
+  limit?: number
+  skip?: number
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  year: undefined,
+  tag: undefined,
+  limit: undefined,
+  skip: 0,
 })
 
 const query: QueryBuilderParams = {

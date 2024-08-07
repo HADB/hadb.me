@@ -1,10 +1,11 @@
 <script lang="ts" setup>
-defineProps({
-  page: {
-    type: Object,
-    required: true,
-  },
-})
+import type { ParsedContent } from '@nuxt/content'
+
+interface Props {
+  page: ParsedContent
+}
+
+defineProps<Props>()
 </script>
 
 <template>

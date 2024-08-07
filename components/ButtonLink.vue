@@ -1,17 +1,14 @@
-<script setup>
-defineProps({
-  href: {
-    type: String,
-    required: false,
-  },
-  external: {
-    type: Boolean,
-    default: false,
-  },
-  icon: {
-    type: String,
-    default: '',
-  },
+<script lang="ts" setup>
+interface Props {
+  href?: string
+  external?: boolean
+  icon?: string
+}
+
+withDefaults(defineProps<Props>(), {
+  href: '',
+  external: false,
+  icon: '',
 })
 </script>
 
