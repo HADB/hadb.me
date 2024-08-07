@@ -20,8 +20,9 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
+    '@nuxtjs/plausible',
     '@nuxtjs/sitemap',
+    '@nuxtjs/tailwindcss',
   ],
 
   // module configs
@@ -79,9 +80,10 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
-  tailwindcss: {
-    cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'last' }],
-    configPath: 'tailwind.config.ts',
+  plausible: {
+    apiHost: 'https://plausible.hadb.me',
+    domain: 'hadb.me',
+    ignoredHostnames: [],
   },
 
   sitemap: {
@@ -105,5 +107,10 @@ export default defineNuxtConfig({
         ],
       },
     },
+  },
+
+  tailwindcss: {
+    cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'last' }],
+    configPath: 'tailwind.config.ts',
   },
 })

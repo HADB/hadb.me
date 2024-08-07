@@ -16,4 +16,4 @@ TODO：
 - [x] 导入全部历史文章
 - [x] 接入评论系统
 - [x] 接入 Cloudflare Pages
-- [ ] 接入 Plausible
+- [x] 接入 Plausible

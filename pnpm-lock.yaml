@@ -44,6 +44,9 @@ importers:
       '@nuxtjs/color-mode':
         specifier: ^3.4.2
         version: 3.4.2(magicast@0.3.4)(rollup@4.19.1)
+      '@nuxtjs/plausible':
+        specifier: ^1.0.2
+        version: 1.0.2(magicast@0.3.4)(rollup@4.19.1)
       '@nuxtjs/sitemap':
         specifier: 6.0.0-beta.1
         version: 6.0.0-beta.1(h3@1.12.0)(magicast@0.3.4)(rollup@4.19.1)(vite@5.3.5(@types/node@22.0.0)(sass@1.77.8)(terser@5.31.3))(vue@3.4.34(typescript@5.5.4))
@@ -304,6 +307,9 @@ packages:
   '@babel/types@7.25.2':
     resolution: {integrity: sha512-YTnYtra7W9e6/oAZEHj0bJehPRUlLH9/fbpT5LfB0NhQXyALCRkRs3zH9v07IYhkgpqX6Z78FnuccZr/l4Fs4Q==}
     engines: {node: '>=6.9.0'}
+
+  '@barbapapazes/plausible-tracker@0.5.2':
+    resolution: {integrity: sha512-su3ut2STFDV+pVCRd0SbCYCA31YWqqEk0Z4/vDMeGvqLMw5hJaQt2mXxbbokIzXTnjODDTeCA/m+TjkHRTWBEg==}
 
   '@clack/core@0.3.4':
     resolution: {integrity: sha512-H4hxZDXgHtWTwV3RAVenqcC4VbJZNegbBjlPvzOzCouXtS2y3sDvlO3IsbrPNWuLWPPlYVYPghQdSF64683Ldw==}
@@ -1117,6 +1123,9 @@ packages:
 
   '@nuxtjs/mdc@0.8.3':
     resolution: {integrity: sha512-FqvJFWkBN9u2FeWog+7+C0aIOx0WIu61TYgAXPmmIOVVua6s2mXQsMyF3fXY2M56QBIaYJzK/SYN+5FGr5GNTQ==}
+
+  '@nuxtjs/plausible@1.0.2':
+    resolution: {integrity: sha512-AT5GoVddqgvbp39OY1/DtWHUgjn+6LGjJXB75imdEUxPok2uAVGtr3oZ0F7merC9T3y0rIqZx8HzpUmCcipBnQ==}
 
   '@nuxtjs/sitemap@6.0.0-beta.1':
     resolution: {integrity: sha512-qLpMWAGr4vyTt2F1WYiA4Cv5ubxvjvd7LNW8Zt917O50Jcs3qSNiGPjFuDYDf9mTNGbkxtDyRti0/uESa5WP2A==}
@@ -5637,6 +5646,8 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
+  '@barbapapazes/plausible-tracker@0.5.2': {}
+
   '@clack/core@0.3.4':
     dependencies:
       picocolors: 1.0.1
@@ -6604,6 +6615,16 @@ snapshots:
       unist-builder: 4.0.0
       unist-util-visit: 5.0.0
       unwasm: 0.3.9
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+
+  '@nuxtjs/plausible@1.0.2(magicast@0.3.4)(rollup@4.19.1)':
+    dependencies:
+      '@barbapapazes/plausible-tracker': 0.5.2
+      '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.19.1)
+      defu: 6.1.4
     transitivePeerDependencies:
       - magicast
       - rollup
