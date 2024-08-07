@@ -20,6 +20,7 @@ const { navigation } = useContent()
       <div class="sm:w-32 flex justify-end items-center space-x-1">
         <ButtonLink href="https://x.com/beandeng" icon="fa6-brands:x-twitter" />
         <ButtonLink href="https://github.com/HADB" icon="fa6-brands:github" />
+        <ButtonLink href="/atom.xml" external icon="material-symbols:rss-feed" />
         <ColorModeSwitch />
       </div>
     </div>
