@@ -12,6 +12,9 @@
   a:not(.prose a, .app-navbar a) {
     @apply no-underline text-current border-solid border-primary-500 dark:border-primary-400 hover:border-b hover:text-primary-500 dark:hover:text-primary-400;
   }
+  th {
+    @apply text-left;
+  }
 }
 
 @layer components {
