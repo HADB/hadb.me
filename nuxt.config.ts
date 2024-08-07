@@ -23,13 +23,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/sitemap',
   ],
-  nitro: {
-    preset: 'cloudflare-pages',
-    prerender: {
-      routes: ['/'],
-      crawlLinks: true,
-    },
-  },
 
   // module configs
   content: {

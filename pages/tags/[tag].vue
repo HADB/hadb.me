@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const route = useRoute()
-const tag = route.params.tag as string
+const tag = decodeURIComponent(route.params.tag as string)
 
 definePageMeta({
   documentDriven: false,
