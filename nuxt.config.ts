@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     highlight: {
       langs: [
         'c#',
+        'cpp',
         'css',
         'dockerfile',
         'html',
@@ -68,6 +69,7 @@ export default defineNuxtConfig({
       icons: [
         'material-symbols:dark-mode-rounded',
         'material-symbols:light-mode-rounded',
+        'material-symbols:rss-feed',
         'uil:desktop',
         'uil:github',
       ],
