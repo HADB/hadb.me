@@ -53,7 +53,7 @@ const query: QueryBuilderParams = {
               <span class="mr-4 text-sm text-slate-500 font-mono flex-shrink-0 leading-6">
                 {{ formatDateTime(post.date, 'yyyy-MM-dd') }}
               </span>
-              <div class="leading-6">
+              <div class="leading-6 truncate">
                 <a :href="post._path">{{ post.title }}</a>
               </div>
             </li>

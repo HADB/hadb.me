@@ -2,7 +2,7 @@
 defineProps({
   post: {
     type: Object,
-    required: true,
+    required: false,
   },
   type: {
     type: String,

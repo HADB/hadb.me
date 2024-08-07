@@ -73,10 +73,6 @@ export default defineNuxtConfig({
     },
   },
 
-  image: {
-    provider: 'ipxStatic',
-  },
-
   colorMode: {
     preference: 'system',
     fallback: 'dark',
