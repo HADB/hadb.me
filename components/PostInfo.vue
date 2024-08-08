@@ -9,7 +9,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <div class="flex items-center flex-wrap text-sm text-slate-600 dark:text-slate-400 leading-10 divided border-t border-b border-slate-200 dark:border-slate-700">
+  <div class="flex items-center flex-wrap text-sm text-slate-600 dark:text-slate-400 py-3 leading-10 divided border-t border-b border-slate-200 dark:border-slate-700">
     <div v-if="page?.date" class="flex items-center">
       <Icon name="uil:calendar-alt" class="w-4 h-4 mr-1" />
       <time :datetime="page.date">

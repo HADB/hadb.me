@@ -65,15 +65,6 @@ export default defineNuxtConfig({
 
   icon: {
     serverBundle: 'auto',
-    clientBundle: {
-      icons: [
-        'material-symbols:dark-mode-rounded',
-        'material-symbols:light-mode-rounded',
-        'material-symbols:rss-feed',
-        'uil:desktop',
-        'uil:github',
-      ],
-    },
   },
 
   colorMode: {
