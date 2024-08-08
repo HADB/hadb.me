@@ -24,6 +24,13 @@
     }
   }
 
+  .prose {
+    p,
+    li {
+      @apply break-all sm:break-normal sm:break-words;
+    }
+  }
+
   .contains-task-list {
     .task-list-item {
       @apply relative pl-8;
