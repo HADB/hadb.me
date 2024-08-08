@@ -15,6 +15,7 @@ defineProps<Props>()
       <time :datetime="page.date">
         {{ formatDateTime(page.date, 'yyyy 年 MM 月 dd 日') }}
       </time>
+      <span v-if="page.time" class="ml-1">{{ page.time }}</span>
     </div>
     <div class="flex items-center">
       <Icon name="uil:font" class="w-4 h-4 mr-1" />
@@ -27,16 +28,23 @@ defineProps<Props>()
     <div class="flex items-center">
       <Icon name="uil:eye" class="w-4 h-4 mr-1" />
       <span class="artalk-pv-count">...</span>
-      <span>&nbsp;阅读</span>
+      <span class="ml-1">阅读</span>
     </div>
     <div class="flex items-center">
       <Icon name="uil:comment-alt-lines" class="w-4 h-4 mr-1" />
       <span class="artalk-comment-count">...</span>
-      <span>&nbsp;评论</span>
+      <span class="ml-1">评论</span>
+    </div>
+    <div v-if="page.weather" class="flex items-center">
+      <Icon name="uil:cloud-sun" class="w-4 h-4 mr-1" />
+      <span>{{ page.weather }}</span>
+    </div>
+    <div v-if="page.location" class="flex items-center">
+      <Icon name="uil:map-marker" class="w-4 h-4 mr-1" />
+      <span>{{ page.location }}</span>
     </div>
     <div v-if="page.tags" class="flex items-center">
       <Icon name="uil:tag-alt" class="w-4 h-4 mr-1" />
-      <span>标签：</span>
       <template v-for="tag in page.tags" :key="tag">
         <NuxtLink :to="`/tags/${encodeURIComponent(tag)}`" class="!border-b-0">
           {{ tag }}
