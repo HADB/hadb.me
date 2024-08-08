@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
     updated: new Date(),
     generator: 'HADB.ME',
     feedLinks: {
-      atom: resolvePath('feed'),
+      atom: resolvePath('atom.xml'),
     },
     author: {
       name: author,
