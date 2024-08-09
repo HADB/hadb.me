@@ -49,7 +49,9 @@ const query: QueryBuilderParams = {
                 {{ formatDateTime(post.date, 'yyyy-MM-dd') }}
               </span>
               <div class="leading-6 truncate">
-                <a :href="post._path">{{ post.title }}</a>
+                <NuxtLink :to="post._path">
+                  {{ post.title }}
+                </NuxtLink>
               </div>
             </li>
           </ul>
