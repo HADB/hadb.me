@@ -8,7 +8,7 @@ export default defineSitemapEventHandler(async (e) => {
 
   return tags.map((tag: Tag) => {
     return asSitemapUrl({
-      loc: `/tags/${tag.name}`,
+      loc: `/tags/${encodeURIComponent(tag.name)}`,
     })
   })
 })

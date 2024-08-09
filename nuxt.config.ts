@@ -92,6 +92,7 @@ export default defineNuxtConfig({
         includeAppSources: true,
         exclude: [
           '/posts/**',
+          '/tags/**',
           '/test',
         ],
       },
