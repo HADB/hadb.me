@@ -1,6 +1,7 @@
 import type { NitroRouteConfig } from 'nitropack'
 
 const redirects: { [path: string]: NitroRouteConfig } = {
+  // page redirects
   '/page/2': { redirect: { to: '/archives', statusCode: 301 } },
   '/page/3': { redirect: { to: '/archives', statusCode: 301 } },
   '/page/4': { redirect: { to: '/archives', statusCode: 301 } },
@@ -9,6 +10,44 @@ const redirects: { [path: string]: NitroRouteConfig } = {
   '/page/7': { redirect: { to: '/archives', statusCode: 301 } },
   '/page/8': { redirect: { to: '/archives', statusCode: 301 } },
   '/page/9': { redirect: { to: '/archives', statusCode: 301 } },
+
+  // tag redirects
+  '/tag/a-li-yun': { redirect: { to: '/tags/阿里云', statusCode: 301 } },
+  '/tag/android': { redirect: { to: '/tags/Android', statusCode: 301 } },
+  '/tag/asp-net': { redirect: { to: '/tags/.NET', statusCode: 301 } },
+  '/tag/cdn': { redirect: { to: '/tags/DevOps', statusCode: 301 } },
+  '/tag/centos': { redirect: { to: '/tags/Linux', statusCode: 301 } },
+  '/tag/ci': { redirect: { to: '/tags/DevOps', statusCode: 301 } },
+  '/tag/csharp': { redirect: { to: '/tags/.NET', statusCode: 301 } },
+  '/tag/devops': { redirect: { to: '/tags/DevOps', statusCode: 301 } },
+  '/tag/docker': { redirect: { to: '/tags/Docker', statusCode: 301 } },
+  '/tag/dotnet': { redirect: { to: '/tags/.NET', statusCode: 301 } },
+  '/tag/ef': { redirect: { to: '/tags/.NET', statusCode: 301 } },
+  '/tag/essay': { redirect: { to: '/tags/随笔', statusCode: 301 } },
+  '/tag/frontend': { redirect: { to: '/tags/前端', statusCode: 301 } },
+  '/tag/ghost-blog': { redirect: { to: '/tags/Ghost', statusCode: 301 } },
+  '/tag/gitlab': { redirect: { to: '/tags/DevOps', statusCode: 301 } },
+  '/tag/https': { redirect: { to: '/tags/DevOps', statusCode: 301 } },
+  '/tag/iis': { redirect: { to: '/tags/DevOps', statusCode: 301 } },
+  '/tag/kubernetes': { redirect: { to: '/tags/k8s', statusCode: 301 } },
+  '/tag/life': { redirect: { to: '/tags/生活', statusCode: 301 } },
+  '/tag/log': { redirect: { to: '/tags/日志', statusCode: 301 } },
+  '/tag/ops': { redirect: { to: '/tags/DevOps', statusCode: 301 } },
+  '/tag/others': { redirect: { to: '/archives', statusCode: 301 } },
+  '/tag/python': { redirect: { to: '/tags/Python', statusCode: 301 } },
+  '/tag/qun-hui': { redirect: { to: '/tags/群晖', statusCode: 301 } },
+  '/tag/shi-ci': { redirect: { to: '/tags/诗词', statusCode: 301 } },
+  '/tag/ssl': { redirect: { to: '/tags/DevOps', statusCode: 301 } },
+  '/tag/summary': { redirect: { to: '/tags/小结', statusCode: 301 } },
+  '/tag/tech': { redirect: { to: '/tags/技术', statusCode: 301 } },
+  '/tag/thought': { redirect: { to: '/tags/思考', statusCode: 301 } },
+  '/tag/tool': { redirect: { to: '/tags/工具', statusCode: 301 } },
+  '/tag/visual-studio': { redirect: { to: '/tags/.NET', statusCode: 301 } },
+  '/tag/vlog': { redirect: { to: '/tags/Vlog', statusCode: 301 } },
+  '/tag/wechat': { redirect: { to: '/tags/前端', statusCode: 301 } },
+  '/tag/you-xi': { redirect: { to: '/tags/游戏', statusCode: 301 } },
+
+  // post redirects
   '/2013-winter-holiday-plan': { redirect: { to: '/posts/2013-winter-holiday-plan', statusCode: 301 } },
   '/2014-beginning': { redirect: { to: '/posts/2014-beginning', statusCode: 301 } },
   '/2015-start-working': { redirect: { to: '/posts/2015-start-working', statusCode: 301 } },
