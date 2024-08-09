@@ -13,6 +13,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
     "@iconify-json/fa6-brands": "^1.1.21",
+    "@iconify-json/heroicons": "^1.1.24",
     "@iconify-json/material-symbols": "^1.1.86",
     "@iconify-json/ph": "^1.1.13",
     "@iconify-json/simple-icons": "^1.1.111",
@@ -23,6 +24,7 @@
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/color-mode": "^3.4.2",
     "@nuxtjs/plausible": "^1.0.2",
+    "@nuxtjs/robots": "^4.0.2",
     "@nuxtjs/sitemap": "6.0.0-beta.1",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tailwindcss/typography": "^0.5.13",

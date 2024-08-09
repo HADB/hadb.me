@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     '@nuxtjs/plausible',
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
+    "@nuxtjs/robots"
   ],
 
   // module configs
