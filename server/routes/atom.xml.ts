@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
     language: 'zh-CN',
     image: resolvePath('favicon/favicon-1024x1024.png'),
     favicon: resolvePath('favicon/favicon-32x32.png'),
-    copyright: `Copyright © 2012-${new Date().getFullYear()}, ${author}, CC BY-NC-SA 4.0`,
+    copyright: `Copyright © ${author}, CC BY-NC-SA 4.0`,
     updated: new Date(),
     generator: 'HADB.ME',
     feedLinks: {
