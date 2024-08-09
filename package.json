@@ -36,6 +36,7 @@
     "feed": "^4.2.2",
     "luxon": "^3.5.0",
     "nuxt": "^3.12.4",
+    "nuxt-gtag": "^2.1.0",
     "remark-reading-time": "^2.0.1",
     "sass": "^1.77.8"
   },

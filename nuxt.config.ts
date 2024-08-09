@@ -30,7 +30,8 @@ export default defineNuxtConfig({
     '@nuxtjs/plausible',
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
-    "@nuxtjs/robots"
+    '@nuxtjs/robots',
+    'nuxt-gtag',
   ],
 
   // module configs
@@ -114,5 +115,9 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'last' }],
     configPath: 'tailwind.config.ts',
+  },
+
+  gtag: {
+    id: 'G-3D1G3C27ZZ',
   },
 })

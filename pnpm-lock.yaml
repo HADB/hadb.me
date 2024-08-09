@@ -86,6 +86,9 @@ importers:
       nuxt:
         specifier: ^3.12.4
         version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@22.0.0)(eslint@9.8.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.19.1)(sass@1.77.8)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@22.0.0)(sass@1.77.8)(terser@5.31.3))
+      nuxt-gtag:
+        specifier: ^2.1.0
+        version: 2.1.0(magicast@0.3.4)(rollup@4.19.1)
       remark-reading-time:
         specifier: ^2.0.1
         version: 2.0.1
@@ -3855,6 +3858,9 @@ packages:
     resolution: {integrity: sha512-6vRdiXTw9SajEQOUi6Ze/XaIXzy1q/sD5UqHQSv3yqTu7Pot5S7fEihNXV8LpcgLz+9HzjVt70r7jYe7R99c2w==}
     engines: {node: ^16.10.0 || >=18.0.0}
     hasBin: true
+
+  nuxt-gtag@2.1.0:
+    resolution: {integrity: sha512-06ES+hgMs5l98bHmsLyltbJXfVr1LAkm/5gwcncdNkz96+D0fVA+RhecIp06iDQXF+YPBE2xAgB4G5PnUn8drA==}
 
   nuxt-site-config-kit@2.2.15:
     resolution: {integrity: sha512-uN+JOijDt0u35rBhI3GhRHvPKncm2Nu/P3QMRIi+mwt4F/tQtlvLa1XUANkeEy8InTnPTVgs6dSDSqHP4sBXzg==}
@@ -9928,6 +9934,17 @@ snapshots:
   nuxi@3.12.0:
     optionalDependencies:
       fsevents: 2.3.3
+
+  nuxt-gtag@2.1.0(magicast@0.3.4)(rollup@4.19.1):
+    dependencies:
+      '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.19.1)
+      defu: 6.1.4
+      pathe: 1.1.2
+      ufo: 1.5.4
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
 
   nuxt-site-config-kit@2.2.15(magicast@0.3.4)(rollup@4.19.1)(vue@3.4.34(typescript@5.5.4)):
     dependencies:
