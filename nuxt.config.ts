@@ -26,11 +26,12 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/icon',
     '@nuxt/image',
+    '@nuxt/ui',
     '@nuxtjs/color-mode',
     '@nuxtjs/plausible',
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/robots',
     'nuxt-gtag',
   ],
 

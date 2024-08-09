@@ -24,6 +24,11 @@ export default <Partial<Config>> {
       colors: {
         primary: colors.emerald,
       },
+      aspectRatio: {
+        auto: 'auto',
+        square: '1 / 1',
+        video: '16 / 9',
+      },
       typography: ({ theme }: { theme: (k: string) => string }) => ({
         slate: {
           css: {
