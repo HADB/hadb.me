@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import redirects from './redirects'
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-07-25',
   devtools: { enabled: true },
@@ -7,7 +9,7 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/atom.xml': { prerender: true },
     '/sitemap.xml': { prerender: true },
-    '/how_to_delete_web_service_of_synology_dsm_7_2': { redirect: { to: '/posts/how-to-delete-web-service-of-synology-dsm-7-2', statusCode: 301 } },
+    ...redirects,
   },
   nitro: {
     prerender: {
