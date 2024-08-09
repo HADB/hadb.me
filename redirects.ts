@@ -1,6 +1,4 @@
-import type { NitroRouteConfig } from 'nitropack'
-
-const redirects: { [path: string]: NitroRouteConfig } = {
+const redirects: { [path: string]: { redirect: { to: string, statusCode?: number } } } = {
   // page redirects
   '/page/2': { redirect: { to: '/archives', statusCode: 301 } },
   '/page/3': { redirect: { to: '/archives', statusCode: 301 } },
@@ -154,6 +152,12 @@ const redirects: { [path: string]: NitroRouteConfig } = {
   '/windows-close-monitor-tool': { redirect: { to: '/posts/windows-close-monitor-tool', statusCode: 301 } },
   '/written-at-the-end-of-march': { redirect: { to: '/posts/written-at-the-end-of-march', statusCode: 301 } },
   '/wxapp-ssl-error': { redirect: { to: '/posts/wxapp-ssl-error', statusCode: 301 } },
+}
+
+for (const [_path, config] of Object.entries(redirects)) {
+  if (config.redirect?.to) {
+    config.redirect.to = encodeURI(config.redirect.to)
+  }
 }
 
 export default redirects
