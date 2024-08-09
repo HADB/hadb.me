@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
+const isDark = computed(() => colorMode.value === 'dark')
+
 const onClick = () => {
   const values = ['light', 'dark']
   const index = values.indexOf(colorMode.value)
@@ -11,6 +13,10 @@ const onClick = () => {
 
 <template>
   <ColorScheme>
-    <ButtonLink :icon="colorMode.value === 'dark' ? 'material-symbols:dark-mode-rounded' : 'material-symbols:light-mode-rounded' " @click="onClick" />
+    <ButtonLink
+      :icon="isDark ? 'material-symbols:dark-mode-rounded' : 'material-symbols:light-mode-rounded'"
+      :tooltip="isDark ? '切换至浅色模式' : '切换至深色模式'"
+      @click="onClick"
+    />
   </ColorScheme>
 </template>

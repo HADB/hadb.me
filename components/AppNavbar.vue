@@ -18,9 +18,9 @@ const { navigation } = useContent()
         </ButtonLink>
       </div>
       <div class="sm:w-32 flex justify-end items-center space-x-1">
-        <ButtonLink href="https://x.com/beandeng" icon="fa6-brands:x-twitter" />
-        <ButtonLink href="https://github.com/HADB" icon="fa6-brands:github" />
-        <ButtonLink href="https://hadb.me/atom.xml" external icon="material-symbols:rss-feed" />
+        <ButtonLink href="https://x.com/beandeng" tooltip="Twitter" icon="fa6-brands:x-twitter" external />
+        <ButtonLink href="https://github.com/HADB" tooltip="GitHub" icon="fa6-brands:github" external />
+        <ButtonLink href="https://hadb.me/atom.xml" tooltip="Feed 订阅" icon="fa6-solid:square-rss" external />
         <ColorModeSwitch />
       </div>
     </div>
