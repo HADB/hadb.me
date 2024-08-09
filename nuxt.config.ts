@@ -3,7 +3,7 @@ import redirects from './redirects'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-07-25',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   eslint: { config: { standalone: false } },
   routeRules: {
     '/': { prerender: true },
