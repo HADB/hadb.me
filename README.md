@@ -2,7 +2,7 @@
   <img width="180px" src="https://raw.githubusercontent.com/HADB/hadb.me/main/public/favicon/favicon.svg" />
 </p>
 
-## [hadb.me](https://hadb.me) [![wakatime](https://wakatime.com/badge/user/018bf5fd-2090-4ec2-b163-49e238da63d6/project/d5cc23f6-dbbf-434c-8694-a7bd4a7a86d5.svg)](https://wakatime.com/badge/user/018bf5fd-2090-4ec2-b163-49e238da63d6/project/d5cc23f6-dbbf-434c-8694-a7bd4a7a86d5)
+## [hadb.me](https://hadb.me) [![wakatime](https://wakatime.com/badge/user/018bf5fd-2090-4ec2-b163-49e238da63d6/project/d5cc23f6-dbbf-434c-8694-a7bd4a7a86d5.svg)](https://wakatime.com/@Bean/projects/lbcgcakepj)
 
 我的个人网站（第 4 代）
 
