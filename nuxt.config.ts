@@ -45,6 +45,8 @@ export default defineNuxtConfig({
         'css',
         'dockerfile',
         'html',
+        'ini',
+        'java',
         'js',
         'json',
         'kotlin',
