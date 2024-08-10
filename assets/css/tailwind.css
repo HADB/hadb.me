@@ -33,7 +33,7 @@
 
   .contains-task-list {
     .task-list-item {
-      @apply relative pl-8;
+      @apply relative pl-10;
       input[type='checkbox'] {
         @apply appearance-none absolute top-1/2 left-2 -mt-2 bg-transparent;
         @apply before:cursor-pointer before:block before:w-4 before:h-4 before:leading-4 before:text-center before:rounded before:bg-transparent before:ring-1 before:ring-slate-300 dark:before:ring-slate-600 before:text-primary-500;
