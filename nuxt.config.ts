@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import process from 'node:process'
 import redirects from './redirects'
 
 export default defineNuxtConfig({
@@ -32,6 +33,7 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
+    '@sentry/nuxt/module',
     'nuxt-gtag',
   ],
 
@@ -119,6 +121,14 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'last' }],
     configPath: 'tailwind.config.ts',
+  },
+
+  sentry: {
+    sourceMapsUploadOptions: {
+      org: 'yuanfen',
+      project: 'hadb-me',
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+    },
   },
 
   gtag: {
