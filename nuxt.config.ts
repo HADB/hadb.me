@@ -55,6 +55,7 @@ export default defineNuxtConfig({
         'mdc',
         'nginx',
         'php',
+        'powershell',
         'python',
         'shell',
         'toml',
