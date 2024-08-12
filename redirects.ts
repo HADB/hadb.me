@@ -1,3 +1,5 @@
+// 支持在 generate 阶段生成重定向配置，为了在免费版 CloudFlare Pages 上实现重定向功能
+
 const redirects: { [path: string]: { redirect: { to: string, statusCode?: number } } } = {
   // page redirects
   '/page/2': { redirect: { to: '/archives', statusCode: 301 } },
@@ -46,9 +48,16 @@ const redirects: { [path: string]: { redirect: { to: string, statusCode?: number
   '/tag/you-xi': { redirect: { to: '/tags/游戏', statusCode: 301 } },
 
   // post redirects
+  // very old path with date
   '/2013-winter-holiday-plan': { redirect: { to: '/posts/2013-winter-holiday-plan', statusCode: 301 } },
+  '/2013/10/03/fix-chinese-url-in-wordpress-in-iis/': { redirect: { to: '/posts/fix-chinese-url-in-wordpress-in-iis', statusCode: 301 } },
   '/2014-beginning': { redirect: { to: '/posts/2014-beginning', statusCode: 301 } },
   '/2015-start-working': { redirect: { to: '/posts/2015-start-working', statusCode: 301 } },
+  '/2015/03/17/entity-framework-code-first-two-foreign-keys-from-same-table/': { redirect: { to: '/posts/entity-framework-code-first-two-foreign-keys-from-same-table', statusCode: 301 } },
+  '/2015/03/23/authenticationmanager-signout': { redirect: { to: '/posts/authenticationmanager-signout-not-working', statusCode: 301 } },
+  '/2015/04/13/fix-fixed-bug-in-ios-when-call-virtual-keyboards': { redirect: { to: '/posts/fix-fixed-bug-in-ios-when-call-virtual-keyboards', statusCode: 301 } },
+  '/2016/11/09/aliyun-cdn-not-support-sni/': { redirect: { to: '/posts/aliyun-cdn-not-support-sni', statusCode: 301 } },
+  '/2017/11/16/wxapp-ssl-error/': { redirect: { to: '/posts/wxapp-ssl-error', statusCode: 301 } },
   '/about-paipai': { redirect: { to: '/posts/about-paipai', statusCode: 301 } },
   '/aliyun-cdn-not-support-sni': { redirect: { to: '/posts/aliyun-cdn-not-support-sni', statusCode: 301 } },
   '/android-unit-test': { redirect: { to: '/posts/android-unit-test', statusCode: 301 } },
@@ -72,8 +81,8 @@ const redirects: { [path: string]: { redirect: { to: string, statusCode?: number
   '/csharp-get-ipaddress': { redirect: { to: '/posts/csharp-get-ipaddress', statusCode: 301 } },
   '/devops-gitlab-ci-aliyun-k8s': { redirect: { to: '/posts/devops-gitlab-ci-aliyun-k8s', statusCode: 301 } },
   '/diary-of-waiting-for-baby-born': { redirect: { to: '/posts/diary-of-waiting-for-baby-born', statusCode: 301 } },
-  '/dockerfile-maven': { redirect: { to: '/posts/dockerfile-maven', statusCode: 301 } },
   '/docker-registry-auth-with-same-domain': { redirect: { to: '/posts/docker-registry-auth-with-same-domain', statusCode: 301 } },
+  '/dockerfile-maven': { redirect: { to: '/posts/dockerfile-maven', statusCode: 301 } },
   '/empty-your-self': { redirect: { to: '/posts/empty-your-self', statusCode: 301 } },
   '/entity-framework-code-first-two-foreign-keys-from-same-table': { redirect: { to: '/posts/entity-framework-code-first-two-foreign-keys-from-same-table', statusCode: 301 } },
   '/essay': { redirect: { to: '/posts/essay-20180301', statusCode: 301 } },
@@ -91,9 +100,9 @@ const redirects: { [path: string]: { redirect: { to: string, statusCode?: number
   '/hadb-me-back': { redirect: { to: '/posts/hadb-me-back', statusCode: 301 } },
   '/hello-osmo-pocket': { redirect: { to: '/posts/hello-osmo-pocket', statusCode: 301 } },
   '/hexo-with-travis-ci': { redirect: { to: '/posts/hexo-with-travis-ci', statusCode: 301 } },
-  '/how_to_delete_web_service_of_synology_dsm_7_2': { redirect: { to: '/posts/how-to-delete-web-service-of-synology-dsm-7-2', statusCode: 301 } },
   '/how-to-become-a-fullstack-developer': { redirect: { to: '/posts/how-to-become-a-fullstack-developer', statusCode: 301 } },
   '/how-to-modify-windows-library-icon': { redirect: { to: '/posts/how-to-modify-windows-library-icon', statusCode: 301 } },
+  '/how_to_delete_web_service_of_synology_dsm_7_2': { redirect: { to: '/posts/how-to-delete-web-service-of-synology-dsm-7-2', statusCode: 301 } },
   '/icbc-plugin-cause-blank-line-in-chrome': { redirect: { to: '/posts/icbc-plugin-cause-blank-line-in-chrome', statusCode: 301 } },
   '/japanese-cuisine-team-building': { redirect: { to: '/posts/japanese-cuisine-team-building', statusCode: 301 } },
   '/jiankongbao': { redirect: { to: '/posts/jiankongbao', statusCode: 301 } },
