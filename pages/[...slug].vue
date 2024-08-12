@@ -5,6 +5,7 @@ const { contentHead } = useRuntimeConfig().public.content
 const { page, layout } = useContent()
 const route = useRoute()
 
+// 注意：以下 301 跳转只在 SSR 时生效
 if (!(page as any).value) {
   // 支持将旧的带日期的路径 301 跳转至 /posts/ 下
   if (route.path.match(/^\/\d{4}\/\d{2}\/\d{2}\/(.+)$/)) {
@@ -12,7 +13,8 @@ if (!(page as any).value) {
   }
 
   // 支持旧的不带日期的路径 301 跳转至 /posts/ 下
-  const { data: fallbackPost } = await useAsyncData(`fallbackPost-${route.params.slug[0]}`, () => queryContent(`posts/${route.params.slug[0]}`).only('_path').findOne())
+  // 动态的 queryContent 请求在 SSG 下不生效
+  const { data: fallbackPost } = await useAsyncData(`fallbackPost-${route.path}`, () => queryContent('posts', route.params.slug[0]).only('_path').findOne())
   if (fallbackPost.value) {
     navigateTo(fallbackPost.value._path, { redirectCode: 301 })
   }
