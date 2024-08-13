@@ -7,9 +7,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   eslint: { config: { standalone: false } },
   routeRules: {
-    '/': { prerender: true },
     '/atom.xml': { prerender: true },
-    '/sitemap.xml': { prerender: true },
     ...redirects,
   },
   nitro: {
@@ -30,7 +28,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/color-mode',
     '@nuxtjs/plausible',
-    '@nuxtjs/robots',
+    // '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
     '@sentry/nuxt/module',
