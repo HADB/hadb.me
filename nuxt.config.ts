@@ -125,7 +125,7 @@ export default defineNuxtConfig({
 
   sentry: {
     sourceMapsUploadOptions: {
-      org: 'yuanfen',
+      org: 'hadb',
       project: 'hadb-me',
       authToken: process.env.SENTRY_AUTH_TOKEN,
     },
