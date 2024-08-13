@@ -34,7 +34,7 @@ importers:
         version: 1.1.113
       '@iconify-json/uil':
         specifier: ^1.1.8
-        version: 1.1.8
+        version: 1.1.9
       '@nuxt/content':
         specifier: ^2.13.2
         version: 2.13.2(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@22.0.0)(eslint@9.8.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.19.1)(sass@1.77.8)(terser@5.31.3)(typescript@5.5.4)(vite@5.3.5(@types/node@22.0.0)(sass@1.77.8)(terser@5.31.3)))(rollup@4.19.1)(vue@3.4.34(typescript@5.5.4))
@@ -871,8 +871,8 @@ packages:
   '@iconify-json/simple-icons@1.1.113':
     resolution: {integrity: sha512-XnGdS+JExCxMN5N2r0FXA99NkYkgJUsqiU+7fUauWkImjLgail0OdNUQ2379yRY8wPSTqHxy9eCxaOAWzJ2ZWA==}
 
-  '@iconify-json/uil@1.1.8':
-    resolution: {integrity: sha512-zkWB8XImzb1gfi5kN9xAfDXF5OqzxbKvtZq9xRUplEWEJYOoDB1RpbbQpCwJQ41j8Nf0ag0LFJr++qhYmvxftQ==}
+  '@iconify-json/uil@1.1.9':
+    resolution: {integrity: sha512-NZkqwKfG2TsJClxzVjYi2a3Mam/3ZrNjzxHNniqqwrSiAQ6QYx9VlFmazQUXQF5xu9v1z1wIeQo3vYClvanrnw==}
 
   '@iconify/collections@1.0.444':
     resolution: {integrity: sha512-3+dA5B8vs+qew23dwBAqv6M4LqtOHlYQiKCproN5o3lLelnA1fnWJMfv5f2RyPecaS9rZEGi1+eg8AFKF2sk1A==}
@@ -6521,7 +6521,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/uil@1.1.8':
+  '@iconify-json/uil@1.1.9':
     dependencies:
       '@iconify/types': 2.0.0
 
