@@ -6,9 +6,10 @@
     "build": "nuxt build",
     "dev": "nuxt dev --host",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
     "lint": "eslint --ignore-pattern '/.nuxt/*' --ignore-pattern '/public/*' .",
-    "lint:fix": "eslint --fix --ignore-pattern '/.nuxt/*' --ignore-pattern '/public/*' ."
+    "lint:fix": "eslint --fix --ignore-pattern '/.nuxt/*' --ignore-pattern '/public/*' .",
+    "prepare": "nuxt prepare",
+    "preview": "nuxt preview"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
