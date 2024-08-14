@@ -1,6 +1,27 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "group:allNonMajor",
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "rangeStrategy": "bump",
+  "timezone": "Asia/Shanghai",
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true,
+      "automergeSchedule": [
+        "after 2pm and before 3pm every weekday"
+      ],
+      "schedule": [
+        "after 10am and before 11am"
+      ]
+    }
   ]
 }
