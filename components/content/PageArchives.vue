@@ -15,7 +15,7 @@ for (let year = currentYear; year >= startYear; year--) {
   <TagList />
   <div class="years">
     <div v-for="year in years" :key="year">
-      <h3>{{ year }} 年</h3>
+      <h3>{{ year }} 年（{{ year - 1991 }} 岁）</h3>
       <PostList :year="year" />
     </div>
   </div>
