@@ -33,7 +33,7 @@
     "@sentry/nuxt": "^8.26.0",
     "@tailwindcss/typography": "^0.5.14",
     "@types/luxon": "^3.4.2",
-    "@typescript-eslint/parser": "^8.1.0",
+    "@typescript-eslint/parser": "^8.2.0",
     "artalk": "^2.8.7",
     "eslint": "^9.9.0",
     "eslint-plugin-format": "^0.1.2",
