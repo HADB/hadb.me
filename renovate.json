@@ -15,13 +15,7 @@
         "pin",
         "digest"
       ],
-      "automerge": true,
-      "automergeSchedule": [
-        "after 2pm and before 3pm every weekday"
-      ],
-      "schedule": [
-        "after 10am and before 11am"
-      ]
+      "automerge": true
     }
   ]
 }
