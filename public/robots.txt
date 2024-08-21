@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: https://hadb.me/sitemap_index.xml

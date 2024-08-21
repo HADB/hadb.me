@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/color-mode',
     '@nuxtjs/plausible',
-    // '@nuxtjs/robots',
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
     '@sentry/nuxt/module',
@@ -90,6 +90,10 @@ export default defineNuxtConfig({
     apiHost: 'https://plausible.hadb.me',
     domain: 'hadb.me',
     ignoredHostnames: [],
+  },
+
+  robots: {
+    header: false,
   },
 
   sitemap: {
