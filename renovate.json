@@ -9,13 +9,9 @@
   "timezone": "Asia/Shanghai",
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "automerge": true
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "schedule": ["before 4am on Monday"]
     }
   ]
 }
