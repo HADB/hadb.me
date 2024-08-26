@@ -31,6 +31,7 @@ const query: QueryBuilderParams = {
     },
   ],
   sort: [
+    { _path: -1 },
     { date: -1 },
   ],
   skip: props.skip,
