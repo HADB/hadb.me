@@ -40,7 +40,7 @@
     "feed": "^4.2.2",
     "luxon": "^3.5.0",
     "nuxt": "^3.13.0",
-    "nuxt-gtag": "^2.1.0",
+    "nuxt-gtag": "^3.0.1",
     "remark-reading-time": "^2.0.1",
     "sass": "^1.77.8"
   },
