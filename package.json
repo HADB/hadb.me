@@ -24,6 +24,7 @@
     "@nuxt/eslint": "^0.5.2",
     "@nuxt/icon": "^1.4.10",
     "@nuxt/image": "^1.7.0",
+    "@nuxt/kit": "^3.13.0",
     "@nuxt/ui": "^2.18.4",
     "@nuxtjs/color-mode": "^3.4.4",
     "@nuxtjs/plausible": "^1.0.2",
