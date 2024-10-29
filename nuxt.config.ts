@@ -122,7 +122,6 @@ export default defineNuxtConfig({
 
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'last' }],
-    configPath: 'tailwind.config.ts',
   },
 
   sentry: {
