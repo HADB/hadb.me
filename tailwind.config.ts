@@ -1,6 +1,6 @@
-import colors from 'tailwindcss/colors'
 import type { Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography'
+import colors from 'tailwindcss/colors'
 
 const round = (num: number) => num.toFixed(7)
 const em = (px: number, base: number) => `${round(px / base)}em`
