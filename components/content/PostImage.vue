@@ -13,6 +13,8 @@ const props = withDefaults(defineProps<Props>(), {
 const { page } = useContent()
 const colorMode = useColorMode()
 const imageUrl = ref(`/images${page.value._path}-${props.index}.${props.extension}`)
+const darkImageUrl = ref(`/images${page.value._path}-${props.index}-dark.${props.extension}`)
+const isDark = ref(false)
 
 watch(colorMode, updateImageUrl)
 
@@ -20,16 +22,17 @@ onMounted(updateImageUrl)
 
 function updateImageUrl() {
   if (props.darkSupported && colorMode.value === 'dark') {
-    imageUrl.value = `/images${page.value._path}-${props.index}-dark.${props.extension}`
+    isDark.value = true
   }
   else {
-    imageUrl.value = `/images${page.value._path}-${props.index}.${props.extension}`
+    isDark.value = false
   }
 }
 </script>
 
 <template>
   <p>
-    <NuxtImg :src="imageUrl" />
+    <NuxtImg v-show="!isDark" :src="imageUrl" />
+    <NuxtImg v-show="isDark" :src="darkImageUrl" />
   </p>
 </template>
