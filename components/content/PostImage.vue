@@ -14,7 +14,7 @@ const { page } = useContent()
 const colorMode = useColorMode()
 const imageUrl = ref(`/images${page.value._path}-${props.index}.${props.extension}`)
 const darkImageUrl = ref(`/images${page.value._path}-${props.index}-dark.${props.extension}`)
-const isDark = ref(false)
+const isDark = ref(true)
 
 watch(colorMode, updateImageUrl)
 
