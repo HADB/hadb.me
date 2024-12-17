@@ -15,6 +15,10 @@
   th:not([align]) {
     @apply text-left;
   }
+  html.dark .light-image,
+  html.light .dark-image {
+    display: none;
+  }
 }
 
 @layer components {
