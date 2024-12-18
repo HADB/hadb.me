@@ -20,6 +20,15 @@ export default defineNuxtConfig({
     name: 'HADB.ME',
     url: 'https://hadb.me',
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern', // can be removed after upgrade to vite 6
+        },
+      },
+    },
+  },
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
