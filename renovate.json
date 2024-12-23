@@ -5,6 +5,7 @@
     "group:allNonMajor",
     ":semanticCommitTypeAll(chore)"
   ],
+  "ignoreDeps": ["nuxt@3.14.1592", "@nuxt/kit@3.14.1592"],
   "rangeStrategy": "bump",
   "timezone": "Asia/Shanghai",
   "packageRules": [
