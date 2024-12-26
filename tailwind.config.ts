@@ -34,8 +34,8 @@ export default <Partial<Config>> {
           css: {
             '--tw-prose-pre-bg': theme('colors.slate.100'),
             '--tw-prose-invert-pre-bg': theme('colors.slate.900'),
-            '--tw-prose-pre-code' : theme('colors.slate.800'),
-            '--tw-prose-invert-pre-code' : theme('colors.slate.200'),
+            '--tw-prose-pre-code': theme('colors.slate.800'),
+            '--tw-prose-invert-pre-code': theme('colors.slate.200'),
             '--tw-prose-links': theme('colors.primary.500'),
             '--tw-prose-invert-links': theme('colors.primary.400'),
             '--tw-prose-borders': theme('colors.slate.200'),
@@ -69,6 +69,8 @@ export default <Partial<Config>> {
               textAlign: 'justify',
             },
             'img': {
+              'marginTop': rem(32),
+              'marginBottom': rem(32),
               'borderRadius': rem(6),
               'outlineStyle': 'solid',
               'outlineWidth': '1px',
