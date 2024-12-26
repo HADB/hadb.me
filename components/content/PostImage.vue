@@ -3,6 +3,8 @@ interface Props {
   index: string
   extension?: string
   darkSupported?: boolean
+  width?: number
+  height?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -16,8 +18,11 @@ const darkImageUrl = ref(`/images${page.value._path}-${props.index}-dark.${props
 </script>
 
 <template>
-  <p>
-    <NuxtImg class="light-image" :src="imageUrl" />
-    <NuxtImg class="dark-image" :src="darkImageUrl" />
+  <p v-if="darkSupported">
+    <NuxtImg class="light-image" :width="width" :height="height" :src="imageUrl" />
+    <NuxtImg class="dark-image" :width="width" :height="height" :src="darkImageUrl" />
+  </p>
+  <p v-else>
+    <NuxtImg :width="width" :height="height" :src="imageUrl" />
   </p>
 </template>

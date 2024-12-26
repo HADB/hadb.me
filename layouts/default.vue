@@ -26,7 +26,7 @@ useHead({
           </h1>
           <template v-if="isPost">
             <PostInfo :page="page" />
-            <NuxtImg v-if="coverPath" :src="coverPath" :alt="page.title" class="w-full" :width="1920" :height="900" />
+            <NuxtImg v-if="coverPath" :src="coverPath" :alt="page.title" class="w-full" :width="page.coverSize?.width || 1920" :height="page.coverSize?.height || 900" />
             <div :class="page.class">
               <slot />
             </div>
