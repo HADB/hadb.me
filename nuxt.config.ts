@@ -41,7 +41,6 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
     '@sentry/nuxt/module',
-    'nuxt-gtag',
   ],
 
   // module configs
@@ -140,9 +139,5 @@ export default defineNuxtConfig({
       authToken: process.env.SENTRY_AUTH_TOKEN,
       telemetry: false,
     },
-  },
-
-  gtag: {
-    id: 'G-3D1G3C27ZZ',
   },
 })
