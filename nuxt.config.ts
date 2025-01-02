@@ -102,6 +102,12 @@ export default defineNuxtConfig({
 
   robots: {
     header: false,
+    groups: [
+      {
+        userAgent: 'YisouSpider',
+        disallow: '/',
+      },
+    ],
   },
 
   sitemap: {
