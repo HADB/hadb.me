@@ -29,6 +29,10 @@ export default defineNuxtConfig({
       },
     },
   },
+  components: [
+    { path: '~/components/content', global: true },
+    { path: '~/components' },
+  ],
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
@@ -45,41 +49,44 @@ export default defineNuxtConfig({
 
   // module configs
   content: {
-    documentDriven: true,
-    highlight: {
-      langs: [
-        'c#',
-        'cpp',
-        'css',
-        'dockerfile',
-        'html',
-        'ini',
-        'java',
-        'js',
-        'json',
-        'kotlin',
-        'log',
-        'md',
-        'mdc',
-        'nginx',
-        'php',
-        'powershell',
-        'python',
-        'shell',
-        'toml',
-        'ts',
-        'vue',
-        'xml',
-        'yaml',
-      ],
-      // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
-      theme: {
-        dark: 'github-dark',
-        default: 'github-light',
+    build: {
+      markdown: {
+        highlight: {
+          langs: [
+            'csharp',
+            'cpp',
+            'css',
+            'dockerfile',
+            'html',
+            'ini',
+            'java',
+            'js',
+            'json',
+            'kotlin',
+            'log',
+            'md',
+            'mdc',
+            'nginx',
+            'php',
+            'powershell',
+            'python',
+            'shell',
+            'toml',
+            'ts',
+            'vue',
+            'xml',
+            'yaml',
+          ],
+          // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
+          theme: {
+            dark: 'github-dark',
+            default: 'github-light',
+          },
+        },
+        remarkPlugins: { 'remark-reading-time': {} },
       },
     },
-    markdown: {
-      remarkPlugins: ['remark-reading-time'],
+    renderer: {
       anchorLinks: false,
     },
   },
@@ -113,17 +120,13 @@ export default defineNuxtConfig({
   sitemap: {
     sitemaps: {
       pages: {
-        includeAppSources: true,
-        exclude: [
-          '/posts/**',
-          '/tags/**',
-          '/test',
+        sources: [
+          '/api/__sitemap__/pages',
         ],
       },
       posts: {
-        includeAppSources: true,
-        include: [
-          '/posts/**',
+        sources: [
+          '/api/__sitemap__/posts',
         ],
       },
       tags: {

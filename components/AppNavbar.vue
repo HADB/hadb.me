@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-const { navigation } = useContent()
+const { data: navigation } = await useAsyncData('navigation', () => {
+  return queryCollectionNavigation('pages')
+})
 </script>
 
 <template>
@@ -11,8 +13,8 @@ const { navigation } = useContent()
       <div class="flex justify-center items-center order-last sm:order-none w-full sm:w-auto pt-2 sm:pt-0 space-x-6">
         <ButtonLink
           v-for="link of navigation"
-          :key="link._path"
-          :to="link._path"
+          :key="link.path"
+          :to="link.path"
         >
           {{ link.title }}
         </ButtonLink>

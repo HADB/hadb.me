@@ -2,7 +2,7 @@
 const startYear = 2010
 const currentYear = new Date().getFullYear()
 const years: number[] = []
-const { data: post_dates } = await useAsyncData(`post_dates`, () => queryContent('posts').where({ date: { $exists: true } }).only(['date']).find())
+const { data: post_dates } = await useAsyncData(`post_dates`, () => queryCollection('posts').where('date', 'IS NOT NULL').select('date').all())
 
 for (let year = currentYear; year >= startYear; year--) {
   if (post_dates.value?.filter((date: any) => date.date.includes(year)).length) {

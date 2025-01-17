@@ -1,8 +1,8 @@
+import { createSitePathResolver } from '#imports'
+import { getCoverPath } from '@/utils/posts'
+import { parseMarkdown } from '@nuxtjs/mdc/runtime'
 import { Feed } from 'feed'
 import { getQuery, setHeader } from 'h3'
-import { getCoverPath } from '@/utils/posts'
-import { serverQueryContent } from '#content/server'
-import { createSitePathResolver } from '#imports'
 
 export default defineEventHandler(async (event) => {
   const canonicalQuery = getQuery(event).canonical
@@ -34,21 +34,21 @@ export default defineEventHandler(async (event) => {
     },
   })
 
-  const posts = await serverQueryContent(event).where({ _path: /^\/posts/, date: { $exists: true } }).find()
-  posts.forEach(async (post) => {
-    if (post._path) {
+  const posts = await queryCollection(event, 'posts').where('date', 'IS NOT NULL').all()
+  for (const post of posts) {
+    if (post.path) {
       feed.addItem({
-        id: post._path,
+        id: post.path,
         title: post.title ? post.title : 'Untitled',
-        link: resolvePath(post._path),
+        link: resolvePath(post.path),
         description: post.description, // TODO: bug: 如果开头有引用，则不会输出内容
         // content: post.description, // TODO: use post HTML content
         author: [{ name: author }],
         date: new Date(post.date),
-        image: post?.cover ? resolvePath(getCoverPath(post._path, post.cover)) : undefined,
+        image: post?.cover ? resolvePath(getCoverPath(post.path, post.cover)) : undefined,
       })
     }
-  })
+  }
 
   setHeader(event, 'Content-Type', 'text/xml; charset=UTF-8')
   return feed.atom1()
