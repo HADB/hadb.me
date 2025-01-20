@@ -28,13 +28,28 @@ useHead({
   meta: [{
     property: 'og:title',
     content: seoTitle(page.value?.title || 'HADB.ME'),
+  }, {
+    property: 'description',
+    content: page.value?.description || '',
+  }, {
+    property: 'og:description',
+    content: page.value?.description || '',
   }],
 })
 </script>
 
 <template>
-  <NuxtLayout name="page">
-    <ContentRenderer v-if="page" :value="page" />
+  <NuxtLayout :name="page?.layout || 'default'">
+    <template v-if="page">
+      <h1 v-if="page.title">
+        {{ page.title }}
+      </h1>
+      <ContentRenderer :value="page" />
+      <TextHr :class="{ hidden: page.hideComments }">
+        评论区
+      </TextHr>
+      <Artalk :path="page.path" :title="page.title" :class="{ hidden: page.hideComments }" />
+    </template>
     <ErrorPageNotFound v-else />
   </NuxtLayout>
 </template>
