@@ -120,13 +120,17 @@ export default defineNuxtConfig({
   sitemap: {
     sitemaps: {
       pages: {
-        sources: [
-          '/api/__sitemap__/pages',
+        includeAppSources: true,
+        exclude: [
+          '/posts/**',
+          '/tags/**',
+          '/test',
         ],
       },
       posts: {
-        sources: [
-          '/api/__sitemap__/posts',
+        includeAppSources: true,
+        include: [
+          '/posts/**',
         ],
       },
       tags: {
