@@ -4,7 +4,7 @@ const { data: post } = await useAsyncData(route.path, () => {
   return queryCollection('posts').path(route.path).first()
 })
 
-const { data: surroundPosts } = await useAsyncData('surround', () => {
+const { data: surroundPosts } = await useAsyncData(`${route.path}-surrounds`, () => {
   return queryCollectionItemSurroundings('posts', route.path, { fields: ['title', 'path', 'date', 'description'] })
 })
 
