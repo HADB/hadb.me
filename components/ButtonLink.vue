@@ -26,10 +26,10 @@ withDefaults(defineProps<Props>(), {
       >
         <template v-if="icon">
           <Icon :name="icon" class="w-5 h-5" />
-          <ContentSlot :use="$slots.default" unwrap="p" />
+          <slot />
         </template>
         <span v-else class="px-2">
-          <ContentSlot :use="$slots.default" unwrap="p" />
+          <slot />
         </span>
       </NuxtLink>
     </UTooltip>

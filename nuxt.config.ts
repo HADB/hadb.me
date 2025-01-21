@@ -29,8 +29,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  components: [
+    { path: '~/components/content', global: true },
+    { path: '~/components' },
+  ],
   modules: [
-    '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/icon',
     '@nuxt/image',
@@ -41,45 +44,49 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
     '@sentry/nuxt/module',
+    '@nuxt/content',
   ],
 
   // module configs
   content: {
-    documentDriven: true,
-    highlight: {
-      langs: [
-        'c#',
-        'cpp',
-        'css',
-        'dockerfile',
-        'html',
-        'ini',
-        'java',
-        'js',
-        'json',
-        'kotlin',
-        'log',
-        'md',
-        'mdc',
-        'nginx',
-        'php',
-        'powershell',
-        'python',
-        'shell',
-        'toml',
-        'ts',
-        'vue',
-        'xml',
-        'yaml',
-      ],
-      // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
-      theme: {
-        dark: 'github-dark',
-        default: 'github-light',
+    build: {
+      markdown: {
+        highlight: {
+          langs: [
+            'csharp',
+            'cpp',
+            'css',
+            'dockerfile',
+            'html',
+            'ini',
+            'java',
+            'js',
+            'json',
+            'kotlin',
+            'log',
+            'md',
+            'mdc',
+            'nginx',
+            'php',
+            'powershell',
+            'python',
+            'shell',
+            'toml',
+            'ts',
+            'vue',
+            'xml',
+            'yaml',
+          ],
+          // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
+          theme: {
+            dark: 'github-dark',
+            default: 'github-light',
+          },
+        },
+        remarkPlugins: { 'remark-reading-time': {} },
       },
     },
-    markdown: {
-      remarkPlugins: ['remark-reading-time'],
+    renderer: {
       anchorLinks: false,
     },
   },

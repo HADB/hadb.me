@@ -1,9 +1,8 @@
-import { serverQueryContent } from '#content/server'
-import { flatTags } from '@/utils/tags'
 import type { Tag } from '@/types/Tag'
+import { flatTags } from '@/utils/tags'
 
 export default defineSitemapEventHandler(async (e) => {
-  const postTags = await serverQueryContent(e).where({ _path: /^\/posts/, tags: { $exists: true } }).only(['tags']).find()
+  const postTags = await queryCollection(e, 'posts').where('tags', 'IS NOT NULL').select('tags').all()
   const tags = flatTags(postTags)
 
   return tags.map((tag: Tag) => {
