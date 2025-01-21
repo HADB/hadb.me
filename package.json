@@ -29,7 +29,7 @@
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/plausible": "^1.2.0",
     "@nuxtjs/robots": "^5.2.0",
-    "@nuxtjs/sitemap": "^7.2.1",
+    "@nuxtjs/sitemap": "^7.2.2",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@sentry/nuxt": "^8.50.0",
     "@tailwindcss/typography": "^0.5.16",

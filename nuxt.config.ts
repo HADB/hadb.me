@@ -34,7 +34,6 @@ export default defineNuxtConfig({
     { path: '~/components' },
   ],
   modules: [
-    '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/icon',
     '@nuxt/image',
@@ -45,6 +44,7 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/tailwindcss',
     '@sentry/nuxt/module',
+    '@nuxt/content',
   ],
 
   // module configs
