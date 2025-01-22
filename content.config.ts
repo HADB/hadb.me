@@ -1,6 +1,13 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
+const readingTimeSchema = z.object({
+  minutes: z.number(),
+  text: z.string(),
+  time: z.number(),
+  words: z.number(),
+})
+
 export default defineContentConfig({
   collections: {
     pages: defineCollection(
@@ -9,9 +16,9 @@ export default defineContentConfig({
         source: '*.md',
         schema: z.object({
           description: z.string().optional(),
-          hideComments: z.boolean().optional(),
-          layout: z.enum(['default', 'full-width']).optional(),
-          readingTime: z.object({}),
+          hideComments: z.boolean().default(false),
+          layout: z.enum(['default', 'full-width']).default('default'),
+          readingTime: readingTimeSchema,
         }),
       }),
     ),
@@ -25,10 +32,10 @@ export default defineContentConfig({
           coverSize: z.object({ width: z.number(), height: z.number() }).optional(),
           date: z.string(),
           description: z.string().optional(),
-          draft: z.boolean().optional(),
-          hideComments: z.boolean().optional(),
+          draft: z.boolean().default(false),
+          hideComments: z.boolean().default(false),
           location: z.string().optional(),
-          readingTime: z.object({}),
+          readingTime: readingTimeSchema,
           tags: z.array(z.string()),
           time: z.string().optional(),
           weather: z.string().optional(),

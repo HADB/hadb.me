@@ -1,5 +1,8 @@
 <script lang="ts" setup>
-const { data: postTags } = await useAsyncData('post-tags', () => queryCollection('posts').where('tags', 'IS NOT NULL').select('tags').all())
+const { data: postTags } = await useAsyncData('post-tags', () => queryCollection('posts')
+  .where('draft', '=', 0)
+  .select('tags')
+  .all())
 const tags = flatTags(postTags.value)
 </script>
 

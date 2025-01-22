@@ -34,7 +34,9 @@ export default defineEventHandler(async (event) => {
     },
   })
 
-  const posts = await queryCollection(event, 'posts').where('date', 'IS NOT NULL').all()
+  const posts = await queryCollection(event, 'posts')
+    .where('draft', '=', 0)
+    .all()
   for (const post of posts) {
     if (post.path) {
       feed.addItem({

@@ -6,6 +6,8 @@ const { data: post } = await useAsyncData(route.path, () => {
 
 const { data: surroundPosts } = await useAsyncData(`${route.path}-surrounds`, () => {
   return queryCollectionItemSurroundings('posts', route.path, { fields: ['title', 'path', 'date', 'description'] })
+    .where('draft', '=', 0)
+    .order('date', 'DESC')
 })
 
 const coverPath = post.value?.cover ? getCoverPath(post.value.path, post.value.cover) : ''
@@ -56,8 +58,8 @@ useHead({
       </TextHr>
       <Artalk :path="post.path" :title="post.title" :class="{ hidden: post.hideComments }" />
       <div class="grid gap-4 sm:gap-12 sm:grid-cols-2 mt-4">
-        <SurroundPostLink :post="surroundPosts!![1]" type="next" />
         <SurroundPostLink :post="surroundPosts!![0]" type="prev" />
+        <SurroundPostLink :post="surroundPosts!![1]" type="next" />
       </div>
     </template>
     <ErrorPageNotFound v-else />
