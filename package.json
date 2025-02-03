@@ -21,7 +21,7 @@
     "@iconify-json/simple-icons": "^1.2.23",
     "@iconify-json/uil": "^1.2.3",
     "@nuxt/content": "^3.0.1",
-    "@nuxt/eslint": "^0.7.6",
+    "@nuxt/eslint": "^1.0.0",
     "@nuxt/icon": "^1.10.3",
     "@nuxt/image": "^1.9.0",
     "@nuxt/kit": "3.15.2",
