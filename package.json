@@ -58,6 +58,13 @@
     },
     "overrides": {
       "sharp": "0.33.5"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@sentry/cli",
+      "better-sqlite3",
+      "esbuild",
+      "sharp"
+    ]
   }
 }
