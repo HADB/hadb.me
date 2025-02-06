@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { ParsedContent } from '@nuxt/content'
+import type { PostsCollectionItem } from '@nuxt/content'
 
 interface Props {
-  page: ParsedContent
+  page: PostsCollectionItem
 }
 
 defineProps<Props>()
@@ -46,7 +46,7 @@ defineProps<Props>()
     <div v-if="page.tags" class="flex items-center">
       <Icon name="uil:tag-alt" class="w-4 h-4 mr-1" />
       <template v-for="tag in page.tags" :key="tag">
-        <NuxtLink :to="`/tags/${encodeURIComponent(tag)}`" class="!border-b-0">
+        <NuxtLink :to="`/tags/${encodeTag(tag)}`" class="!border-b-0">
           {{ tag }}
         </NuxtLink>
         <span class="mx-1 font-sans text-sm font-normal leading-normal pointer-events-none select-none text-slate-400 dark:text-slate-600 last:hidden">/</span>

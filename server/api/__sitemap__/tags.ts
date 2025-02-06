@@ -1,5 +1,5 @@
 import type { Tag } from '@/types/Tag'
-import { flatTags } from '@/utils/tags'
+import { encodeTag, flatTags } from '@/utils/tags'
 
 export default defineSitemapEventHandler(async (e) => {
   const postTags = await queryCollection(e, 'posts')
@@ -11,7 +11,7 @@ export default defineSitemapEventHandler(async (e) => {
 
   return tags.map((tag: Tag) => {
     return asSitemapUrl({
-      loc: `/tags/${encodeURIComponent(tag.name)}`,
+      loc: `/tags/${encodeTag(tag.name)}`,
     })
   })
 })
