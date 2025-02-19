@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 interface Props {
-  src: string
+  filename: string
   class?: string
   autoplay?: boolean
   controls?: boolean
@@ -8,11 +8,12 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+const post = await usePost()
 </script>
 
 <template>
   <video
-    :src="props.src"
+    :src="`/static/${post?.stem}/${props.filename}`"
     :class="props.class"
     :autoplay="props.autoplay"
     :controls="props.controls"

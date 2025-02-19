@@ -5,7 +5,7 @@
     </div>
     <NuxtImg
       class="m-0 w-full object-cover lg:col-span-2"
-      src="/images/about_me.jpg"
+      src="/static/about-me.jpg"
       alt="Bean"
     />
   </div>

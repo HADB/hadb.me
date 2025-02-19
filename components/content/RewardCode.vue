@@ -11,5 +11,5 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <NuxtImg :width="width" :height="height" src="/images/reward-code.jpg" />
+  <NuxtImg :width="width" :height="height" src="/static/reward-code.jpg" />
 </template>
