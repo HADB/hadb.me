@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 interface Props {
-  index: string
-  extension?: string
+  filename: string
   darkSupported?: boolean
   width?: number
   height?: number
@@ -9,13 +8,12 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  extension: 'jpg',
   darkSupported: false,
 })
 
 const post = await usePost()
-const imageUrl = ref(`/static/${post.value?.stem}/${props.index}.${props.extension}`)
-const darkImageUrl = ref(`/static/${post.value?.stem}/${props.index}-dark.${props.extension}`)
+const imageUrl = ref(`/static/${post.value?.stem}/${props.filename}`)
+const darkImageUrl = ref(`/static/${post.value?.stem}/dark-${props.filename}`)
 </script>
 
 <template>
