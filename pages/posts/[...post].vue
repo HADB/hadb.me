@@ -12,6 +12,8 @@ if (!post.value) {
     return queryCollection('posts').where('path', 'LIKE', `%${postKey}`).first()
   })
 
+  post.value = fallbackPost.value
+
   if (fallbackPost.value) {
     if (import.meta.server) {
       const event = useRequestEvent()
@@ -22,7 +24,7 @@ if (!post.value) {
     }
     else {
       // Client side redirect
-      window.location.href = fallbackPost.value.path
+      navigateTo(fallbackPost.value.path)
     }
   }
   else if (import.meta.server) {
