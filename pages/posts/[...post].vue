@@ -3,19 +3,22 @@ const post = await usePost()
 const surroundPosts = await useSurroundPosts()
 const coverPath = getCoverPath(post.value)
 
+console.log('post', post.value)
 // 注意：以下 301 跳转只在 SSR 时生效
 if (!post.value) {
   const route = useRoute()
   const postKey = route.path.replace(/^\/posts\//, '')
-
+  console.log('postKey', postKey)
   const { data: fallbackPost } = await useAsyncData(`post-fallback-${route.path}`, () => {
     return queryCollection('posts').where('path', 'LIKE', `%${postKey}`).first()
   })
 
+  console.log('fallbackPost', fallbackPost.value)
   post.value = fallbackPost.value
 
   if (fallbackPost.value) {
     if (import.meta.server) {
+      console.log('server side redirect')
       const event = useRequestEvent()
       if (event) {
         event.node.res.writeHead(301, { Location: fallbackPost.value.path })
@@ -24,10 +27,12 @@ if (!post.value) {
     }
     else {
       // Client side redirect
+      console.log('client side redirect')
       navigateTo(fallbackPost.value.path)
     }
   }
   else if (import.meta.server) {
+    console.log('server side 404')
     const event = useRequestEvent()
     if (event) {
       event.node.res.statusCode = 404
