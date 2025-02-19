@@ -19,11 +19,11 @@ defineProps<Props>()
     </div>
     <div class="flex items-center">
       <Icon name="uil:font" class="w-4 h-4 mr-1" />
-      <span>{{ page.readingTime.words }} 字</span>
+      <span>{{ page.readingTime?.words }} 字</span>
     </div>
     <div class="flex items-center">
       <Icon name="uil:clock" class="w-4 h-4 mr-1" />
-      <span>{{ getReadingMinutes(page.readingTime.time) }} 分钟</span>
+      <span>{{ getReadingMinutes(page.readingTime?.time) }} 分钟</span>
     </div>
     <div class="flex items-center">
       <Icon name="uil:eye" class="w-4 h-4 mr-1" />

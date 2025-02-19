@@ -47,7 +47,7 @@ export default defineEventHandler(async (event) => {
         // content: post.description, // TODO: use post HTML content
         author: [{ name: author }],
         date: new Date(post.date),
-        image: post?.cover ? resolvePath(getCoverPath(post.path, post.cover)) : undefined,
+        image: post?.cover ? resolvePath(getCoverPath(post)) : undefined,
       })
     }
   }

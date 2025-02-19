@@ -25,7 +25,7 @@ export default defineContentConfig({
     posts: defineCollection(
       asSitemapCollection({
         type: 'page',
-        source: 'posts/*.md',
+        source: 'posts/**/*.md',
         schema: z.object({
           class: z.string().optional(),
           cover: z.string().optional(),
@@ -38,6 +38,7 @@ export default defineContentConfig({
           readingTime: readingTimeSchema,
           tags: z.array(z.string()),
           time: z.string().optional(),
+          type: z.enum(['article', 'video', 'gallery']).default('article'),
           weather: z.string().optional(),
         }),
       }),

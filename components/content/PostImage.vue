@@ -13,9 +13,9 @@ const props = withDefaults(defineProps<Props>(), {
   darkSupported: false,
 })
 
-const route = useRoute()
-const imageUrl = ref(`/images${route.path}-${props.index}.${props.extension}`)
-const darkImageUrl = ref(`/images${route.path}-${props.index}-dark.${props.extension}`)
+const post = await usePost()
+const imageUrl = ref(`/static/${post.value?.stem}/${props.index}.${props.extension}`)
+const darkImageUrl = ref(`/static/${post.value?.stem}/${props.index}-dark.${props.extension}`)
 </script>
 
 <template>
