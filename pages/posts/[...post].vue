@@ -59,7 +59,7 @@ useHead({
         {{ post.title }}
       </h1>
 
-      <PostInfo :page="post" />
+      <PostInfo :post="post" />
       <NuxtImg v-if="coverPath" :src="coverPath" :alt="post.title" class="w-full" :width="post.coverSize?.width || 1920" :height="post.coverSize?.height || 900" />
       <div :class="post.class">
         <ContentRenderer :value="post" />
