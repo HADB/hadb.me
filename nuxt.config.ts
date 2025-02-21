@@ -29,10 +29,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  components: [
-    { path: '~/components/content', global: true },
-    { path: '~/components' },
-  ],
   modules: [
     '@nuxt/eslint',
     '@nuxt/icon',
