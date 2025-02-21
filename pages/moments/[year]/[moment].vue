@@ -8,8 +8,6 @@ if (!moment.value && import.meta.server) {
   }
 }
 
-console.log('moment', moment.value)
-
 useHead({
   title: '动态详情',
   titleTemplate: (title) => {

@@ -23,7 +23,6 @@ const { data: moments } = await useAsyncData(`moments-${props.tag}-${props.skip}
     .limit(props.limit)
     .all()
 })
-console.log(moments)
 
 function onMomentClick(moment) {
   const selectedText = window.getSelection()?.toString()
