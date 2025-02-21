@@ -44,7 +44,7 @@ defineProps<{
     <div v-if="post.tags" class="flex items-center">
       <Icon name="uil:tag-alt" class="w-4 h-4 mr-1" />
       <template v-for="tag in post.tags" :key="tag">
-        <NuxtLink :to="`/tags/${encodeTag(tag)}`" class="!border-b-0">
+        <NuxtLink :to="`/posts/tag/${encodeTag(tag)}`" class="!border-b-0">
           {{ tag }}
         </NuxtLink>
         <span class="mx-1 font-sans text-sm font-normal leading-normal pointer-events-none select-none text-slate-400 dark:text-slate-600 last:hidden">/</span>

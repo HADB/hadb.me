@@ -3,7 +3,7 @@ import { encodeTag, flatTags } from '@/utils/tags'
 
 export default defineSitemapEventHandler(async (e) => {
   const postTags = await queryCollection(e, 'posts')
-    .where('draft', '=', 0)
+    .where('draft', '=', false)
     .where('tags', 'IS NOT NULL')
     .select('tags')
     .all()
@@ -11,7 +11,7 @@ export default defineSitemapEventHandler(async (e) => {
 
   return tags.map((tag: Tag) => {
     return asSitemapUrl({
-      loc: `/tags/${encodeTag(tag.name)}`,
+      loc: `/posts/tag/${encodeTag(tag.name)}`,
     })
   })
 })

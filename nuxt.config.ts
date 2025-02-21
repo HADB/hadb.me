@@ -119,23 +119,40 @@ export default defineNuxtConfig({
 
   sitemap: {
     sitemaps: {
-      pages: {
+      'pages': {
         includeAppSources: true,
         exclude: [
           '/posts/**',
-          '/tags/**',
+          '/moments/**',
           '/test',
         ],
       },
-      posts: {
+      'posts': {
         includeAppSources: true,
         include: [
           '/posts/**',
         ],
+        exclude: [
+          '/posts/tag/**',
+        ],
       },
-      tags: {
+      'post-tags': {
         sources: [
-          '/api/__sitemap__/tags',
+          '/api/__sitemap__/post-tags',
+        ],
+      },
+      'moments': {
+        includeAppSources: true,
+        include: [
+          '/moments/**',
+        ],
+        exclude: [
+          '/moments/tag/**',
+        ],
+      },
+      'moment-tags': {
+        sources: [
+          '/api/__sitemap__/moment-tags',
         ],
       },
     },

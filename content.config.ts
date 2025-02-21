@@ -42,5 +42,18 @@ export default defineContentConfig({
         }),
       }),
     ),
+    moments: defineCollection(
+      asSitemapCollection({
+        type: 'page',
+        source: 'moments/**/*.yaml',
+        schema: z.object({
+          datetime: z.string(),
+          location: z.string().optional(),
+          tags: z.array(z.string()),
+          text: z.string(),
+          media: z.array(z.object({ type: z.enum(['image', 'video']), filename: z.string() })),
+        }),
+      }),
+    ),
   },
 })

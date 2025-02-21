@@ -3,7 +3,7 @@ export default async function () {
 
   const { data } = await useAsyncData(`surroundPosts-${route.path}`, () => {
     return queryCollectionItemSurroundings('posts', route.path, { fields: ['title', 'path', 'date', 'description'] })
-      .where('draft', '=', 0)
+      .where('draft', '=', false)
       .order('date', 'DESC')
   })
   return data

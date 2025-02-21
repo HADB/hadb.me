@@ -35,7 +35,7 @@ export default defineEventHandler(async (event) => {
   })
 
   const posts = await queryCollection(event, 'posts')
-    .where('draft', '=', 0)
+    .where('draft', '=', false)
     .all()
   for (const post of posts) {
     if (post.path) {

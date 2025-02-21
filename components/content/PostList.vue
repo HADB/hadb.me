@@ -14,9 +14,9 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { data: posts } = await useAsyncData(`posts-${props.year}-${props.tag}-${props.skip}-${props.limit}`, () => {
-  let query = queryCollection('posts').where('draft', '=', 0)
+  let query = queryCollection('posts').where('draft', '=', false)
   if (props.year) {
-    query = query.where('date', 'LIKE', `${props.year}%`)
+    query = query.where('date', 'LIKE', `${props.year}-%`)
   }
   if (props.tag) {
     query = query.where('tags', 'LIKE', `%${props.tag}%`)
