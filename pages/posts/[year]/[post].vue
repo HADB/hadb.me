@@ -6,7 +6,7 @@ const coverPath = getCoverPath(post.value)
 // 注意：以下 301 跳转只在 SSR 时生效
 if (!post.value) {
   const route = useRoute()
-  const postKey = route.path.replace(/^\/posts\//, '')
+  const postKey = route.path.replace(/^\/posts\//, '').replace(/^\/article\//, '')
   const { data: fallbackPost } = await useAsyncData(`post-fallback-${route.path}`, () => {
     return queryCollection('posts').where('path', 'LIKE', `%${postKey}`).first()
   })

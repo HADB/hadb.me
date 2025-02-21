@@ -1,8 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-const postsDirectory = path.join(__dirname, 'content/posts/article')
-const redirects: { [path: string]: { redirect: { to: string, statusCode?: number } } } = {}
+const postsDirectory = path.join(__dirname, 'content/posts')
+const redirects: { [path: string]: { redirect: { to: string, statusCode?: number } } } = {
+  '/archives': { redirect: { to: '/posts', statusCode: 301 } },
+}
 
 // 获取目录下所有的 .md 文件
 const getPostFiles = (dir: string): string[] => {
@@ -28,9 +30,12 @@ const getPostFiles = (dir: string): string[] => {
 getPostFiles(postsDirectory).forEach((filePath) => {
   const fileName = path.basename(filePath).replace(/^\d{8}\./, '').replace('.md', '')
   const year = path.basename(path.dirname(filePath))
-  const pathUrl = `/posts/article/${year}/${fileName}`
+  const pathUrl = `/posts/${year}/${fileName}`
 
   redirects[`/posts/${fileName}`] = {
+    redirect: { to: encodeURI(pathUrl), statusCode: 301 },
+  }
+  redirects[`/posts/article/${year}/${fileName}`] = {
     redirect: { to: encodeURI(pathUrl), statusCode: 301 },
   }
 })

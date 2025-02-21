@@ -38,7 +38,6 @@ export default defineContentConfig({
           readingTime: readingTimeSchema,
           tags: z.array(z.string()),
           time: z.string().optional(),
-          type: z.enum(['article', 'video', 'gallery']).default('article'),
           weather: z.string().optional(),
         }),
       }),

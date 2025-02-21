@@ -2,7 +2,7 @@ import type { Tag } from '@/types/Tag'
 import type { PostsCollectionItem } from '@nuxt/content'
 
 export function encodeTag(tag: string) {
-  return tag.replace(/([:/?#[\]@!$&'()*+,;= "<>\\])/g, encodeURIComponent)
+  return tag?.replace(/([:/?#[\]@!$&'()*+,;= "<>\\])/g, encodeURIComponent)
 }
 
 export function flatTags(postTags: Pick<PostsCollectionItem, 'tags'>[] | null) {
