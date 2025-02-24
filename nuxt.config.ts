@@ -15,7 +15,13 @@ export default defineNuxtConfig({
       autoSubfolderIndex: false,
     },
   },
-  css: ['artalk/dist/Artalk.css'],
+  css: [
+    'artalk/dist/Artalk.css',
+    'lightgallery/css/lightgallery.css',
+    'lightgallery/css/lg-thumbnail.css',
+    'lightgallery/css/lg-video.css',
+    'lightgallery/css/lg-zoom.css',
+  ],
   site: {
     name: 'HADB.ME',
     url: 'https://hadb.me',

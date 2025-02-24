@@ -36,8 +36,8 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3
       '@nuxt/content':
-        specifier: ^3.2.1
-        version: 3.2.1(@libsql/client@0.14.0)(magicast@0.3.5)(rollup@4.31.0)(typescript@5.7.3)
+        specifier: ^3.1.1
+        version: 3.1.1(@libsql/client@0.14.0)(magicast@0.3.5)(rollup@4.31.0)(typescript@5.7.3)
       '@nuxt/eslint':
         specifier: ^1.1.0
         version: 1.1.0(@vue/compiler-sfc@3.5.13)(eslint-plugin-format@1.0.1(eslint@9.21.0(jiti@2.4.2)))(eslint@9.21.0(jiti@2.4.2))(magicast@0.3.5)(rollup@4.31.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.10.7)(jiti@2.4.2)(sass@1.85.0)(terser@5.37.0)(yaml@2.7.0))
@@ -92,6 +92,9 @@ importers:
       feed:
         specifier: ^4.2.2
         version: 4.2.2
+      lightgallery:
+        specifier: ^2.8.2
+        version: 2.8.2
       luxon:
         specifier: ^3.5.0
         version: 3.5.0
@@ -901,8 +904,8 @@ packages:
     engines: {node: ^16.10.0 || >=18.0.0}
     hasBin: true
 
-  '@nuxt/content@3.2.1':
-    resolution: {integrity: sha512-6jASUd0B4JM4/1dnSdpzj17mmNSzXLWOBLrTjwTpmLBc4C6G/1fWyQb1TeGnCczekfXNoxUK0LUAYpVs5ULEAw==}
+  '@nuxt/content@3.1.1':
+    resolution: {integrity: sha512-mq4hGq4W/vnPDjquaM6NyXxY7w5irEdw92JfjcgOoSLkFFW3S3ikN9G33zkBwOP35vGReFj8ckiiovYLHFfZUg==}
     peerDependencies:
       '@electric-sql/pglite': '*'
       '@libsql/client': '*'
@@ -1691,8 +1694,8 @@ packages:
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
 
-  '@sqlite.org/sqlite-wasm@3.49.0-build3':
-    resolution: {integrity: sha512-Dfbkybv7AIfDKAbIA5jjupT/mqFWyIMcgAwqR1qVyfHuidmEpPL48PWaOga/l4Elnty5RATzOY9U9P1yeUgjGQ==}
+  '@sqlite.org/sqlite-wasm@3.48.0-build4':
+    resolution: {integrity: sha512-hI6twvUkzOmyGZhQMza1gpfqErZxXRw6JEsiVjUbo7tFanVD+8Oil0Ih3l2nGzHdxPI41zFmfUQG7GHqhciKZQ==}
     hasBin: true
 
   '@stylistic/eslint-plugin@4.0.1':
@@ -3856,6 +3859,10 @@ packages:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
     cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
+
+  lightgallery@2.8.2:
+    resolution: {integrity: sha512-6BV7joQtgdHUhDgNPeGu/RWqcGvmvwbyJpTdB5jgKX5nhU5yGEG3PVaETIlAEEV15Uop+8p+F3PqnokFUlywZA==}
+    engines: {node: '>=6.0.0'}
 
   lilconfig@3.1.3:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
@@ -6820,7 +6827,7 @@ snapshots:
   '@libsql/isomorphic-ws@0.1.5':
     dependencies:
       '@types/ws': 8.5.13
-      ws: 8.18.0
+      ws: 8.18.1
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -6920,12 +6927,12 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@nuxt/content@3.2.1(@libsql/client@0.14.0)(magicast@0.3.5)(rollup@4.31.0)(typescript@5.7.3)':
+  '@nuxt/content@3.1.1(@libsql/client@0.14.0)(magicast@0.3.5)(rollup@4.31.0)(typescript@5.7.3)':
     dependencies:
       '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.31.0)
       '@nuxtjs/mdc': 0.13.5(magicast@0.3.5)(rollup@4.31.0)
       '@shikijs/langs': 2.5.0
-      '@sqlite.org/sqlite-wasm': 3.49.0-build3
+      '@sqlite.org/sqlite-wasm': 3.48.0-build4
       '@webcontainer/env': 1.1.1
       better-sqlite3: 11.8.1
       c12: 2.0.4(magicast@0.3.5)
@@ -8282,7 +8289,7 @@ snapshots:
 
   '@socket.io/component-emitter@3.1.2': {}
 
-  '@sqlite.org/sqlite-wasm@3.49.0-build3': {}
+  '@sqlite.org/sqlite-wasm@3.48.0-build4': {}
 
   '@stylistic/eslint-plugin@4.0.1(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3)':
     dependencies:
@@ -10770,6 +10777,8 @@ snapshots:
       '@libsql/win32-x64-msvc': 0.4.7
     optional: true
 
+  lightgallery@2.8.2: {}
+
   lilconfig@3.1.3: {}
 
   lines-and-columns@1.2.4: {}
@@ -11398,7 +11407,7 @@ snapshots:
 
   node-abi@3.73.0:
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.1
 
   node-addon-api@7.1.1: {}
 

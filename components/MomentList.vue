@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 interface Props {
-  year?: number
   tag?: string
   limit?: number
   skip?: number
@@ -24,23 +23,37 @@ const { data: moments } = await useAsyncData(`moments-${props.tag}-${props.skip}
     .all()
 })
 
-function onMomentClick(moment) {
-  const selectedText = window.getSelection()?.toString()
-  if (selectedText) {
-    return
+if (moments.value?.length) {
+  for (const moment of moments.value) {
+    if (moment.media) {
+      for (const media of moment.media) {
+        if (media && media.id && media.type === 'video') {
+          const { value: mediaInfo } = await useMediaInfo(media.id)
+          media.thumbnail = `https://media.hadb.me${mediaInfo?.thumbnail_url}`
+          media.duration = mediaInfo?.duration
+        }
+      }
+    }
   }
-  navigateTo(moment.path)
 }
+
+// function onMomentClick(moment) {
+//   const selectedText = window.getSelection()?.toString()
+//   if (selectedText) {
+//     return
+//   }
+//   navigateTo(moment.path)
+// }
 </script>
 
 <template>
   <div class="post-list">
     <div class="moments">
-      <div v-for="moment in moments" :key="moment.path" class="px-4 py-4 my-4 border rounded-lg border-slate-200 dark:border-slate-700 flex flex-col cursor-pointer">
+      <div v-for="moment in moments" :key="moment.path" class="px-4 py-4 my-4 border rounded-lg border-slate-200 dark:border-slate-700 flex flex-col">
         <span class="mr-4 text-sm text-slate-500 flex-shrink-0 leading-6">
           {{ formatDateTime(moment.datetime, 'yyyy 年 MM 月 dd 日 HH:mm') }}
         </span>
-        <MomentContent :moment="moment" @click="onMomentClick(moment)" />
+        <MomentContent :moment="moment" />
       </div>
 
       <template v-if="!moments?.length">

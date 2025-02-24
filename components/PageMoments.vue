@@ -4,5 +4,5 @@ const route = useRoute()
 
 <template>
   <MomentTags />
-  <MomentList :tag="route.query.tag" />
+  <MomentList :tag="route.params.tag?.toString()" />
 </template>
