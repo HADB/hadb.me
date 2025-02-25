@@ -23,20 +23,6 @@ const { data: moments } = await useAsyncData(`moments-${props.tag}-${props.skip}
     .all()
 })
 
-if (moments.value?.length) {
-  for (const moment of moments.value) {
-    if (moment.media) {
-      for (const media of moment.media) {
-        if (media && media.id && media.type === 'video') {
-          const { value: mediaInfo } = await useMediaInfo(media.id)
-          media.thumbnail = `https://media.hadb.me${mediaInfo?.thumbnail_url}`
-          media.duration = mediaInfo?.duration
-        }
-      }
-    }
-  }
-}
-
 // function onMomentClick(moment) {
 //   const selectedText = window.getSelection()?.toString()
 //   if (selectedText) {

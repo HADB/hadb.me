@@ -5,7 +5,7 @@ import lgVideo from 'lightgallery/plugins/video'
 import lgZoom from 'lightgallery/plugins/zoom'
 import Lightgallery from 'lightgallery/vue'
 
-defineProps<{
+const props = defineProps<{
   moment: MomentsCollectionItem
 }>()
 
@@ -14,6 +14,18 @@ const gallerySettings = {
   speed: 500,
   plugins: [lgZoom, lgVideo, lgThumbnail],
   thumbnail: true,
+}
+
+if (props.moment.media) {
+  for (const mediaItem of props.moment.media) {
+    if (mediaItem && mediaItem.id && mediaItem.type === 'video') {
+      const mediaInfo = await $fetch<any>(`https://media.hadb.me/api/v1/media/${mediaItem.id}`)
+      if (mediaInfo) {
+        mediaItem.thumbnail = `https://media.hadb.me${mediaInfo.thumbnail_url}`
+        mediaItem.duration = mediaInfo.duration
+      }
+    }
+  }
 }
 </script>
 
@@ -26,7 +38,7 @@ const gallerySettings = {
       <Lightgallery :settings="gallerySettings">
         <a
           v-for="media in moment.media.filter(media => media.type === 'image')"
-          :key="media"
+          :key="`${media.type}-${media.id}-${media.filename}`"
           :href="`/static/${moment.stem}/${media.filename}`"
           class="inline-block h-32 rounded-lg mr-2"
         >
@@ -41,7 +53,7 @@ const gallerySettings = {
       <Lightgallery :settings="{ ...gallerySettings, videojs: true }">
         <button
           v-for="media in moment.media.filter(media => media.type === 'video')"
-          :key="media.id"
+          :key="`${media.type}-${media.id}-${media.filename}`"
           :data-src="`https://media.hadb.me/embed?m=${media.id}`"
           data-iframe="true"
           class="inline-block h-32 rounded-lg mr-2"
