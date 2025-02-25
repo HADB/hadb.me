@@ -14,6 +14,10 @@ const gallerySettings = {
   speed: 500,
   plugins: [lgZoom, lgVideo, lgThumbnail],
   thumbnail: true,
+  mobileSettings: {
+    controls: false,
+    showCloseIcon: true,
+  },
 }
 
 if (props.moment.media) {
