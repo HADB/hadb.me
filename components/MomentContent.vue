@@ -19,10 +19,11 @@ const gallerySettings = {
 if (props.moment.media) {
   for (const mediaItem of props.moment.media) {
     if (mediaItem && mediaItem.id && mediaItem.type === 'video') {
-      const mediaInfo = await $fetch<any>(`https://media.hadb.me/api/v1/media/${mediaItem.id}`)
-      if (mediaInfo) {
-        mediaItem.thumbnail = `https://media.hadb.me${mediaInfo.thumbnail_url}`
-        mediaItem.duration = mediaInfo.duration
+      // const mediaInfo = await $fetch<any>(`https://media.hadb.me/api/v1/media/${mediaItem.id}`)
+      const mediaInfo = await useMediaInfo(mediaItem.id)
+      if (mediaInfo.value) {
+        mediaItem.thumbnail = `https://media.hadb.me${mediaInfo.value.thumbnail_url}`
+        mediaItem.duration = mediaInfo.value.duration
       }
     }
   }
