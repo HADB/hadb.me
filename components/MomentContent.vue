@@ -36,9 +36,7 @@ for (const video of videos) {
 
 <template>
   <div class="not-prose">
-    <p>
-      {{ moment.text }}
-    </p>
+    <ContentRenderer :value="moment" />
     <div v-if="moment.media" class="mt-2">
       <Lightgallery
         v-if="images.length > 0"

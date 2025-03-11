@@ -41,5 +41,13 @@
   },
   "editor.quickSuggestions": {
     "strings": true
+  },
+  "mdc.enableFormatting": true,
+  "[mdc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnPaste": true
   }
 }

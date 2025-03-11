@@ -45,17 +45,17 @@ export default defineContentConfig({
     moments: defineCollection(
       asSitemapCollection({
         type: 'page',
-        source: 'moments/**/*.yaml',
+        source: 'moments/**/*.md',
         schema: z.object({
           datetime: z.string(),
           location: z.string().optional(),
           tags: z.array(z.string()),
-          text: z.string(),
+          content: z.string(),
           media: z.array(z.object({
             type: z.enum(['image', 'video']),
             filename: z.string().optional(),
             id: z.string().optional(),
-            thumbnail: z.string().optional(),
+            poster: z.string().optional(),
             duration: z.number().optional(),
           })),
         }),
