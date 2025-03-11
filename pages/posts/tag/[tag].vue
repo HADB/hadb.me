@@ -16,7 +16,7 @@ useHead({
 
 <template>
   <NuxtLayout>
-    <h1>「{{ tag }}」相关文章</h1>
+    <h1><span class="text-slate-500">#</span> {{ tag }} 相关文章</h1>
     <PostList :tag="tag" />
   </NuxtLayout>
 </template>

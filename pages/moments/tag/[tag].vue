@@ -16,7 +16,7 @@ useHead({
 
 <template>
   <NuxtLayout>
-    <h1>「{{ tag }}」相关动态</h1>
+    <h1><span class="text-slate-500">#</span> {{ tag }} 相关动态</h1>
     <MomentList :tag="tag" />
   </NuxtLayout>
 </template>
