@@ -20,15 +20,15 @@ const gallerySettings = {
   },
 }
 
-if (props.moment.media) {
-  for (const mediaItem of props.moment.media) {
-    if (mediaItem && mediaItem.id && mediaItem.type === 'video') {
-      // const mediaInfo = await $fetch<any>(`https://media.hadb.me/api/v1/media/${mediaItem.id}`)
-      const mediaInfo = await useMediaInfo(mediaItem.id)
-      if (mediaInfo.value) {
-        mediaItem.thumbnail = `https://media.hadb.me${mediaInfo.value.thumbnail_url}`
-        mediaItem.duration = mediaInfo.value.duration
-      }
+const images = props.moment.media?.filter((media) => media.type === 'image') || []
+const videos = props.moment.media?.filter((media) => media.type === 'video') || []
+
+for (const video of videos) {
+  if (video.id) {
+    const mediaInfo = await useMediaInfo(video.id)
+    if (mediaInfo.value) {
+      video.poster = `https://media.hadb.me${mediaInfo.value.poster_url}`
+      video.duration = mediaInfo.value.duration
     }
   }
 }
@@ -39,35 +39,60 @@ if (props.moment.media) {
     <p>
       {{ moment.text }}
     </p>
-    <div v-if="moment.media" class="flex flex-wrap mt-2">
-      <Lightgallery :settings="gallerySettings">
+    <div v-if="moment.media" class="mt-2">
+      <Lightgallery
+        v-if="images.length > 0"
+        :settings="gallerySettings"
+        :class="{
+          'grid gap-3 grid-cols-3 lg:grid-cols-9': images.length > 1,
+          'flex': images.length === 1,
+        }"
+      >
         <a
-          v-for="media in moment.media.filter(media => media.type === 'image')"
-          :key="`${media.type}-${media.id}-${media.filename}`"
-          :href="`/static/${moment.stem}/${media.filename}`"
-          class="inline-block h-32 rounded-lg mr-2"
+          v-for="image in images"
+          :key="`${image.type}-${image.id}-${image.filename}`"
+          :href="`/static/${moment.stem}/${image.filename}`"
+          :class="{ 'aspect-square': images.length > 1 }"
+          class="inline-block"
         >
           <NuxtImg
-            v-if="media.type === 'image' && media.filename"
-            :src="`/static/${moment.stem}/${media.filename}`"
-            class="w-full h-full object-cover rounded-md"
+            v-if="image.filename"
+            :src="`/static/${moment.stem}/${image.filename}`"
+            :class="{
+              'w-full h-full object-cover': images.length > 1,
+              'max-w-[256px] max-h-[144px] object-contain object-left-top': images.length === 1,
+            }"
           />
         </a>
       </Lightgallery>
 
-      <Lightgallery :settings="{ ...gallerySettings, videojs: true }">
+      <Lightgallery
+        v-if="videos.length > 0"
+        :settings="{ ...gallerySettings, videojs: true }"
+        :class="{
+          'grid gap-3 grid-cols-3 lg:grid-cols-9': videos.length > 1,
+          'flex': videos.length === 1,
+        }"
+      >
         <button
-          v-for="media in moment.media.filter(media => media.type === 'video')"
-          :key="`${media.type}-${media.id}-${media.filename}`"
-          :data-src="`https://media.hadb.me/embed?m=${media.id}`"
+          v-for="video in videos"
+          :key="`${video.type}-${video.id}`"
+          :data-src="`https://media.hadb.me/embed?m=${video.id}`"
           data-iframe="true"
-          class="inline-block h-32 rounded-lg mr-2"
+          :class="{ 'aspect-square': videos.length > 1 }"
+          class="inline-block relative"
         >
           <NuxtImg
-            v-if="media.type === 'video' && media.id"
-            :src="media.thumbnail"
-            class="w-full h-full object-cover rounded-md"
+            v-if="video.poster"
+            :src="video.poster"
+            :class="{
+              'w-full h-full object-cover': videos.length > 1,
+              'max-w-[256px] max-h-[144px] object-contain object-left-top': videos.length === 1,
+            }"
           />
+          <span v-if="video.duration" class="absolute bottom-0 right-0 m-1 px-1.5 py-0.5 bg-black bg-opacity-50 text-white text-xs rounded-md">
+            {{ getDuration(video.duration) }}
+          </span>
         </button>
       </Lightgallery>
     </div>

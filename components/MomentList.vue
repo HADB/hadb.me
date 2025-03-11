@@ -22,14 +22,6 @@ const { data: moments } = await useAsyncData(`moments-${props.tag}-${props.skip}
     .limit(props.limit)
     .all()
 })
-
-// function onMomentClick(moment) {
-//   const selectedText = window.getSelection()?.toString()
-//   if (selectedText) {
-//     return
-//   }
-//   navigateTo(moment.path)
-// }
 </script>
 
 <template>
