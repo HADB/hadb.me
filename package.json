@@ -25,7 +25,7 @@
     "@nuxt/icon": "^1.11.0",
     "@nuxt/image": "^1.10.0",
     "@nuxt/kit": "3.15.4",
-    "@nuxt/ui": "^2.21.1",
+    "@nuxt/ui": "^3.0.1",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/plausible": "^1.2.0",
     "@nuxtjs/robots": "^5.2.8",
