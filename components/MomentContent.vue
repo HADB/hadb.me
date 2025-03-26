@@ -27,7 +27,7 @@ for (const video of videos) {
   if (video.id) {
     const mediaInfo = await useMediaInfo(video.id)
     if (mediaInfo.value) {
-      video.poster = `https://media.hadb.me${mediaInfo.value.poster_url}`
+      video.poster = `https://peertube.hadb.me${mediaInfo.value.previewPath}`
       video.duration = mediaInfo.value.duration
     }
   }
@@ -66,7 +66,7 @@ for (const video of videos) {
 
       <Lightgallery
         v-if="videos.length > 0"
-        :settings="{ ...gallerySettings, videojs: true }"
+        :settings="{ ...gallerySettings, videojs: true, download: false, zoom: false }"
         :class="{
           'grid gap-3 grid-cols-3 lg:grid-cols-9': videos.length > 1,
           'flex': videos.length === 1,
@@ -75,7 +75,7 @@ for (const video of videos) {
         <button
           v-for="video in videos"
           :key="`${video.type}-${video.id}`"
-          :data-src="`https://media.hadb.me/embed?m=${video.id}`"
+          :data-src="`https://peertube.hadb.me/videos/embed/${video.id}?p2p=0`"
           data-iframe="true"
           :class="{ 'aspect-square': videos.length > 1 }"
           class="inline-block relative"
@@ -89,7 +89,7 @@ for (const video of videos) {
             }"
           />
           <span v-if="video.duration" class="absolute bottom-0 right-0 m-1 px-1.5 py-0.5 bg-black bg-opacity-50 text-white text-xs rounded-md">
-            {{ getDuration(video.duration) }}
+            {{ formatDuration(video.duration) }}
           </span>
         </button>
       </Lightgallery>

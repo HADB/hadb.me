@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     'lightgallery/css/lg-thumbnail.css',
     'lightgallery/css/lg-video.css',
     'lightgallery/css/lg-zoom.css',
+    '~/assets/styles/main.scss',
   ],
   site: {
     name: 'HADB.ME',
@@ -161,7 +162,7 @@ export default defineNuxtConfig({
   },
 
   tailwindcss: {
-    cssPath: ['~/assets/css/tailwind.css', { injectPosition: 'last' }],
+    cssPath: ['~/assets/styles/tailwind.css', { injectPosition: 'last' }],
   },
 
   sentry: {

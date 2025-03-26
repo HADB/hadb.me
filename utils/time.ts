@@ -10,9 +10,9 @@ export function getReadingMinutes(milliseconds: number) {
   return Math.ceil(milliseconds / 1000 / 60)
 }
 
-export function getDuration(seconds: number) {
+export function formatDuration(seconds: number) {
   const hours = Math.floor(seconds / 3600) ? Math.floor(seconds / 3600).toString().padStart(2, '0') : undefined
   const minutes = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0')
-  const restSeconds = (seconds % 60).toString().padStart(2, '0')
+  const restSeconds = Math.round(seconds % 60).toString().padStart(2, '0')
   return `${hours ? `${hours}:` : ''}${minutes}:${restSeconds}`
 }
