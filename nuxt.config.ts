@@ -22,7 +22,6 @@ export default defineNuxtConfig({
     'lightgallery/css/lg-video.css',
     'lightgallery/css/lg-zoom.css',
     '~/assets/styles/tailwind.css',
-    '~/assets/styles/main.scss',
   ],
   site: {
     name: 'HADB.ME',

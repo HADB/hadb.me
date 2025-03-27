@@ -1,48 +1,48 @@
 .artalk,
 .atk-layer-wrap {
-  --at-color-font: theme(colors.slate.700);
-  --at-color-deep: theme(colors.primary.500);
-  --at-color-sub: theme(colors.slate.500);
-  --at-color-grey: theme(colors.slate.500);
-  --at-color-meta: theme(colors.slate.600);
-  --at-color-border: theme(colors.slate.200);
-  --at-color-light: theme(colors.primary.400);
-  --at-color-bg: theme(colors.slate.50);
-  --at-color-bg-transl: --alpha(theme(colors.slate.50) / 95%);
-  --at-color-bg-grey: theme(colors.slate.200);
-  --at-color-bg-grey-transl: --alpha(theme(colors.slate.200) / 75%);
-  --at-color-bg-light: --alpha(theme(colors.primary.400) / 10%);
-  --at-color-main: theme(colors.primary.500);
-  --at-color-red: theme(colors.red.500);
-  --at-color-pink: theme(colors.pink.500);
-  --at-color-yellow: theme(colors.yellow.500);
-  --at-color-green: theme(colors.green.500);
-  --at-color-gradient: linear-gradient(180deg, transparent, theme(colors.slate.50));
+  --at-color-font: var(--color-slate-700);
+  --at-color-deep: var(--color-primary-500);
+  --at-color-sub: var(--color-slate-500);
+  --at-color-grey: var(--color-slate-500);
+  --at-color-meta: var(--color-slate-600);
+  --at-color-border: var(--color-slate-200);
+  --at-color-light: var(--color-primary-400);
+  --at-color-bg: var(--color-slate-50);
+  --at-color-bg-transl: --alpha(var(--color-slate-50) / 95%);
+  --at-color-bg-grey: var(--color-slate-200);
+  --at-color-bg-grey-transl: --alpha(var(--color-slate-200) / 75%);
+  --at-color-bg-light: --alpha(var(--color-primary-400) / 10%);
+  --at-color-main: var(--color-primary-500);
+  --at-color-red: var(--color-red-500);
+  --at-color-pink: var(--color-pink-500);
+  --at-color-yellow: var(--color-yellow-500);
+  --at-color-green: var(--color-green-500);
+  --at-color-gradient: linear-gradient(180deg, transparent, var(--color-slate-50));
   margin-top: 1.25em;
 
   &:is(.dark *) {
-    --at-color-font: theme(colors.slate.300);
-    --at-color-deep: theme(colors.slate.500);
-    --at-color-sub: theme(colors.slate.500);
-    --at-color-grey: theme(colors.slate.500);
-    --at-color-meta: theme(colors.slate.400);
-    --at-color-border: theme(colors.slate.700);
-    --at-color-light: theme(colors.primary.600);
-    --at-color-bg: theme(colors.slate.900);
-    --at-color-bg-transl: --alpha(theme(colors.slate.900) / 95%);
-    --at-color-bg-grey: theme(colors.slate.700);
-    --at-color-bg-grey-transl: --alpha(theme(colors.slate.700) / 75%);
-    --at-color-bg-light: --alpha(theme(colors.primary.400) / 10%);
-    --at-color-main: theme(colors.primary.500);
-    --at-color-red: theme(colors.red.500);
-    --at-color-pink: theme(colors.pink.500);
-    --at-color-yellow: theme(colors.yellow.500);
-    --at-color-green: theme(colors.green.500);
-    --at-color-gradient: linear-gradient(180deg, transparent, theme(colors.slate.900));
+    --at-color-font: var(--color-slate-300);
+    --at-color-deep: var(--color-slate-500);
+    --at-color-sub: var(--color-slate-500);
+    --at-color-grey: var(--color-slate-500);
+    --at-color-meta: var(--color-slate-400);
+    --at-color-border: var(--color-slate-700);
+    --at-color-light: var(--color-primary-600);
+    --at-color-bg: var(--color-slate-900);
+    --at-color-bg-transl: --alpha(var(--color-slate-900) / 95%);
+    --at-color-bg-grey: var(--color-slate-700);
+    --at-color-bg-grey-transl: --alpha(var(--color-slate-700) / 75%);
+    --at-color-bg-light: --alpha(var(--color-primary-400) / 10%);
+    --at-color-main: var(--color-primary-500);
+    --at-color-red: var(--color-red-500);
+    --at-color-pink: var(--color-pink-500);
+    --at-color-yellow: var(--color-yellow-500);
+    --at-color-green: var(--color-green-500);
+    --at-color-gradient: linear-gradient(180deg, transparent, var(--color-slate-900));
   }
 
   .atk-main-editor > .atk-bottom .atk-send-btn {
-    color: theme(colors.white);
+    color: var(--color-white);
     margin: 5px;
   }
 
@@ -50,7 +50,7 @@
     border: 1px solid var(--at-color-border);
   }
   .atk-auth-plugin-dialog .atk-form button[type='submit'] {
-    color: theme(colors.white);
+    color: var(--color-white);
   }
   .atk-layer-dialog {
     padding: 15px;
@@ -58,17 +58,17 @@
     border: 1px solid var(--at-color-border);
   }
   .atk-comment > .atk-main > .atk-footer .atk-actions > span {
-    font-size: theme(fontSize.sm);
+    font-size: var(--text-sm);
   }
   .atk-comment > .atk-main > .atk-header {
-    font-size: theme(fontSize.sm);
+    font-size: var(--text-sm);
   }
   .atk-comment > .atk-main > .atk-header .badge,
   .atk-comment > .atk-main > .atk-header .atk-ua,
   .atk-comment > .atk-main > .atk-header .atk-pinned-badge,
   .atk-comment > .atk-main > .atk-header .atk-region-badge,
   .atk-comment > .atk-main > .atk-header .atk-badge {
-    font-size: theme(fontSize.xs);
+    font-size: var(--text-xs);
     padding: 2px 6px;
     line-height: 18px;
     border-radius: 4px;
