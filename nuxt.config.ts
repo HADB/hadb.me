@@ -28,6 +28,9 @@ export default defineNuxtConfig({
     name: 'HADB.ME',
     url: 'https://hadb.me',
   },
+  sourcemap: {
+    client: true,
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',

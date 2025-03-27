@@ -1,11 +1,11 @@
 import type { Tag } from '@/types/Tag'
-import type { PostsCollectionItem } from '@nuxt/content'
+import type { MomentsCollectionItem, PostsCollectionItem } from '@nuxt/content'
 
 export function encodeTag(tag: string) {
   return tag?.replace(/([:/?#[\]@!$&'()*+,;= "<>\\])/g, encodeURIComponent)
 }
 
-export function flatTags(postTags: Pick<PostsCollectionItem, 'tags'>[] | null) {
+export function flatTags(postTags: Pick<PostsCollectionItem | MomentsCollectionItem, 'tags'>[] | null) {
   const tags = postTags?.map((p) => p.tags).flat().reduce((acc: Tag[], curr) => {
     const found = acc.find((tag: Tag) => tag.name === curr)
     if (found) {

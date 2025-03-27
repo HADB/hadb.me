@@ -48,6 +48,7 @@ export default defineContentConfig({
         source: 'moments/**/*.md',
         schema: z.object({
           datetime: z.string(),
+          hideComments: z.boolean().default(false),
           location: z.string().optional(),
           tags: z.array(z.string()),
           content: z.string(),
