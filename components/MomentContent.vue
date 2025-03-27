@@ -56,6 +56,7 @@ for (const video of videos) {
           <NuxtImg
             v-if="image.filename"
             :src="`/static/${moment.stem}/${image.filename}`"
+            placeholder-class="bg-slate-300 dark:bg-slate-700"
             :class="{
               'w-full h-full object-cover': images.length > 1,
               'max-w-[256px] max-h-[144px] object-contain object-left-top': images.length === 1,
@@ -82,6 +83,7 @@ for (const video of videos) {
         >
           <NuxtImg
             v-if="video.poster"
+            placeholder-class="bg-slate-300 dark:bg-slate-700"
             :src="video.poster"
             :class="{
               'w-full h-full object-cover': videos.length > 1,
