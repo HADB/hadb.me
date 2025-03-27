@@ -1,0 +1,126 @@
+.artalk,
+.atk-layer-wrap {
+  --at-color-font: theme(colors.slate.700);
+  --at-color-deep: theme(colors.primary.500);
+  --at-color-sub: theme(colors.slate.500);
+  --at-color-grey: theme(colors.slate.500);
+  --at-color-meta: theme(colors.slate.600);
+  --at-color-border: theme(colors.slate.200);
+  --at-color-light: theme(colors.primary.400);
+  --at-color-bg: theme(colors.slate.50);
+  --at-color-bg-transl: --alpha(theme(colors.slate.50) / 95%);
+  --at-color-bg-grey: theme(colors.slate.200);
+  --at-color-bg-grey-transl: --alpha(theme(colors.slate.200) / 75%);
+  --at-color-bg-light: --alpha(theme(colors.primary.400) / 10%);
+  --at-color-main: theme(colors.primary.500);
+  --at-color-red: theme(colors.red.500);
+  --at-color-pink: theme(colors.pink.500);
+  --at-color-yellow: theme(colors.yellow.500);
+  --at-color-green: theme(colors.green.500);
+  --at-color-gradient: linear-gradient(180deg, transparent, theme(colors.slate.50));
+  margin-top: 1.25em;
+
+  &:is(.dark *) {
+    --at-color-font: theme(colors.slate.300);
+    --at-color-deep: theme(colors.slate.500);
+    --at-color-sub: theme(colors.slate.500);
+    --at-color-grey: theme(colors.slate.500);
+    --at-color-meta: theme(colors.slate.400);
+    --at-color-border: theme(colors.slate.700);
+    --at-color-light: theme(colors.primary.600);
+    --at-color-bg: theme(colors.slate.900);
+    --at-color-bg-transl: --alpha(theme(colors.slate.900) / 95%);
+    --at-color-bg-grey: theme(colors.slate.700);
+    --at-color-bg-grey-transl: --alpha(theme(colors.slate.700) / 75%);
+    --at-color-bg-light: --alpha(theme(colors.primary.400) / 10%);
+    --at-color-main: theme(colors.primary.500);
+    --at-color-red: theme(colors.red.500);
+    --at-color-pink: theme(colors.pink.500);
+    --at-color-yellow: theme(colors.yellow.500);
+    --at-color-green: theme(colors.green.500);
+    --at-color-gradient: linear-gradient(180deg, transparent, theme(colors.slate.900));
+  }
+
+  .atk-main-editor > .atk-bottom .atk-send-btn {
+    color: theme(colors.white);
+    margin: 5px;
+  }
+
+  .atk-auth-plugin-dialog {
+    border: 1px solid var(--at-color-border);
+  }
+  .atk-auth-plugin-dialog .atk-form button[type='submit'] {
+    color: theme(colors.white);
+  }
+  .atk-layer-dialog {
+    padding: 15px;
+    background-color: var(--at-color-bg);
+    border: 1px solid var(--at-color-border);
+  }
+  .atk-comment > .atk-main > .atk-footer .atk-actions > span {
+    font-size: theme(fontSize.sm);
+  }
+  .atk-comment > .atk-main > .atk-header {
+    font-size: theme(fontSize.sm);
+  }
+  .atk-comment > .atk-main > .atk-header .badge,
+  .atk-comment > .atk-main > .atk-header .atk-ua,
+  .atk-comment > .atk-main > .atk-header .atk-pinned-badge,
+  .atk-comment > .atk-main > .atk-header .atk-region-badge,
+  .atk-comment > .atk-main > .atk-header .atk-badge {
+    font-size: theme(fontSize.xs);
+    padding: 2px 6px;
+    line-height: 18px;
+    border-radius: 4px;
+  }
+  .atk-comment > .atk-avatar img {
+    margin: 0;
+    border-radius: 6px;
+  }
+
+  .atk-comment-wrap {
+    border-bottom: 1px solid var(--at-color-border);
+    &:first-child {
+      border-top: 1px solid var(--at-color-border);
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+
+    > .atk-comment {
+      padding: 10px 0;
+    }
+  }
+  .atk-comment-children > .atk-comment-wrap > .atk-comment {
+    padding: 10px 0;
+  }
+  .atk-list-no-comment {
+    font-size: inherit;
+  }
+  .atk-list {
+    > .atk-list-header {
+      .atk-comment-count {
+        font-size: inherit;
+        .atk-comment-count-num {
+          font-size: inherit;
+        }
+        .atk-dropdown {
+          .atk-dropdown-item {
+            padding-inline-start: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+    > .atk-list-footer .atk-copyright a {
+      color: inherit;
+      &:hover {
+        color: var(--tw-prose-links);
+        border-color: var(--tw-prose-links);
+      }
+    }
+  }
+  .atk-loading {
+    background: none;
+  }
+}

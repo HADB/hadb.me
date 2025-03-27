@@ -85,10 +85,10 @@ for (const video of videos) {
             :src="video.poster"
             :class="{
               'w-full h-full object-cover': videos.length > 1,
-              'max-w-[256px] max-h-[144px] object-contain object-left-top': videos.length === 1,
+              'max-w-full sm:max-w-[256px] sm:max-h-[144px] object-contain object-left-top': videos.length === 1,
             }"
           />
-          <span v-if="video.duration" class="absolute bottom-0 right-0 m-1 px-1.5 py-0.5 bg-black bg-opacity-50 text-white text-xs rounded-md">
+          <span v-if="video.duration" class="absolute bottom-0 right-0 m-1 px-1.5 py-0.5 bg-black bg-opacity/50 text-white text-xs rounded-md">
             {{ formatDuration(video.duration) }}
           </span>
         </button>

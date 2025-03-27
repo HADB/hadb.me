@@ -21,31 +21,21 @@ export default defineNuxtConfig({
     'lightgallery/css/lg-thumbnail.css',
     'lightgallery/css/lg-video.css',
     'lightgallery/css/lg-zoom.css',
+    '~/assets/styles/tailwind.css',
     '~/assets/styles/main.scss',
   ],
   site: {
     name: 'HADB.ME',
     url: 'https://hadb.me',
   },
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern', // can be removed after upgrade to vite 6
-        },
-      },
-    },
-  },
   modules: [
     '@nuxt/eslint',
-    '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxtjs/color-mode',
     '@nuxtjs/plausible',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-    '@nuxtjs/tailwindcss',
     '@sentry/nuxt/module',
     '@nuxt/content',
   ],
@@ -95,7 +85,7 @@ export default defineNuxtConfig({
   },
 
   icon: {
-    serverBundle: 'auto',
+    serverBundle: 'local',
   },
 
   colorMode: {
@@ -159,10 +149,6 @@ export default defineNuxtConfig({
         ],
       },
     },
-  },
-
-  tailwindcss: {
-    cssPath: ['~/assets/styles/tailwind.css', { injectPosition: 'last' }],
   },
 
   sentry: {

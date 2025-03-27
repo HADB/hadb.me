@@ -33,8 +33,8 @@ const { data: posts } = await useAsyncData(`posts-${props.year}-${props.tag}-${p
   <div class="post-list">
     <div class="posts">
       <ul class="list-none ps-0">
-        <li v-for="post in posts" :key="post.path" class="ps-0 my-4 flex">
-          <span class="mr-4 text-sm text-slate-500 font-mono flex-shrink-0 leading-6">
+        <li v-for="post in posts" :key="post.path" class="ps-0 mt-4 mb-4 flex">
+          <span class="mr-4 text-sm text-slate-500 font-mono shrink-0 leading-6">
             {{ formatDateTime(post.date, 'yyyy-MM-dd') }}
           </span>
           <div class="leading-6 truncate">
