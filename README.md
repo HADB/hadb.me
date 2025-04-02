@@ -28,4 +28,4 @@
 - [x] 接入 Plausible
 - [x] 导入 Disqus 评论至 Artalk
 - [x] 导入 Google Analytics PV 数据至 Artalk
-- [ ] 生成 Feed 订阅的时候，如何生成文章全文的 content
+- [x] Nuxt 3 + Content 3 + Feed 生成全文 content
