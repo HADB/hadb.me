@@ -1,6 +1,7 @@
+import type { MinimalTree } from '@nuxt/content'
 import { createSitePathResolver } from '#imports'
+import { decompressTree, extractContent } from '@/utils/mdc'
 import { getCoverPath } from '@/utils/posts'
-import { parseMarkdown } from '@nuxtjs/mdc/runtime'
 import { Feed } from 'feed'
 import { getQuery, setHeader } from 'h3'
 
@@ -38,13 +39,13 @@ export default defineEventHandler(async (event) => {
     .where('draft', '=', false)
     .all()
   for (const post of posts) {
-    if (post.path) {
+    if (post && post.path) {
       feed.addItem({
         id: post.path,
         title: post.title ? post.title : 'Untitled',
         link: resolvePath(post.path),
         description: post.description, // TODO: bug: 如果开头有引用，则不会输出内容
-        // content: post.description, // TODO: use post HTML content
+        content: extractContent(decompressTree(post.body as unknown as MinimalTree)),
         author: [{ name: author }],
         date: new Date(post.date),
         image: post?.cover ? resolvePath(getCoverPath(post)) : undefined,
