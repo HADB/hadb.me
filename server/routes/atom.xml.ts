@@ -39,16 +39,18 @@ export default defineEventHandler(async (event) => {
     .where('draft', '=', false)
     .all()
   for (const post of posts) {
-    if (post && post.path) {
+    if (post.path) {
+      const coverUrl = post?.cover ? resolvePath(getCoverPath(post)) : undefined
+      const cover = coverUrl ? `<img src="${coverUrl}" alt="封面" />` : ''
+
       feed.addItem({
         id: post.path,
         title: post.title ? post.title : 'Untitled',
         link: resolvePath(post.path),
         description: post.description, // TODO: bug: 如果开头有引用，则不会输出内容
-        content: extractContent(decompressTree(post.body as unknown as MinimalTree)),
+        content: cover + extractContent(decompressTree(post.body as unknown as MinimalTree)),
         author: [{ name: author }],
         date: new Date(post.date),
-        image: post?.cover ? resolvePath(getCoverPath(post)) : undefined,
       })
     }
   }
