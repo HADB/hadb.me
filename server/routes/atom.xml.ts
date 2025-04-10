@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
   const author = 'Bean'
   const feed = new Feed({
     title: 'HADB.ME',
-    description: 'Bean 的个人网站',
+    description: 'feedId:87047734898412544+userId:130241058717434880',
     id: resolvePath(''),
     link: resolvePath(''),
     language: 'zh-CN',
