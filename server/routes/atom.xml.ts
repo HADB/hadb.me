@@ -48,7 +48,7 @@ export default defineEventHandler(async (event) => {
         title: post.title ? post.title : 'Untitled',
         link: resolvePath(post.path),
         description: post.description, // TODO: bug: 如果开头有引用，则不会输出内容
-        content: cover + extractContent(decompressTree(post.body as unknown as MinimalTree)),
+        content: cover + extractContent(decompressTree(post.body as unknown as MinimalTree, post.stem)),
         author: [{ name: author }],
         date: new Date(post.date),
       })

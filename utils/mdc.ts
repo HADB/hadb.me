@@ -8,27 +8,121 @@ export function compressTree(input: MDCRoot): MinimalTree {
   }
 }
 
-export function decompressTree(input: MinimalTree): MDCRoot {
+export function decompressTree(tree: MinimalTree, stem: string): MDCRoot {
   return {
     type: 'root',
-    children: input.value.map(decompressNode),
+    children: tree.value.map((node) => decompressNode(node, stem)),
   }
 }
 
-function decompressNode(input: MinimalNode): MDCElement | MDCText {
-  if (typeof input === 'string') {
+function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
+  if (typeof node === 'string') {
     return {
       type: 'text',
-      value: input,
+      value: node,
     }
   }
 
-  const [tag, props, ...children] = input as MinimalElement
+  const [tag, props, ...children] = node as MinimalElement
+  if (![
+    'a',
+    'blockquote',
+    'br',
+    'code',
+    'del',
+    'em',
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'hr',
+    'i',
+    'input',
+    'li',
+    'ol',
+    'p',
+    'pre',
+    'span',
+    'strong',
+    'style',
+    'table',
+    'tbody',
+    'td',
+    'th',
+    'thead',
+    'tr',
+    'u',
+    'ul',
+    'email',
+    'iframe',
+    'post-image',
+    'reward-code',
+    'scrollable-table',
+    'video-player',
+  ].includes(tag)) {
+    console.warn('Unknown tag:', tag)
+  }
+
+  let resultTag = tag
+  let resultProps = props
+  let resultChildren = children
+
+  if (tag === 'video-player') {
+    resultTag = 'video'
+    resultProps = {
+      src: `/static/${stem}/${props.filename}`,
+      controls: props.controls,
+      autoplay: props.autoplay,
+      loop: props.loop,
+    }
+  }
+  else if (tag === 'post-image') {
+    resultTag = 'img'
+    resultProps = {
+      src: `/static/${stem}/${props.filename}`,
+      alt: props.description,
+    }
+  }
+  else if (tag === 'scrollable-table' && children.length === 1) {
+    return decompressNode(children[0], stem)
+  }
+  else if (tag === 'iframe') {
+    resultTag = 'a'
+    resultProps = {
+      href: props.src,
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }
+    resultChildren = [
+      '点击查看',
+    ]
+  }
+  else if (tag === 'email') {
+    resultTag = 'a'
+    resultProps = {
+      href: `mailto:${props.email}`,
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }
+    resultChildren = [
+      props.email as string,
+    ]
+  }
+  else if (tag === 'reward-code') {
+    resultTag = 'img'
+    resultProps = {
+      src: `/static/reward-code.jpg`,
+      alt: '赞赏码',
+    }
+  }
+
   return {
     type: 'element',
-    tag,
-    props,
-    children: children.map(decompressNode),
+    tag: resultTag,
+    props: resultProps,
+    children: resultChildren.map((child) => decompressNode(child, stem)),
   }
 }
 

@@ -18,11 +18,11 @@ const darkImageUrl = ref(`/static/${post.value?.stem}/dark-${props.filename}`)
 
 <template>
   <template v-if="darkSupported">
-    <NuxtImg class="light-image" :width="width" :height="height" :src="imageUrl" />
-    <NuxtImg class="dark-image" :width="width" :height="height" :src="darkImageUrl" />
+    <NuxtImg class="light-image" :width="width" :height="height" :src="imageUrl" :alt="description" />
+    <NuxtImg class="dark-image" :width="width" :height="height" :src="darkImageUrl" :alt="description" />
   </template>
   <template v-else>
-    <NuxtImg :width="width" :height="height" :src="imageUrl" />
+    <NuxtImg :width="width" :height="height" :src="imageUrl" :alt="description" />
   </template>
   <p v-if="description" class="text-sm text-center text-slate-500 -mt-6">
     {{ description }}
