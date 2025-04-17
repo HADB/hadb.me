@@ -31,6 +31,8 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
     'code',
     'del',
     'em',
+    'figcaption',
+    'figure',
     'h1',
     'h2',
     'h3',
@@ -39,6 +41,7 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
     'h6',
     'hr',
     'i',
+    'img',
     'input',
     'li',
     'ol',
@@ -79,10 +82,28 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
     }
   }
   else if (tag === 'post-image') {
-    resultTag = 'img'
-    resultProps = {
-      src: `/static/${stem}/${props.filename}`,
-      alt: props.description,
+    // resultTag = 'img'
+    // resultProps = {
+    //   src: `/static/${stem}/${props.filename}`,
+    //   alt: props.description,
+    // }
+    resultTag = 'figure'
+    resultProps = {}
+    resultChildren = [
+      [
+        'img',
+        {
+          src: `/static/${stem}/${props.filename}`,
+          alt: props.description,
+        },
+      ],
+    ]
+    if (props.description) {
+      resultChildren.push([
+        'figcaption',
+        {},
+        props.description as string,
+      ])
     }
   }
   else if (tag === 'scrollable-table' && children.length === 1) {
