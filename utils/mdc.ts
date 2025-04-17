@@ -82,11 +82,6 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
     }
   }
   else if (tag === 'post-image') {
-    // resultTag = 'img'
-    // resultProps = {
-    //   src: `/static/${stem}/${props.filename}`,
-    //   alt: props.description,
-    // }
     resultTag = 'figure'
     resultProps = {}
     resultChildren = [
@@ -94,7 +89,7 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
         'img',
         {
           src: `/static/${stem}/${props.filename}`,
-          alt: props.description,
+          alt: props.description || '',
         },
       ],
     ]

@@ -7,13 +7,17 @@ interface Props {
   description?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  darkSupported: false,
-})
+const {
+  filename,
+  darkSupported = false,
+  width,
+  height,
+  description,
+} = defineProps<Props>()
 
 const post = await usePost()
-const imageUrl = ref(`/static/${post.value?.stem}/${props.filename}`)
-const darkImageUrl = ref(`/static/${post.value?.stem}/dark-${props.filename}`)
+const imageUrl = ref(`/static/${post.value?.stem}/${filename}`)
+const darkImageUrl = ref(`/static/${post.value?.stem}/dark-${filename}`)
 </script>
 
 <template>
