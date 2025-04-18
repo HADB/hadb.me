@@ -76,8 +76,8 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
     resultTag = 'video'
     resultProps = {
       src: `/static/${stem}/${props.filename}`,
-      controls: props.controls,
       autoplay: props.autoplay,
+      controls: props.controls,
       loop: props.loop,
     }
   }
@@ -89,7 +89,7 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
         'img',
         {
           src: `/static/${stem}/${props.filename}`,
-          alt: props.description || '',
+          alt: props.description,
         },
       ],
     ]
@@ -191,7 +191,13 @@ export function extractContent(
     if (node.props && node.tag !== 'pre' && node.tag !== 'code') {
       attributes = Object.entries(node.props)
         .filter(([key]) => !['style'].includes(key))
-        .map(([key, value]) => `${key}="${value}"`)
+        .filter(([_, value]) => value !== undefined && value !== null && value !== '' && value !== false)
+        .map(([key, value]) => {
+          if (value === true) {
+            return key
+          }
+          return `${key}="${value}"`
+        })
         .join(' ')
 
       if (attributes) {
