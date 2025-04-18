@@ -8,14 +8,14 @@ export function compressTree(input: MDCRoot): MinimalTree {
   }
 }
 
-export function decompressTree(tree: MinimalTree, stem: string): MDCRoot {
+export function decompressTree(tree: MinimalTree, stem: string, resolvePath: (path: string) => string): MDCRoot {
   return {
     type: 'root',
-    children: tree.value.map((node) => decompressNode(node, stem)),
+    children: tree.value.map((node) => decompressNode(node, stem, resolvePath)),
   }
 }
 
-function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
+function decompressNode(node: MinimalNode, stem: string, resolvePath: (path: string) => string): MDCElement | MDCText {
   if (typeof node === 'string') {
     return {
       type: 'text',
@@ -75,7 +75,7 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
   if (tag === 'video-player') {
     resultTag = 'video'
     resultProps = {
-      src: `/static/${stem}/${props.filename}`,
+      src: resolvePath(`/static/${stem}/${props.filename}`),
       autoplay: props.autoplay,
       controls: props.controls,
       loop: props.loop,
@@ -88,7 +88,7 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
       [
         'img',
         {
-          src: `/static/${stem}/${props.filename}`,
+          src: resolvePath(`/static/${stem}/${props.filename}`),
           alt: props.description,
         },
       ],
@@ -102,7 +102,7 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
     }
   }
   else if (tag === 'scrollable-table' && children.length === 1) {
-    return decompressNode(children[0], stem)
+    return decompressNode(children[0], stem, resolvePath)
   }
   else if (tag === 'iframe') {
     resultTag = 'a'
@@ -129,7 +129,7 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
   else if (tag === 'reward-code') {
     resultTag = 'img'
     resultProps = {
-      src: `/static/reward-code.jpg`,
+      src: resolvePath(`/static/reward-code.jpg`),
       alt: '赞赏码',
     }
   }
@@ -138,7 +138,7 @@ function decompressNode(node: MinimalNode, stem: string): MDCElement | MDCText {
     type: 'element',
     tag: resultTag,
     props: resultProps,
-    children: resultChildren.map((child) => decompressNode(child, stem)),
+    children: resultChildren.map((child) => decompressNode(child, stem, resolvePath)),
   }
 }
 
