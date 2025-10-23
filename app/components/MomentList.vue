@@ -33,8 +33,8 @@ const { data: moments } = await useAsyncData(`moments-${props.tag}-${props.skip}
         </div>
         <MomentContent :moment="moment" />
         <div class="flex flex-wrap items-center gap-x-2 text-sm leading-6">
-          <NuxtLink v-for="tag in moment.tags" :key="tag" :to="`/moments/tag/${encodeTag(tag)}`" class="border-b-0!">
-            <span class="text-slate-500">#</span> {{ tag }}
+          <NuxtLink v-for="momentTag in moment.tags" :key="momentTag" :to="`/moments/tag/${encodeTag(momentTag)}`" class="border-b-0!">
+            <span class="text-slate-500">#</span> {{ momentTag }}
           </NuxtLink>
         </div>
       </div>

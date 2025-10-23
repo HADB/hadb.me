@@ -1,21 +1,21 @@
-import type { MarkdownRoot, MinimalElement, MinimalNode, MinimalTree } from '@nuxt/content'
+import type { MinimarkElement, MinimarkNode, MinimarkTree } from '@nuxt/content'
 import type { MDCComment, MDCElement, MDCNode, MDCRoot, MDCText } from '@nuxtjs/mdc'
 
-export function compressTree(input: MDCRoot): MinimalTree {
+export function compressTree(input: MDCRoot): MinimarkTree {
   return {
-    type: 'minimal',
-    value: input.children.map(compressNode).filter((v) => v !== undefined) as MinimalNode[],
+    type: 'minimark',
+    value: input.children.map(compressNode).filter((v) => v !== undefined) as MinimarkNode[],
   }
 }
 
-export function decompressTree(tree: MinimalTree, stem: string, resolvePath: (path: string) => string): MDCRoot {
+export function decompressTree(tree: MinimarkTree, stem: string, resolvePath: (path: string) => string): MDCRoot {
   return {
     type: 'root',
     children: tree.value.map((node) => decompressNode(node, stem, resolvePath)),
   }
 }
 
-function decompressNode(node: MinimalNode, stem: string, resolvePath: (path: string) => string): MDCElement | MDCText {
+function decompressNode(node: MinimarkNode, stem: string, resolvePath: (path: string) => string): MDCElement | MDCText {
   if (typeof node === 'string') {
     return {
       type: 'text',
@@ -23,7 +23,7 @@ function decompressNode(node: MinimalNode, stem: string, resolvePath: (path: str
     }
   }
 
-  const [tag, props, ...children] = node as MinimalElement
+  const [tag, props, ...children] = node as MinimarkElement
   if (![
     'a',
     'blockquote',
@@ -102,7 +102,7 @@ function decompressNode(node: MinimalNode, stem: string, resolvePath: (path: str
     }
   }
   else if (tag === 'scrollable-table' && children.length === 1) {
-    return decompressNode(children[0], stem, resolvePath)
+    return decompressNode(children[0]!, stem, resolvePath)
   }
   else if (tag === 'iframe') {
     resultTag = 'a'
@@ -142,7 +142,7 @@ function decompressNode(node: MinimalNode, stem: string, resolvePath: (path: str
   }
 }
 
-function compressNode(input: MDCElement | MDCText | MDCComment): MinimalNode | undefined {
+function compressNode(input: MDCElement | MDCText | MDCComment): MinimarkNode | undefined {
   if (input.type === 'comment') {
     return undefined
   }

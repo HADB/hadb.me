@@ -1,9 +1,9 @@
-import type { MinimalTree } from '@nuxt/content'
+import type { MinimarkTree } from '@nuxt/content'
 import { createSitePathResolver } from '#imports'
-import { decompressTree, extractContent } from '@/utils/mdc'
-import { getCoverPath } from '@/utils/posts'
 import { Feed } from 'feed'
 import { getQuery, setHeader } from 'h3'
+import { decompressTree, extractContent } from '~~/shared/utils/mdc'
+import { getCoverPath } from '~~/shared/utils/posts'
 
 export default defineEventHandler(async (event) => {
   const canonicalQuery = getQuery(event).canonical
@@ -48,7 +48,7 @@ export default defineEventHandler(async (event) => {
         title: post.title ? post.title : 'Untitled',
         link: resolvePath(post.path),
         description: post.description, // TODO: bug: 如果开头有引用，则不会输出内容
-        content: cover + extractContent(decompressTree(post.body as unknown as MinimalTree, post.stem, resolvePath)),
+        content: cover + extractContent(decompressTree(post.body as unknown as MinimarkTree, post.stem, resolvePath)),
         author: [{ name: author }],
         date: new Date(post.date),
       })

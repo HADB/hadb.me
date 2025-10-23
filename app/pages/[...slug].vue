@@ -8,7 +8,7 @@ const { data: page } = await useAsyncData(route.path, () => {
 if (!page.value) {
   // 支持将旧的带日期的路径 301 跳转至 /posts/ 下
   if (route.path.match(/^\/\d{4}\/\d{2}\/\d{2}\/(.+)$/)) {
-    navigateTo(`/posts/${route.params.slug[3]}`, { redirectCode: 301 })
+    navigateTo(`/posts/${route.params.slug![3]}`, { redirectCode: 301 })
   }
 
   // Page not found, set correct status code on SSR

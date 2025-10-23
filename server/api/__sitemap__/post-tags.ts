@@ -1,5 +1,5 @@
-import type { Tag } from '@/types/Tag'
-import { encodeTag, flatTags } from '@/utils/tags'
+import type { Tag } from '~~/types/Tag'
+import { encodeTag, flatTags } from '~~/shared/utils/tags'
 
 export default defineSitemapEventHandler(async (e) => {
   const postTags = await queryCollection(e, 'posts')
