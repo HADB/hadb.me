@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.19.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --host=0.0.0.0 --no-qr",
@@ -60,7 +60,7 @@
       ]
     },
     "overrides": {
-      "sharp": "0.34.3"
+      "sharp": "0.34.4"
     },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
