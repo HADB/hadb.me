@@ -48,20 +48,6 @@
     "typescript": "^5.9.3"
   },
   "pnpm": {
-    "supportedArchitectures": {
-      "os": [
-        "win32",
-        "darwin",
-        "current"
-      ],
-      "cpu": [
-        "x64",
-        "arm64"
-      ]
-    },
-    "overrides": {
-      "sharp": "0.34.4"
-    },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "@sentry/cli",
