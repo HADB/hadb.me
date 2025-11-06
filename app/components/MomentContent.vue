@@ -59,7 +59,7 @@ for (const video of videos) {
             placeholder-class="bg-slate-300 dark:bg-slate-700"
             :class="{
               'w-full h-full object-cover': images.length > 1,
-              'max-w-[256px] max-h-[144px] object-contain object-left-top': images.length === 1,
+              'max-w-64 max-h-36 object-contain object-top-left': images.length === 1,
             }"
           />
         </a>
@@ -87,7 +87,7 @@ for (const video of videos) {
             :src="video.poster"
             :class="{
               'w-full h-full object-cover': videos.length > 1,
-              'max-w-full sm:max-w-[256px] sm:max-h-[144px] object-contain object-left-top': videos.length === 1,
+              'max-w-full sm:max-w-64 sm:max-h-36 object-contain object-top-left': videos.length === 1,
             }"
           />
           <span v-if="video.duration" class="absolute bottom-0 right-0 m-1 px-1.5 py-0.5 bg-black bg-opacity/50 text-white text-xs rounded-md">
