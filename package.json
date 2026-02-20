@@ -36,7 +36,7 @@
     "@types/luxon": "^3.7.1",
     "@typescript-eslint/parser": "^8.54.0",
     "artalk": "^2.9.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.1",
     "eslint-plugin-format": "^1.4.0",
     "feed": "^5.2.0",
     "lightgallery": "^2.9.0",
