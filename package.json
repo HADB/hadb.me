@@ -27,7 +27,7 @@
     "@nuxt/kit": "^4.4.4",
     "@nuxt/ui": "^4.7.1",
     "@nuxtjs/color-mode": "^4.0.0",
-    "@nuxtjs/plausible": "^2.0.1",
+    "@nuxtjs/plausible": "^3.0.2",
     "@nuxtjs/robots": "^5.7.1",
     "@nuxtjs/sitemap": "^7.6.0",
     "@sentry/nuxt": "^10.51.0",

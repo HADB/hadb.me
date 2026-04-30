@@ -54,8 +54,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(magicast@0.5.2)
       '@nuxtjs/plausible':
-        specifier: ^2.0.1
-        version: 2.0.1(magicast@0.5.2)
+        specifier: ^3.0.2
+        version: 3.0.2(magicast@0.5.2)
       '@nuxtjs/robots':
         specifier: ^5.7.1
         version: 5.7.1(magicast@0.5.2)(vite@7.3.2(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.44.0)(yaml@2.8.2))(vue@3.5.33(typescript@5.9.3))(zod@3.25.76)
@@ -302,9 +302,6 @@ packages:
   '@babel/types@7.29.0':
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
-
-  '@barbapapazes/plausible-tracker@0.5.6':
-    resolution: {integrity: sha512-GRZxn3ZngYQ1+QbdP8d66D/lQg+T2oEevG8kBGfNwVbt9VZB67sgMx/gkRo/Ww2lH7QelgjUNzvOeG+DsJX2HQ==}
 
   '@bomb.sh/tab@0.0.14':
     resolution: {integrity: sha512-cHMk2LI430MVoX1unTt9oK1iZzQS4CYDz97MSxKLNErW69T43Z2QLFTpdS/3jVOIKrIADWfuxQ+nQNJkNV7E4w==}
@@ -1449,8 +1446,8 @@ packages:
   '@nuxtjs/mdc@0.21.1':
     resolution: {integrity: sha512-DIeUD7IahWVUSoZExysxH9dX51Io6hcQYgGJODq0cMTGqaoDD32lRfHBJxYUmy+sUCV1+1hfa2ixspgJgEd2GA==}
 
-  '@nuxtjs/plausible@2.0.1':
-    resolution: {integrity: sha512-Edr7oFIeZ9Og2lS21NhC3MRgcR7X9H1Hyjve8EsM2CycJGBlCcGKHs0+vi4KpbCVi33VlTXUUYNRPtGyeUX6Fw==}
+  '@nuxtjs/plausible@3.0.2':
+    resolution: {integrity: sha512-6z01a7XbggSmI4CTWCkDDmLHQNm7wob2dx1QnvpIoo+YEV19298+GsuvlBclXVxXSk7op8r8qJpw25xKo8mzQQ==}
 
   '@nuxtjs/robots@5.7.1':
     resolution: {integrity: sha512-1y1pW8Dh2gqJGFpXwkTin1KokBofYAG91C1gqxR4XbI7Xkl7DAXQ+BropHF2AeCV/uCxs6qz28ONp0+60TSw1Q==}
@@ -2362,6 +2359,9 @@ packages:
   '@pkgr/core@0.2.9':
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+
+  '@plausible-analytics/tracker@0.4.4':
+    resolution: {integrity: sha512-fz0NOYUEYXtg1TBaPEEvtcBq3FfmLFuTe1VZw4M8sTWX129br5dguu3M15+plOQnc181ShYe67RfwhKgK89VnA==}
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
@@ -8628,8 +8628,6 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@barbapapazes/plausible-tracker@0.5.6': {}
-
   '@bomb.sh/tab@0.0.14(cac@6.7.14)(citty@0.2.2)':
     optionalDependencies:
       cac: 6.7.14
@@ -9630,7 +9628,7 @@ snapshots:
       pathe: 2.0.3
       sirv: 3.0.2
       tinyglobby: 0.2.16
-      ufo: 1.6.3
+      ufo: 1.6.4
       unifont: 0.7.4
       unplugin: 3.0.0
       unstorage: 1.17.4(db0@0.3.4(better-sqlite3@11.9.1))(ioredis@5.10.1)
@@ -9718,7 +9716,7 @@ snapshots:
     dependencies:
       c12: 3.3.3(magicast@0.5.2)
       consola: 3.4.2
-      defu: 6.1.4
+      defu: 6.1.7
       destr: 2.0.5
       errx: 0.1.0
       exsolve: 1.0.8
@@ -9735,7 +9733,7 @@ snapshots:
       semver: 7.7.4
       std-env: 3.10.0
       tinyglobby: 0.2.15
-      ufo: 1.6.3
+      ufo: 1.6.4
       unctx: 2.5.0
       unimport: 5.6.0
       untyped: 2.0.0
@@ -10058,7 +10056,7 @@ snapshots:
       '@vue/compiler-core': 3.5.33
       consola: 3.4.2
       debug: 4.4.3
-      defu: 6.1.4
+      defu: 6.1.7
       destr: 2.0.5
       detab: 3.0.2
       github-slugger: 2.0.0
@@ -10085,7 +10083,7 @@ snapshots:
       remark-stringify: 11.0.0
       scule: 1.3.0
       shiki: 4.0.2
-      ufo: 1.6.3
+      ufo: 1.6.4
       unified: 11.0.5
       unist-builder: 4.0.0
       unist-util-visit: 5.1.0
@@ -10095,12 +10093,12 @@ snapshots:
       - magicast
       - supports-color
 
-  '@nuxtjs/plausible@2.0.1(magicast@0.5.2)':
+  '@nuxtjs/plausible@3.0.2(magicast@0.5.2)':
     dependencies:
-      '@barbapapazes/plausible-tracker': 0.5.6
       '@nuxt/kit': 4.4.4(magicast@0.5.2)
-      defu: 6.1.4
-      ufo: 1.6.1
+      '@plausible-analytics/tracker': 0.4.4
+      defu: 6.1.7
+      ufo: 1.6.4
     transitivePeerDependencies:
       - magicast
 
@@ -10782,6 +10780,8 @@ snapshots:
     optional: true
 
   '@pkgr/core@0.2.9': {}
+
+  '@plausible-analytics/tracker@0.4.4': {}
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -12568,7 +12568,7 @@ snapshots:
     dependencies:
       chokidar: 5.0.0
       confbox: 0.2.2
-      defu: 6.1.4
+      defu: 6.1.7
       dotenv: 17.2.3
       exsolve: 1.0.8
       giget: 2.0.0
@@ -13763,7 +13763,7 @@ snapshots:
       magic-regexp: 0.10.0
       magic-string: 0.30.21
       pathe: 2.0.3
-      ufo: 1.6.3
+      ufo: 1.6.4
       unplugin: 2.3.11
 
   fontkitten@1.0.2:
@@ -13782,7 +13782,7 @@ snapshots:
       magic-string: 0.30.21
       ohash: 2.0.11
       pathe: 2.0.3
-      ufo: 1.6.3
+      ufo: 1.6.4
       unifont: 0.7.4
       unstorage: 1.17.4(db0@0.3.4(better-sqlite3@11.9.1))(ioredis@5.10.1)
     optionalDependencies:
@@ -13879,7 +13879,7 @@ snapshots:
     dependencies:
       citty: 0.1.6
       consola: 3.4.2
-      defu: 6.1.4
+      defu: 6.1.7
       node-fetch-native: 1.6.7
       nypm: 0.6.5
       pathe: 2.0.3
@@ -13972,24 +13972,24 @@ snapshots:
     dependencies:
       cookie-es: 1.2.2
       crossws: 0.3.5
-      defu: 6.1.4
+      defu: 6.1.7
       destr: 2.0.5
       iron-webcrypto: 1.2.1
       node-mock-http: 1.0.3
       radix3: 1.1.2
-      ufo: 1.6.3
+      ufo: 1.6.4
       uncrypto: 0.1.3
 
   h3@1.15.5:
     dependencies:
       cookie-es: 1.2.2
       crossws: 0.3.5
-      defu: 6.1.4
+      defu: 6.1.7
       destr: 2.0.5
       iron-webcrypto: 1.2.1
       node-mock-http: 1.0.4
       radix3: 1.1.2
-      ufo: 1.6.3
+      ufo: 1.6.4
       uncrypto: 0.1.3
 
   has-flag@4.0.0: {}
@@ -14257,7 +14257,7 @@ snapshots:
       '@fastify/accept-negotiator': 2.0.1
       citty: 0.1.6
       consola: 3.4.2
-      defu: 6.1.4
+      defu: 6.1.7
       destr: 2.0.5
       etag: 1.8.1
       h3: 1.15.5
@@ -14267,7 +14267,7 @@ snapshots:
       pathe: 2.0.3
       sharp: 0.34.4
       svgo: 4.0.0
-      ufo: 1.6.3
+      ufo: 1.6.4
       unstorage: 1.17.1(db0@0.3.4(better-sqlite3@11.9.1))(ioredis@5.10.1)
       xss: 1.0.15
     transitivePeerDependencies:
@@ -14608,7 +14608,7 @@ snapshots:
       clipboardy: 4.0.0
       consola: 3.4.2
       crossws: 0.3.5
-      defu: 6.1.4
+      defu: 6.1.7
       get-port-please: 3.2.0
       h3: 1.15.5
       http-shutdown: 1.2.2
@@ -14617,7 +14617,7 @@ snapshots:
       node-forge: 1.3.1
       pathe: 1.1.2
       std-env: 3.10.0
-      ufo: 1.6.3
+      ufo: 1.6.4
       untun: 0.1.3
       uqr: 0.1.2
     optional: true
@@ -14674,7 +14674,7 @@ snapshots:
       mlly: 1.8.2
       regexp-tree: 0.1.27
       type-level-regexp: 0.1.17
-      ufo: 1.6.3
+      ufo: 1.6.4
       unplugin: 2.3.11
 
   magic-string-ast@1.0.3:
@@ -15083,7 +15083,7 @@ snapshots:
       acorn: 8.15.0
       pathe: 2.0.3
       pkg-types: 1.3.1
-      ufo: 1.6.3
+      ufo: 1.6.4
 
   mlly@1.8.2:
     dependencies:
@@ -15301,7 +15301,7 @@ snapshots:
       ohash: 2.0.11
       scule: 1.3.0
       typescript: 5.9.3
-      ufo: 1.6.3
+      ufo: 1.6.4
       vue-component-meta: 3.2.4(typescript@5.9.3)
     transitivePeerDependencies:
       - magicast
@@ -15312,7 +15312,7 @@ snapshots:
       pkg-types: 2.3.0
       site-config-stack: 3.2.19(vue@3.5.33(typescript@5.9.3))
       std-env: 3.10.0
-      ufo: 1.6.3
+      ufo: 1.6.4
     transitivePeerDependencies:
       - magicast
       - vue
@@ -15323,7 +15323,7 @@ snapshots:
       pkg-types: 2.3.0
       site-config-stack: 3.2.21(vue@3.5.33(typescript@5.9.3))
       std-env: 3.10.0
-      ufo: 1.6.3
+      ufo: 1.6.4
     transitivePeerDependencies:
       - magicast
       - vue
@@ -15338,7 +15338,7 @@ snapshots:
       pkg-types: 2.3.0
       sirv: 3.0.2
       site-config-stack: 3.2.19(vue@3.5.33(typescript@5.9.3))
-      ufo: 1.6.3
+      ufo: 1.6.4
     transitivePeerDependencies:
       - magicast
       - vite
@@ -15354,7 +15354,7 @@ snapshots:
       pkg-types: 2.3.0
       sirv: 3.0.2
       site-config-stack: 3.2.21(vue@3.5.33(typescript@5.9.3))
-      ufo: 1.6.3
+      ufo: 1.6.4
     transitivePeerDependencies:
       - magicast
       - vite
@@ -16128,7 +16128,7 @@ snapshots:
 
   rc9@2.1.2:
     dependencies:
-      defu: 6.1.4
+      defu: 6.1.7
       destr: 2.0.5
 
   rc9@3.0.0:
@@ -16620,12 +16620,12 @@ snapshots:
 
   site-config-stack@3.2.19(vue@3.5.33(typescript@5.9.3)):
     dependencies:
-      ufo: 1.6.3
+      ufo: 1.6.4
       vue: 3.5.33(typescript@5.9.3)
 
   site-config-stack@3.2.21(vue@3.5.33(typescript@5.9.3)):
     dependencies:
-      ufo: 1.6.3
+      ufo: 1.6.4
       vue: 3.5.33(typescript@5.9.3)
 
   skin-tone@2.0.0:
@@ -17175,7 +17175,7 @@ snapshots:
       lru-cache: 10.4.3
       node-fetch-native: 1.6.7
       ofetch: 1.5.1
-      ufo: 1.6.3
+      ufo: 1.6.4
     optionalDependencies:
       db0: 0.3.4(better-sqlite3@11.9.1)
       ioredis: 5.10.1
@@ -17190,7 +17190,7 @@ snapshots:
       lru-cache: 11.2.5
       node-fetch-native: 1.6.7
       ofetch: 1.5.1
-      ufo: 1.6.3
+      ufo: 1.6.4
     optionalDependencies:
       db0: 0.3.4(better-sqlite3@11.9.1)
       ioredis: 5.10.1
@@ -17383,11 +17383,11 @@ snapshots:
   vite@6.4.1(@types/node@24.9.1)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.44.0)(yaml@2.8.2):
     dependencies:
       esbuild: 0.25.12
-      fdir: 6.5.0(picomatch@4.0.3)
-      picomatch: 4.0.3
-      postcss: 8.5.6
+      fdir: 6.5.0(picomatch@4.0.4)
+      picomatch: 4.0.4
+      postcss: 8.5.12
       rollup: 4.60.2
-      tinyglobby: 0.2.15
+      tinyglobby: 0.2.16
     optionalDependencies:
       '@types/node': 24.9.1
       fsevents: 2.3.3
