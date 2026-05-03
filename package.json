@@ -12,7 +12,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6.7.3",
+    "@antfu/eslint-config": "^8.2.0",
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-solid": "^1.2.4",
     "@iconify-json/heroicons": "^1.2.3",
@@ -27,17 +27,17 @@
     "@nuxt/kit": "^4.4.4",
     "@nuxt/ui": "^4.7.1",
     "@nuxtjs/color-mode": "^4.0.0",
-    "@nuxtjs/plausible": "^2.0.1",
-    "@nuxtjs/robots": "^5.7.1",
-    "@nuxtjs/sitemap": "^7.6.0",
+    "@nuxtjs/plausible": "^3.0.2",
+    "@nuxtjs/robots": "^6.0.8",
+    "@nuxtjs/sitemap": "^8.0.15",
     "@sentry/nuxt": "^10.51.0",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.4",
     "@types/luxon": "^3.7.1",
     "@typescript-eslint/parser": "^8.59.1",
     "artalk": "^2.9.1",
-    "eslint": "^9.39.4",
-    "eslint-plugin-format": "^1.5.0",
+    "eslint": "^10.3.0",
+    "eslint-plugin-format": "^2.0.1",
     "feed": "^5.2.1",
     "lightgallery": "^2.9.0",
     "luxon": "^3.7.2",
@@ -45,7 +45,7 @@
     "remark-reading-time": "^2.1.0",
     "sass": "^1.99.0",
     "tailwindcss": "^4.2.4",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -54,6 +54,7 @@
       "better-sqlite3",
       "esbuild",
       "sharp",
+      "unrs-resolver",
       "vue-demi"
     ]
   }
