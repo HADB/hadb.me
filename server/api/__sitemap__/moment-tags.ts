@@ -1,4 +1,4 @@
-import type { Tag } from '~~/types/Tag'
+import type { Tag } from '~~/shared/types'
 import { encodeTag, flatTags } from '~~/shared/utils/tags'
 
 export default defineSitemapEventHandler(async (e) => {

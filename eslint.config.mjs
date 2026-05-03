@@ -4,6 +4,7 @@ import withNuxt from './.nuxt/eslint.config.mjs'
 export default withNuxt(
   antfu({
     lessOpinionated: true,
+    markdown: false,
     rules: {
       'style/brace-style': ['error', 'stroustrup', { allowSingleLine: false }],
       'style/arrow-parens': ['error', 'always'],

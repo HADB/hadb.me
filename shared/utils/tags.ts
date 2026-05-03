@@ -1,5 +1,5 @@
 import type { MomentsCollectionItem, PostsCollectionItem } from '@nuxt/content'
-import type { Tag } from '~~/types/Tag'
+import type { Tag } from '~~/shared/types'
 
 export function encodeTag(tag: string) {
   return tag?.replace(/([:/?#[\]@!$&'()*+,;= "<>\\])/g, encodeURIComponent)

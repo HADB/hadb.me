@@ -8888,7 +8888,7 @@ snapshots:
 
   '@eslint/compat@2.0.2(eslint@10.3.0(jiti@2.6.1))':
     dependencies:
-      '@eslint/core': 1.1.0
+      '@eslint/core': 1.2.1
     optionalDependencies:
       eslint: 10.3.0(jiti@2.6.1)
 

@@ -1,8 +1,6 @@
 <script lang="ts" setup>
-import type { PostsCollectionItem } from '@nuxt/content'
-
 interface Props {
-  post?: PostsCollectionItem
+  post?: SurroundPost | null
   type: 'prev' | 'next'
 }
 

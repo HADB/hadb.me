@@ -1,9 +1,9 @@
 import type { MinimarkTree } from '@nuxt/content'
-import { createSitePathResolver } from '#imports'
 import { Feed } from 'feed'
 import { getQuery, setHeader } from 'h3'
 import { decompressTree, extractContent } from '~~/shared/utils/mdc'
 import { getCoverPath } from '~~/shared/utils/posts'
+import { createSitePathResolver } from '#imports'
 
 export default defineEventHandler(async (event) => {
   const canonicalQuery = getQuery(event).canonical
