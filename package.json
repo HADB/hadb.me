@@ -12,7 +12,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^8.3.0",
+    "@antfu/eslint-config": "^9.1.0",
     "@iconify-json/fa6-brands": "^1.2.6",
     "@iconify-json/fa6-solid": "^1.2.4",
     "@iconify-json/heroicons": "^1.2.3",
@@ -38,7 +38,7 @@
     "artalk": "^2.9.1",
     "eslint": "^10.6.0",
     "eslint-plugin-format": "^2.0.1",
-    "feed": "^5.2.1",
+    "feed": "^6.0.0",
     "lightgallery": "^2.9.0",
     "luxon": "^3.7.2",
     "nuxt": "^4.4.8",
