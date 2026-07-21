@@ -44,7 +44,7 @@ export default defineEventHandler(async (event) => {
       const cover = coverUrl ? `<img src="${coverUrl}" alt="封面" />` : ''
 
       feed.addItem({
-        id: post.path,
+        id: resolvePath(post.path),
         title: post.title ? post.title : 'Untitled',
         link: resolvePath(post.path),
         description: post.description, // TODO: bug: 如果开头有引用，则不会输出内容
