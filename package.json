@@ -36,6 +36,7 @@
     "@types/luxon": "^3.7.3",
     "@typescript-eslint/parser": "^8.65.0",
     "artalk": "^2.10.0",
+    "better-sqlite3": "^12.5.0",
     "eslint": "^10.8.0",
     "eslint-plugin-format": "^2.0.1",
     "feed": "^6.0.0",
