@@ -57,6 +57,9 @@ for (const video of videos) {
             <NuxtImg
               v-if="image.filename"
               :src="`/static/${moment.stem}/${image.filename}`"
+              :width="512"
+              :height="images.length > 1 ? 512 : 288"
+              :fit="images.length > 1 ? 'cover' : 'inside'"
               placeholder-class="bg-slate-300 dark:bg-slate-700"
               :class="{
                 'w-full h-full object-cover': images.length > 1,
@@ -86,6 +89,9 @@ for (const video of videos) {
               v-if="video.poster"
               placeholder-class="bg-slate-300 dark:bg-slate-700"
               :src="video.poster"
+              :width="512"
+              :height="288"
+              fit="cover"
               :class="{
                 'w-full h-full object-cover': videos.length > 1,
                 'max-w-full sm:max-w-64 sm:max-h-36 object-contain object-top-left': videos.length === 1,
@@ -97,6 +103,60 @@ for (const video of videos) {
           </button>
         </Lightgallery>
       </div>
+
+      <template #fallback>
+        <div v-if="moment.media" class="mt-2">
+          <div
+            v-if="images.length > 0"
+            :class="{
+              'grid gap-3 grid-cols-3 lg:grid-cols-9': images.length > 1,
+              'flex': images.length === 1,
+            }"
+          >
+            <a
+              v-for="image in images"
+              :key="`${image.type}-${image.id}-${image.filename}`"
+              :href="`/static/${moment.stem}/${image.filename}`"
+              :class="{ 'aspect-square': images.length > 1 }"
+              class="inline-block"
+            >
+              <NuxtImg
+                v-if="image.filename"
+                :src="`/static/${moment.stem}/${image.filename}`"
+                :width="512"
+                :height="images.length > 1 ? 512 : 288"
+                :fit="images.length > 1 ? 'cover' : 'inside'"
+                :class="{
+                  'w-full h-full object-cover': images.length > 1,
+                  'max-w-64 max-h-36 object-contain object-top-left': images.length === 1,
+                }"
+              />
+            </a>
+          </div>
+
+          <div
+            v-if="videos.length > 0"
+            :class="{
+              'grid gap-3 grid-cols-3 lg:grid-cols-9': videos.length > 1,
+              'flex': videos.length === 1,
+            }"
+          >
+            <template v-for="video in videos" :key="`${video.type}-${video.id}`">
+              <NuxtImg
+                v-if="video.poster"
+                :src="video.poster"
+                :width="512"
+                :height="288"
+                fit="cover"
+                :class="{
+                  'w-full h-full object-cover': videos.length > 1,
+                  'max-w-full sm:max-w-64 sm:max-h-36 object-contain object-top-left': videos.length === 1,
+                }"
+              />
+            </template>
+          </div>
+        </div>
+      </template>
     </ClientOnly>
   </div>
 </template>

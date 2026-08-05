@@ -7,6 +7,8 @@
       class="m-0 w-full object-cover lg:col-span-2"
       src="/static/about-me.jpg"
       alt="Bean"
+      :width="1040"
+      :height="1040"
     />
   </div>
 </template>
