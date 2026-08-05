@@ -57,8 +57,8 @@ for (const video of videos) {
             <NuxtImg
               v-if="image.filename"
               :src="`/static/${moment.stem}/${image.filename}`"
-              :width="512"
-              :height="images.length > 1 ? 512 : 288"
+              :width="256"
+              :height="images.length > 1 ? 256 : 144"
               :fit="images.length > 1 ? 'cover' : 'inside'"
               placeholder-class="bg-slate-300 dark:bg-slate-700"
               :class="{
@@ -89,8 +89,8 @@ for (const video of videos) {
               v-if="video.poster"
               placeholder-class="bg-slate-300 dark:bg-slate-700"
               :src="video.poster"
-              :width="512"
-              :height="288"
+              :width="256"
+              :height="videos.length > 1 ? 256 : 144"
               fit="cover"
               :class="{
                 'w-full h-full object-cover': videos.length > 1,
@@ -123,8 +123,8 @@ for (const video of videos) {
               <NuxtImg
                 v-if="image.filename"
                 :src="`/static/${moment.stem}/${image.filename}`"
-                :width="512"
-                :height="images.length > 1 ? 512 : 288"
+                :width="256"
+                :height="images.length > 1 ? 256 : 144"
                 :fit="images.length > 1 ? 'cover' : 'inside'"
                 :class="{
                   'w-full h-full object-cover': images.length > 1,
@@ -145,8 +145,8 @@ for (const video of videos) {
               <NuxtImg
                 v-if="video.poster"
                 :src="video.poster"
-                :width="512"
-                :height="288"
+                :width="256"
+                :height="videos.length > 1 ? 256 : 144"
                 fit="cover"
                 :class="{
                   'w-full h-full object-cover': videos.length > 1,
