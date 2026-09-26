@@ -30,7 +30,7 @@
     "@nuxtjs/plausible": "^3.0.2",
     "@nuxtjs/robots": "^6.2.0",
     "@nuxtjs/sitemap": "^8.5.0",
-    "@sentry/nuxt": "^10.72.0",
+    "@sentry/nuxt": "^11.0.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "@types/luxon": "^3.7.5",
