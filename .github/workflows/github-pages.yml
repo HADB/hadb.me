@@ -28,6 +28,7 @@ jobs:
           NITRO_PRESET: github_pages
           NUXT_APP_BASE_URL: /
           NUXT_SITE_URL: https://hadb.me
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
         run: pnpm generate
       - name: Check the generated site
         run: |
