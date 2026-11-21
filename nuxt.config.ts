@@ -157,11 +157,9 @@ export default defineNuxtConfig({
   },
 
   sentry: {
-    sourceMapsUploadOptions: {
-      org: 'hadb',
-      project: 'hadb-me',
-      authToken: process.env.SENTRY_AUTH_TOKEN,
-      telemetry: false,
-    },
+    org: 'hadb',
+    project: 'hadb-me',
+    authToken: process.env.SENTRY_AUTH_TOKEN,
+    telemetry: false,
   },
 })
