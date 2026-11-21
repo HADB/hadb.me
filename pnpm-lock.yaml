@@ -5405,8 +5405,8 @@ packages:
   image-meta@0.3.1:
     resolution: {integrity: sha512-rKANCbmsJCZ3/q87GTWZ+8MhOvhPLjsScznVtqvBoTu6Tyq8FzdPoBUMl/ZxQXy+/5I+C1vxXwS1jSwmHgmDLQ==}
 
-  immutable@5.1.5:
-    resolution: {integrity: sha512-t7xcm2siw+hlUM68I+UEOK+z84RzmN59as9DZ7P1l0994DKUWV7UXBMQZVxaoMSRQ+PBZbHCOoBt7a2wxOMt+A==}
+  immutable@5.2.1:
+    resolution: {integrity: sha512-CgXNM1BhKqpMjFHTyqQSk09OWqzHNJ/U4BdeBgXoBdR2DdgBdOSv131cO1/YMgzopqnka3B/i949UaMLEKUxOA==}
 
   import-in-the-middle@3.0.1:
     resolution: {integrity: sha512-pYkiyXVL2Mf3pozdlDGV6NAObxQx13Ae8knZk1UJRJ6uRW/ZRmTGHlQYtrsSl7ubuE5F8CD1z+s1n4RHNuTtuA==}
@@ -14020,7 +14020,7 @@ snapshots:
 
   image-meta@0.3.1: {}
 
-  immutable@5.1.5: {}
+  immutable@5.2.1: {}
 
   import-in-the-middle@3.0.1:
     dependencies:
@@ -16134,7 +16134,7 @@ snapshots:
   sass@1.103.1:
     dependencies:
       chokidar: 5.0.0
-      immutable: 5.1.5
+      immutable: 5.2.1
       source-map-js: 1.2.4
     optionalDependencies:
       '@parcel/watcher': 2.5.6
