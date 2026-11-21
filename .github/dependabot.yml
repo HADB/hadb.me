@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+      timezone: Asia/Shanghai
+    cooldown:
+      default-days: 3
+    groups:
+      npm-non-major:
+        patterns: ['*']
+        update-types: [minor, patch]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+      timezone: Asia/Shanghai
+    groups:
+      actions-non-major:
+        patterns: ['*']
+        update-types: [minor, patch]

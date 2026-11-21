@@ -1,18 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "group:allNonMajor",
-    ":semanticCommitTypeAll(chore)",
-    "security:minimumReleaseAgeNpm"
-  ],
-  "rangeStrategy": "bump",
-  "timezone": "Asia/Shanghai",
+  "pruneStaleBranches": false,
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "extends": ["schedule:monthly"]
+      "matchPackageNames": [
+        "*"
+      ],
+      "enabled": false
     }
   ]
 }
