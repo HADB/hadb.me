@@ -7046,10 +7046,6 @@ packages:
     resolution: {integrity: sha512-IH/iSeO9T6gz1KkFleGDWkG9N3dl4jXVYUtMhIqH10Md0ttMer8nUNWiP1DKuNrybD2xBrixLJdCC9J6ECoYkg==}
     engines: {node: '>=10.0.0'}
 
-  source-map-js@1.2.1:
-    resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
-    engines: {node: '>=0.10.0'}
-
   source-map-js@1.2.4:
     resolution: {integrity: sha512-J7ZjMvHd9O1fcT/5V09QWaaSl2BbWx3F6O08spde82Namf9UB0GxRVIPiNbVsdKkoizHiSpTodo3vp2bAy91MA==}
     engines: {node: '>=6.0.0'}
@@ -9013,12 +9009,12 @@ snapshots:
   '@eslint/css-tree@4.0.5':
     dependencies:
       mdn-data: 2.29.0
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
 
   '@eslint/css-tree@4.1.2':
     dependencies:
       mdn-data: 2.37.2
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
 
   '@eslint/js@10.0.1(eslint@10.9.1(jiti@2.7.0)(supports-color@10.2.2))':
     optionalDependencies:
@@ -11191,7 +11187,7 @@ snapshots:
       jiti: 2.7.0
       lightningcss: 1.32.0
       magic-string: 0.30.21
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
       tailwindcss: 4.3.3
 
   '@tailwindcss/oxide-android-arm64@4.3.3':
@@ -12101,7 +12097,7 @@ snapshots:
       '@vue/shared': 3.5.40
       entities: 7.0.1
       estree-walker: 2.0.2
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
 
   '@vue/compiler-core@3.5.42':
     dependencies:
@@ -12109,7 +12105,7 @@ snapshots:
       '@vue/shared': 3.5.42
       entities: 7.0.1
       estree-walker: 2.0.2
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
 
   '@vue/compiler-core@3.5.46':
     dependencies:
@@ -12139,7 +12135,7 @@ snapshots:
       estree-walker: 2.0.2
       magic-string: 0.30.21
       postcss: 8.5.25
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
 
   '@vue/compiler-sfc@3.5.46':
     dependencies:
@@ -12713,7 +12709,7 @@ snapshots:
   css-tree@3.2.1:
     dependencies:
       mdn-data: 2.27.1
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
 
   cssesc@3.0.0: {}
 
@@ -14484,7 +14480,7 @@ snapshots:
     dependencies:
       '@babel/parser': 7.29.8
       '@babel/types': 7.29.8
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
 
   make-asynchronous@1.1.0:
     dependencies:
@@ -15678,7 +15674,7 @@ snapshots:
     dependencies:
       nanoid: 3.3.17
       picocolors: 1.1.1
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
 
   postcss@8.5.33:
     dependencies:
@@ -16159,7 +16155,7 @@ snapshots:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.5
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
     optionalDependencies:
       '@parcel/watcher': 2.5.6
 
@@ -16343,8 +16339,6 @@ snapshots:
       debug: 4.4.3(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
-
-  source-map-js@1.2.1: {}
 
   source-map-js@1.2.4: {}
 
@@ -17194,7 +17188,7 @@ snapshots:
       exsolve: 1.2.0
       magic-string: 1.4.5
       pathe: 2.0.3
-      source-map-js: 1.2.1
+      source-map-js: 1.2.4
       vite: 8.3.8(@types/node@24.9.1)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.103.1)(terser@5.51.3)(yaml@2.9.1)
       vue: 3.5.46(typescript@6.0.3)
 
