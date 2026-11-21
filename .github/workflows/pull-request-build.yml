@@ -1,0 +1,39 @@
+name: Pull request build
+
+on:
+  pull_request:
+    branches: [main]
+  merge_group:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pull-request-build-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    name: Nuxt static build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+      - name: Install locked dependencies
+        run: |
+          npm install --global "$(node -p 'require("./package.json").packageManager')"
+          pnpm install --frozen-lockfile
+      - name: Generate the static site
+        env:
+          NITRO_PRESET: github_pages
+          NUXT_APP_BASE_URL: /
+          NUXT_SITE_URL: https://hadb.me
+        run: |
+          pnpm generate
+          test -s .output/public/index.html
+          test -s .output/public/atom.xml
