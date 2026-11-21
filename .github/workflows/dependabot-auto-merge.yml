@@ -48,6 +48,18 @@ jobs:
         id: merge
         if: steps.eligible.outputs.merge == 'true'
         run: |
+          # The build and this workflow are scheduled independently.
+          for attempt in {1..12}; do
+            if gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --json name 2>/dev/null \
+              | jq -e 'any(.[]; .name == "Nuxt static build")' > /dev/null; then
+              break
+            fi
+            if [[ "$attempt" == 12 ]]; then
+              echo 'The required Nuxt static build has not registered for this PR.'
+              exit 1
+            fi
+            sleep 5
+          done
           gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --watch --fail-fast --interval 15
           gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --json name,state \
             --jq 'any(.[]; .name == "Nuxt static build" and .state == "SUCCESS")' | grep -qx true
