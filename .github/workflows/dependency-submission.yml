@@ -1,0 +1,44 @@
+name: Submit dependency graph
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/scripts/dependency-snapshot.mjs
+      - .github/workflows/dependency-submission.yml
+      - .nvmrc
+      - package.json
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
+  workflow_dispatch:
+
+concurrency:
+  group: submit-dependency-graph
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - name: Generate an SBOM from the pnpm lockfile
+        run: |
+          npm install --global "$(node -p 'require("./package.json").packageManager')"
+          pnpm sbom --lockfile-only --sbom-format cyclonedx --out "$RUNNER_TEMP/pnpm-sbom.json"
+          node .github/scripts/dependency-snapshot.mjs "$RUNNER_TEMP/pnpm-sbom.json" > "$RUNNER_TEMP/dependency-snapshot.json"
+      - name: Submit to the GitHub dependency graph
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/dependency-graph/snapshots" \
+            --input "$RUNNER_TEMP/dependency-snapshot.json"
