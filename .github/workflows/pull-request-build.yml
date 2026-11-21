@@ -33,7 +33,6 @@ jobs:
           NITRO_PRESET: github_pages
           NUXT_APP_BASE_URL: /
           NUXT_SITE_URL: https://hadb.me
-        run: |
-          pnpm generate
-          test -s .output/public/index.html
-          test -s .output/public/atom.xml
+        run: pnpm generate
+      - name: Check generated pages over HTTP
+        run: python3 .github/scripts/smoke-static-site.py .output/public
