@@ -5,6 +5,8 @@ import redirects from './redirects'
 export default defineNuxtConfig({
   compatibilityDate: '2024-07-25',
   devtools: { enabled: false },
+  // 预渲染时让图库和 Nuxt 共用同一个 Vue 运行时。
+  build: { transpile: ['@lightgallery/vue'] },
   eslint: { config: { standalone: false } },
   routeRules: {
     '/atom.xml': { prerender: true },
