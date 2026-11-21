@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   ],
   site: {
     name: 'HADB.ME',
-    url: 'https://hadb.me',
+    url: process.env.NUXT_SITE_URL || 'https://hadb.me',
   },
   // 仅在配置了 Sentry authToken 的生产构建（CI）中开启 sourcemap，
   // 本地构建关闭以避免 Sentry 插件全量处理 sourcemap 导致的内存溢出

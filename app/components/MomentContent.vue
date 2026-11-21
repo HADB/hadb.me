@@ -9,6 +9,8 @@ const props = defineProps<{
   moment: MomentsCollectionItem
 }>()
 
+const publicPath = usePublicPath()
+
 const gallerySettings = {
   licenseKey: 'HADB.ME',
   speed: 500,
@@ -50,7 +52,7 @@ for (const video of videos) {
           <a
             v-for="image in images"
             :key="`${image.type}-${image.id}-${image.filename}`"
-            :href="`/static/${moment.stem}/${image.filename}`"
+            :href="publicPath(`/static/${moment.stem}/${image.filename}`)"
             :class="{ 'aspect-square': images.length > 1 }"
             class="inline-block"
           >
@@ -116,7 +118,7 @@ for (const video of videos) {
             <a
               v-for="image in images"
               :key="`${image.type}-${image.id}-${image.filename}`"
-              :href="`/static/${moment.stem}/${image.filename}`"
+              :href="publicPath(`/static/${moment.stem}/${image.filename}`)"
               :class="{ 'aspect-square': images.length > 1 }"
               class="inline-block"
             >

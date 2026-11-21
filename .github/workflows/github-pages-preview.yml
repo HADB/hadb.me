@@ -26,11 +26,13 @@ jobs:
         env:
           NITRO_PRESET: github_pages
           NUXT_APP_BASE_URL: /hadb.me/
+          NUXT_SITE_URL: https://hadb.github.io
         run: pnpm generate
       - name: Check the generated site
         run: |
           test -s .output/public/index.html
-          test -s .output/public/atom.xml
+          grep -Fq 'https://hadb.github.io/hadb.me/atom.xml' .output/public/atom.xml
+          grep -Fq '/hadb.me/posts' .output/public/archives.html
           site_bytes=$(du -sb .output/public | cut -f1)
           echo "Generated site: $site_bytes bytes" >> "$GITHUB_STEP_SUMMARY"
           test "$site_bytes" -lt 1000000000

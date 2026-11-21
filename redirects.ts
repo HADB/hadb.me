@@ -1,9 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import process from 'node:process'
 
+const basePath = (process.env.NUXT_APP_BASE_URL ?? '/').replace(/\/$/, '')
 const postsDirectory = path.join(__dirname, 'content/posts')
 const redirects: { [path: string]: { redirect: { to: string, statusCode?: number } } } = {
-  '/archives': { redirect: { to: '/posts', statusCode: 301 } },
+  '/archives': { redirect: { to: `${basePath}/posts`, statusCode: 301 } },
 }
 
 // 获取目录下所有的 .md 文件
@@ -30,7 +32,7 @@ const getPostFiles = (dir: string): string[] => {
 getPostFiles(postsDirectory).forEach((filePath) => {
   const fileName = path.basename(filePath).replace(/^\d{8}\./, '').replace('.md', '')
   const year = path.basename(path.dirname(filePath))
-  const pathUrl = `/posts/${year}/${fileName}`
+  const pathUrl = `${basePath}/posts/${year}/${fileName}`
 
   redirects[`/posts/${fileName}`] = {
     redirect: { to: encodeURI(pathUrl), statusCode: 301 },

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const publicPath = usePublicPath()
 const { data: navigation } = await useAsyncData('navigation', () => {
   return queryCollectionNavigation('pages')
 })
@@ -21,7 +22,7 @@ const { data: navigation } = await useAsyncData('navigation', () => {
       </div>
       <div class="sm:w-32 flex justify-end items-center space-x-1">
         <ButtonLink to="https://github.com/HADB" tooltip="GitHub" icon="fa6-brands:github" external target="_blank" />
-        <ButtonLink to="https://hadb.me/atom.xml" tooltip="Feed 订阅" icon="fa6-solid:square-rss" external target="_blank" />
+        <ButtonLink :to="publicPath('/atom.xml')" tooltip="Feed 订阅" icon="fa6-solid:square-rss" external target="_blank" />
         <ColorModeSwitch />
       </div>
     </div>

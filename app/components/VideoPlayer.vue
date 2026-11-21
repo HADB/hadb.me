@@ -9,11 +9,12 @@ interface Props {
 
 const props = defineProps<Props>()
 const post = await usePost()
+const publicPath = usePublicPath()
 </script>
 
 <template>
   <video
-    :src="`/static/${post?.stem}/${props.filename}`"
+    :src="publicPath(`/static/${post?.stem}/${props.filename}`)"
     :class="props.class"
     :autoplay="props.autoplay"
     :controls="props.controls"
