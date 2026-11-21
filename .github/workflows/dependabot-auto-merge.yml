@@ -1,0 +1,61 @@
+name: Dependabot auto-merge
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, synchronize, ready_for_review]
+
+concurrency:
+  group: dependabot-auto-merge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  merge:
+    if: >-
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      actions: write
+      checks: read
+      contents: write
+      pull-requests: write
+      statuses: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      PR_HEAD: ${{ github.event.pull_request.head.sha }}
+    steps:
+      # This workflow never checks out or runs code from the pull request.
+      - name: Read signed Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
+      - name: Check that every update is minor or patch
+        id: eligible
+        if: >-
+          steps.metadata.outputs.update-type == 'version-update:semver-minor' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        env:
+          UPDATED_DEPENDENCIES: ${{ steps.metadata.outputs.updated-dependencies-json }}
+        run: |
+          if jq -e 'length > 0 and all(.[]; .updateType == "version-update:semver-minor" or .updateType == "version-update:semver-patch")' \
+            <<< "$UPDATED_DEPENDENCIES" > /dev/null; then
+            echo 'merge=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Wait for required checks and squash merge
+        id: merge
+        if: steps.eligible.outputs.merge == 'true'
+        run: |
+          gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --watch --fail-fast --interval 15
+          gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --json name,state \
+            --jq 'any(.[]; .name == "Nuxt static build" and .state == "SUCCESS")' | grep -qx true
+          gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$PR_HEAD"
+      # A merge using GITHUB_TOKEN does not trigger the usual push workflows.
+      - name: Start the production deployment
+        if: steps.merge.outcome == 'success'
+        run: gh workflow run github-pages.yml --repo "$GITHUB_REPOSITORY" --ref main
+      - name: Refresh the dependency graph
+        if: '!cancelled() && steps.merge.outcome == "success"'
+        run: gh workflow run dependency-submission.yml --repo "$GITHUB_REPOSITORY" --ref main
