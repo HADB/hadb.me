@@ -39,7 +39,7 @@ jobs:
           site_bytes=$(du -sb .output/public | cut -f1)
           echo "Generated site: $site_bytes bytes" >> "$GITHUB_STEP_SUMMARY"
           test "$site_bytes" -lt 1000000000
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: .output/public
 
