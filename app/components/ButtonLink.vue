@@ -21,7 +21,7 @@ withDefaults(defineProps<Props>(), {
         :to="to"
         :external="external"
         :target="target"
-        active-class="bg-slate-100 dark:bg-slate-700/30 outline"
+        exact-active-class="bg-slate-100 dark:bg-slate-700/30 outline"
         class="inline-flex items-center font-medium text-base leading-4 sm:text-lg sm:leading-7 gap-1 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700/30 p-2 rounded-sm no-underline hover:outline outline-slate-200 dark:outline-slate-700 shrink-0"
       >
         <template v-if="icon">
