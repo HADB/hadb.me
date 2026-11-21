@@ -1,8 +1,9 @@
-name: GitHub Pages preview
+name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [github-pages-preview]
+    branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: github-pages-preview
@@ -22,17 +23,18 @@ jobs:
         run: |
           npm install --global "$(node -p 'require("./package.json").packageManager')"
           pnpm install --frozen-lockfile
-      - name: Generate the preview site
+      - name: Generate the production site
         env:
           NITRO_PRESET: github_pages
-          NUXT_APP_BASE_URL: /hadb.me/
-          NUXT_SITE_URL: https://hadb.github.io
+          NUXT_APP_BASE_URL: /
+          NUXT_SITE_URL: https://hadb.me
         run: pnpm generate
       - name: Check the generated site
         run: |
           test -s .output/public/index.html
-          grep -Fq 'https://hadb.github.io/hadb.me/atom.xml' .output/public/atom.xml
-          grep -Fq '/hadb.me/posts' .output/public/archives.html
+          grep -Fq 'https://hadb.me/atom.xml' .output/public/atom.xml
+          grep -Fq 'url=/posts' .output/public/archives.html
+          grep -Fq 'href="/favicon/' .output/public/index.html
           site_bytes=$(du -sb .output/public | cut -f1)
           echo "Generated site: $site_bytes bytes" >> "$GITHUB_STEP_SUMMARY"
           test "$site_bytes" -lt 1000000000
@@ -50,6 +52,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy the preview site
+      - name: Deploy the production site
         id: deployment
         uses: actions/deploy-pages@v4
