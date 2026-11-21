@@ -207,7 +207,7 @@ importers:
         version: 4.6.4(@nuxt/schema@4.6.4)(confbox@0.3.2)(dotenv@17.4.2)(giget@3.3.1)(jiti@2.7.0)(magic-string@1.4.5)(mlly@1.8.2)(oxc-parser@0.154.0)(rolldown@1.2.19)(unplugin@3.7.0(esbuild@0.28.2)(rolldown@1.2.19)(rollup@4.68.7)(vite@8.3.8(@types/node@24.9.1)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(terser@5.51.3)(yaml@2.9.1)))
       '@nuxt/ui':
         specifier: ^4.12.2
-        version: 4.12.2(907f27d9467b807f5e6a5784aceebbf6)
+        version: 4.12.2(1ce1d4d181218895f7c97e53f62842c0)
       '@nuxtjs/color-mode':
         specifier: ^4.1.0
         version: 4.1.0(@nuxt/schema@4.6.4)(confbox@0.3.2)(dotenv@17.4.2)(giget@3.3.1)(jiti@2.7.0)(magic-string@1.4.5)(mlly@1.8.2)(oxc-parser@0.154.0)(rolldown@1.2.19)(unplugin@3.7.0(esbuild@0.28.2)(rolldown@1.2.19)(rollup@4.68.7)(vite@8.3.8(@types/node@24.9.1)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(terser@5.51.3)(yaml@2.9.1)))
@@ -2419,19 +2419,9 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/rollup-android-arm-eabi@4.68.6':
-    resolution: {integrity: sha512-TDFizbE5Ic3YCZrFF2zfodXsmRRbcwkc0PvCjo9gi+i9NVtSYdH52imwXUDCUeNTuc56p0KI+Jp8FA3QMRGdZw==}
-    cpu: [arm]
-    os: [android]
-
   '@rollup/rollup-android-arm-eabi@4.68.7':
     resolution: {integrity: sha512-ZL7MgOeMUiBum1bjzzyBotE3DuHVz+UUxcDVlLL7gpdhDM4RpjG4bZOIly7ensIcXw9jhWl7HTIIQ9KsgjykGQ==}
     cpu: [arm]
-    os: [android]
-
-  '@rollup/rollup-android-arm64@4.68.6':
-    resolution: {integrity: sha512-TBNzo00RawX2V+VxTcIbrUal2RlmtNOZTqsMZwwohSh568+UzKEQyQlLndhmQqGufd4zC0s/xauyDH2DFQGazw==}
-    cpu: [arm64]
     os: [android]
 
   '@rollup/rollup-android-arm64@4.68.7':
@@ -2439,29 +2429,14 @@ packages:
     cpu: [arm64]
     os: [android]
 
-  '@rollup/rollup-android-x64@4.68.6':
-    resolution: {integrity: sha512-VdtOfxpuSmLuCVpsolouZJgxT+KakjeuQnGuLRgm9qNGnSbbVzotq96aYgw0g9DdC+382tFo+WXCWy02YrLbew==}
-    cpu: [x64]
-    os: [android]
-
   '@rollup/rollup-android-x64@4.68.7':
     resolution: {integrity: sha512-P9vs1uCC2drepKKuiXrhY+r7ry/jtDCrBS8SUCYm2Rr7rVTR9eFH6XVAmD9TdfYFlDgRe5r1eH8tLQVuz+l/VA==}
     cpu: [x64]
     os: [android]
 
-  '@rollup/rollup-darwin-arm64@4.68.6':
-    resolution: {integrity: sha512-r7F+3ALvYv2Zh2chzYlYwTqgR96IcjK5CFukcQdl1ljnzO/sNdk86ejkKFveN3CbK8L8YlbdeOja44aq1L5jgA==}
-    cpu: [arm64]
-    os: [darwin]
-
   '@rollup/rollup-darwin-arm64@4.68.7':
     resolution: {integrity: sha512-Lgu2AV7jbOTNNhkQ/OurNm7Snqu1Ux/3y7k8q47fbpPa3q63aIzKKp1xFzax5KH4pcdUzbnX/riuFsxKflsF+g==}
     cpu: [arm64]
-    os: [darwin]
-
-  '@rollup/rollup-darwin-x64@4.68.6':
-    resolution: {integrity: sha512-4f4MBaFbHnqBBiDh/6NuKHMCKHalV8E++VIqgtCZ170lw4VzTfHCNTfFRNy2BxaBBkO1kDpolJfEt4JLHNWRww==}
-    cpu: [x64]
     os: [darwin]
 
   '@rollup/rollup-darwin-x64@4.68.7':
@@ -2469,19 +2444,9 @@ packages:
     cpu: [x64]
     os: [darwin]
 
-  '@rollup/rollup-freebsd-arm64@4.68.6':
-    resolution: {integrity: sha512-2wT5m6mt0GnKvaQNlmkqmdaMVvpvldtjXu75ODyxicYIZokadSWD4OCt/jj8YLqERpB8HeJK+OyC2wjpDMXpCA==}
-    cpu: [arm64]
-    os: [freebsd]
-
   '@rollup/rollup-freebsd-arm64@4.68.7':
     resolution: {integrity: sha512-vAeCwbFyEu/vBt9O/uHCHJSvwtOpTSssnM/PoZgn8rmvAkS+9ixaUfJZ2IP3ltom+rvpuQQEIEqltPY7qhC9lQ==}
     cpu: [arm64]
-    os: [freebsd]
-
-  '@rollup/rollup-freebsd-x64@4.68.6':
-    resolution: {integrity: sha512-1BdUbZWqoaaFUcPKNHVsKVzeHeVY0F1A0a1uaCopQhz/0jXVPeC+JI1cOZkLSR2mumT11qEubrxA0IM9uecofw==}
-    cpu: [x64]
     os: [freebsd]
 
   '@rollup/rollup-freebsd-x64@4.68.7':
@@ -2489,23 +2454,11 @@ packages:
     cpu: [x64]
     os: [freebsd]
 
-  '@rollup/rollup-linux-arm-gnueabihf@4.68.6':
-    resolution: {integrity: sha512-MgtBdogIGR8qRMQY8d+Wq67ADYKfci7PdzyWsduCRsgdMDdQ/5idEwQJP3yDs8t3AbV1bk8BovKJrH48EKmhDA==}
-    cpu: [arm]
-    os: [linux]
-    libc: [glibc]
-
   '@rollup/rollup-linux-arm-gnueabihf@4.68.7':
     resolution: {integrity: sha512-nz/Eu1sag3w5gPiKLJhAbKa4D9hUUJpDc9XzKXxGNHZqwgT2AbuVS2e4k9CIoLQp5dPhSN9ntiEVuz2jTzu1Gg==}
     cpu: [arm]
     os: [linux]
     libc: [glibc]
-
-  '@rollup/rollup-linux-arm-musleabihf@4.68.6':
-    resolution: {integrity: sha512-NWFCiyEk96y3EE03yO4Tgj2dVzgHnMQ1dHho3HUZdzsf+zBjCpumTA0YT5z2ndZaNFvHJPmiyT4d7yXwbvaaiA==}
-    cpu: [arm]
-    os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm-musleabihf@4.68.7':
     resolution: {integrity: sha512-05CEv2G/kI261A1WQBZL8gx6xXULjPfVnTKAkfnV/0uqHeLo+dNEOeUzMaiK/HDGR0Z1Nn7KJjm/34bNbNcfTA==}
@@ -2513,23 +2466,11 @@ packages:
     os: [linux]
     libc: [musl]
 
-  '@rollup/rollup-linux-arm64-gnu@4.68.6':
-    resolution: {integrity: sha512-WCGpkloY1hQp8qFy91wTriZC0jfVkGx/NPrU1Nz/Ui6MsdFI+Pdu9vBiSemIwd+jHF+MjJTQelVzfOT1RSAkig==}
-    cpu: [arm64]
-    os: [linux]
-    libc: [glibc]
-
   '@rollup/rollup-linux-arm64-gnu@4.68.7':
     resolution: {integrity: sha512-wrqk3EkxQt98lTdiYhjcaWmFHwvKiSgHFi7XmPTSF4X8+uGUTBOAc0CaynEvpUhBgkPRbwASrYoU/5uJPF+LFA==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
-
-  '@rollup/rollup-linux-arm64-musl@4.68.6':
-    resolution: {integrity: sha512-Dzqr4rcbaGvpIzd6p11gpIqtEQX3QO3u7tg726SNSCSpstwejC8Emk4lRN4CqmUlEtH7gfBi63o1ClqjW28XQw==}
-    cpu: [arm64]
-    os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-musl@4.68.7':
     resolution: {integrity: sha512-DnuEUWvzeSxHxzu5lvrN+I/UzrcQkR/fQ4Bibetdp73Rf7aP0XgFpalSDuHmVWsCLETE+Lrl3GVOqIvFP7rcjw==}
@@ -2537,23 +2478,11 @@ packages:
     os: [linux]
     libc: [musl]
 
-  '@rollup/rollup-linux-loong64-gnu@4.68.6':
-    resolution: {integrity: sha512-Rn8Tg6V+tamTIPKMAfjWhFGU31U2iTYbOBaCRNepupobGYdRSjALA/fDz0/U2uoWp5jXOKYk+42I38tc0NOeew==}
-    cpu: [loong64]
-    os: [linux]
-    libc: [glibc]
-
   '@rollup/rollup-linux-loong64-gnu@4.68.7':
     resolution: {integrity: sha512-n0sr2s+rzVw8ntRucOxGhWeJ9lEl9KxCRzF3RmnZLE/tRnfKiloLuK8UqWrKFqVigEAh0IkRkPz5LVaV9/ZfvA==}
     cpu: [loong64]
     os: [linux]
     libc: [glibc]
-
-  '@rollup/rollup-linux-loong64-musl@4.68.6':
-    resolution: {integrity: sha512-TD6m6LcCTjbwydIIylRCaUwfFbey+vphXvGeubtyxaMiYZbCrLvWtDloSdXpWVJTvHEqE+0o3j7nMqgBdsrCdw==}
-    cpu: [loong64]
-    os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-loong64-musl@4.68.7':
     resolution: {integrity: sha512-qDVJyMCbh7ekjt1kM9CZsyCFZvv5UW1QTIx3YfJ/gh8LkqpoPNpl9dCeYeOa+bsDOGTWZiMG2riXuoFSRISimQ==}
@@ -2561,23 +2490,11 @@ packages:
     os: [linux]
     libc: [musl]
 
-  '@rollup/rollup-linux-ppc64-gnu@4.68.6':
-    resolution: {integrity: sha512-kSiyetmVcKpXg5QuqlJG/Tj1cDRJDQnMHESYj/KZMvWxjG9beJwZe3edPkaBJF9qCtXfwzwDsjg+x0XNV/negg==}
-    cpu: [ppc64]
-    os: [linux]
-    libc: [glibc]
-
   '@rollup/rollup-linux-ppc64-gnu@4.68.7':
     resolution: {integrity: sha512-GiIOHHIzgpMoR5DT1pA1b9qMk5i0Ngg2FRj4D6XFSBC8e/axHuIdB7K/OBozO2RtCVAMnH1rXcuJrGScg+bvzA==}
     cpu: [ppc64]
     os: [linux]
     libc: [glibc]
-
-  '@rollup/rollup-linux-ppc64-musl@4.68.6':
-    resolution: {integrity: sha512-F53Un52pSB5NodQI4sbMgbommV6UJwyuL6yyoTtCam5gdDe/ys/qoyNoUJOQ2ZV7Vcq3gJQ78E3fLYUBRE7isQ==}
-    cpu: [ppc64]
-    os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-ppc64-musl@4.68.7':
     resolution: {integrity: sha512-B132V2fwDl7UGLhvK6s3Ay7eNQ4dmDSDgsBm/Wwbz+Wgnunz0le4R2wzDp6TL5ExMu3MC1auJIrVtk2gOyxbyw==}
@@ -2585,23 +2502,11 @@ packages:
     os: [linux]
     libc: [musl]
 
-  '@rollup/rollup-linux-riscv64-gnu@4.68.6':
-    resolution: {integrity: sha512-eyniKw3s64oaL7FKbso5GlBWqyrnN0Vidm2P8hNwZY7HJSAoweDlC94b1ZFCRNODy0l/bqzlQhSr5nXE0uK89w==}
-    cpu: [riscv64]
-    os: [linux]
-    libc: [glibc]
-
   '@rollup/rollup-linux-riscv64-gnu@4.68.7':
     resolution: {integrity: sha512-3NueHQilbssjxgJMx9hXBV+U5keb3CBzmW5WhoBG3iSLFcmz9U2FVoG4MUYpZoZ+KSNMQPN2AA79dTxlEF0VxQ==}
     cpu: [riscv64]
     os: [linux]
     libc: [glibc]
-
-  '@rollup/rollup-linux-riscv64-musl@4.68.6':
-    resolution: {integrity: sha512-sWtxf+kwM+HbAVRkiiTKfYp1RvWaI/ctISSmbni55zpY5a5VBdjJL3RwN+gB/9HTkRC1khZl0vdURoBAXZUshA==}
-    cpu: [riscv64]
-    os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-riscv64-musl@4.68.7':
     resolution: {integrity: sha512-8XRwbf76oAF1zZzg6OT8EY3swvCptZnLmiqMgO5+STyhTZ9s7rXa+tY8jESZW9IDyKACcVBGqa/RACDaLzRVjQ==}
@@ -2609,21 +2514,9 @@ packages:
     os: [linux]
     libc: [musl]
 
-  '@rollup/rollup-linux-s390x-gnu@4.68.6':
-    resolution: {integrity: sha512-vWfNmTP9HGrDIDUIJK9SFRdKNB+Xhv1PWiOKg/97R0MmrkQXAGMpAF1w50jSZNLz4Ra7WAVOFEpb7sAcvvW1fA==}
-    cpu: [s390x]
-    os: [linux]
-    libc: [glibc]
-
   '@rollup/rollup-linux-s390x-gnu@4.68.7':
     resolution: {integrity: sha512-pvqqfjNdxVLvmovH681K5cPIL9DXj5n1RROaa0vb9JrtHddiScLrkHPRKj5flTKHF1M7xvRy0SS2yTRIc2TO0Q==}
     cpu: [s390x]
-    os: [linux]
-    libc: [glibc]
-
-  '@rollup/rollup-linux-x64-gnu@4.68.6':
-    resolution: {integrity: sha512-O+C505KYTRgQp/CF6p7XUzZGB4/pQAZTCj/edTDEXXE3wTKtAgNDXWX/5IcIZ/JQYaE8+iRLGoekmBv9XTz+PA==}
-    cpu: [x64]
     os: [linux]
     libc: [glibc]
 
@@ -2633,51 +2526,25 @@ packages:
     os: [linux]
     libc: [glibc]
 
-  '@rollup/rollup-linux-x64-musl@4.68.6':
-    resolution: {integrity: sha512-EGeTTPGYqkt2qoEWgE1ahiuQDPTpeEv+qXLh4JRaWEhneGdvpqE5G3wcWR4VzJdykWz76ZsZD4UFf/wkFSAMLg==}
-    cpu: [x64]
-    os: [linux]
-    libc: [musl]
-
   '@rollup/rollup-linux-x64-musl@4.68.7':
     resolution: {integrity: sha512-VNLvsYMD5+zLCi5SohwDdL8PpicC9PnArLwyMJXXUcAduzrM3k9aZT9XiHw+mn5dOWr3UEyfyqJbOvxwJ2fCWQ==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@rollup/rollup-openbsd-x64@4.68.6':
-    resolution: {integrity: sha512-fHTZCMwe6Ws0ErKJmM1aE+NC+YruV/E4Y7B4mOYFkQYgOxbAjCeXJIfTt9jpOziVsZw6z5uuQQPG9MRCz3htqw==}
-    cpu: [x64]
-    os: [openbsd]
-
   '@rollup/rollup-openbsd-x64@4.68.7':
     resolution: {integrity: sha512-7aOjdahkwiECWWOmjAemPd21yeQ18TW59DUiLWttzolMe5tDwHyBhlOfmxRUHOQnepTNkZ2Qwp1T6LxFZ5v7yQ==}
     cpu: [x64]
     os: [openbsd]
-
-  '@rollup/rollup-openharmony-arm64@4.68.6':
-    resolution: {integrity: sha512-DlrAKng5/Q0dLONKhV42LdIBaBwsNIibsT+Ye6+q2wals5/4N7HUtHmgIxGmQAZtBYpNKf+DpFoULvMSQmtyoA==}
-    cpu: [arm64]
-    os: [openharmony]
 
   '@rollup/rollup-openharmony-arm64@4.68.7':
     resolution: {integrity: sha512-BnNkTwE4FMCAoz3UYiJ6D6Y3pGozYIYZ2W+onH64uhiTI2iwD3KOaNSlkuHYfupZVemls3YTlvbPnuKwHsraiQ==}
     cpu: [arm64]
     os: [openharmony]
 
-  '@rollup/rollup-win32-arm64-msvc@4.68.6':
-    resolution: {integrity: sha512-H65qpoBVVfymEP4XrDOxDBvXQYdJ1MB2mEmnqPL5Msp6qi7oOUa9wscymiJTqKksZoAgdmf9hlcHAeL5ZujMkg==}
-    cpu: [arm64]
-    os: [win32]
-
   '@rollup/rollup-win32-arm64-msvc@4.68.7':
     resolution: {integrity: sha512-OH8tGWsJcRW6Vn0dmndyWJGdQa46bH2/2/PVfleBGUWuBd5/HVkIvw2UslgBwUZdtV78bJaoCNBmYI5+bcTJ4A==}
     cpu: [arm64]
-    os: [win32]
-
-  '@rollup/rollup-win32-ia32-msvc@4.68.6':
-    resolution: {integrity: sha512-aUE6+JAOzD68OA8EjkgHoVZrUeQuh6iKoZfqRf4PwSj18HMDdcVDFa81EvlVoXscje6zI4kUG3Gg7WnlwdiUyQ==}
-    cpu: [ia32]
     os: [win32]
 
   '@rollup/rollup-win32-ia32-msvc@4.68.7':
@@ -2685,18 +2552,8 @@ packages:
     cpu: [ia32]
     os: [win32]
 
-  '@rollup/rollup-win32-x64-gnu@4.68.6':
-    resolution: {integrity: sha512-pmmS2XZv4aaI7KPu4YjCVZsjhUH7JS5Pf7IaCMn2tc3wWMJFTz4FeItjmUXHOauCkFgQMYMrzeqgZrleT15S8Q==}
-    cpu: [x64]
-    os: [win32]
-
   '@rollup/rollup-win32-x64-gnu@4.68.7':
     resolution: {integrity: sha512-0ncKtQ55fqElV9Sk4cZ/4tiXVGlWxaH5PvDOlx1Sx8GuHIpSWgYrTcyrO51JnVFfy7LvAJiffkEg63ZHKwTMag==}
-    cpu: [x64]
-    os: [win32]
-
-  '@rollup/rollup-win32-x64-msvc@4.68.6':
-    resolution: {integrity: sha512-DkUnrmo6oUZPDK6O6LOXLcEx8BZ85I8qkJLZWoSaOBHPqJfYzTtqweyoSxPpePG7XQvFkFEcSgVvHWRnuiXIcw==}
     cpu: [x64]
     os: [win32]
 
@@ -6851,8 +6708,8 @@ packages:
   prosemirror-keymap@1.2.3:
     resolution: {integrity: sha512-4HucRlpiLd1IPQQXNqeo81BGtkY8Ai5smHhKW9jjPKRc2wQIxksg7Hl1tTI2IfT2B/LgX6bfYvXxEpJl7aKYKw==}
 
-  prosemirror-model@1.25.11:
-    resolution: {integrity: sha512-QWg9RhnpLlogAmp3p96uEFrE5txQpFynd4vhBAELkwgOCWQs/X0yCzB3/hrHqiPwf91RG5KyWq6553zs9JqIOQ==}
+  prosemirror-model@1.25.13:
+    resolution: {integrity: sha512-MlDMWGjYXaYOeCiO17jcybntCOzPnN+97U0809ke2QsgPtxW3n5/sD6ZKyJONUgMw1iP93ohZTjeKjnRJ7L6kQ==}
 
   prosemirror-schema-list@1.5.1:
     resolution: {integrity: sha512-927lFx/uwyQaGwJxLWCZRkjXG0p48KpMj6ueoYiu4JX05GGuGcgzAy62dfiV8eFZftgyBUvLx76RsMe20fJl+Q==}
@@ -6866,8 +6723,8 @@ packages:
   prosemirror-transform@1.12.0:
     resolution: {integrity: sha512-GxboyN4AMIsoHNtz5uf2r2Ru551i5hWeCMD6E2Ib4Eogqoub0NflniaBPVQ4MrGE5yZ8JV9tUHg9qcZTTrcN4w==}
 
-  prosemirror-view@1.42.1:
-    resolution: {integrity: sha512-rRqzZnRgkyh69XoOMrfFJHwauHscLBmHbq772kwbic1ymQAM8gXjzEbJse5j1ep2UO2HRIAQL0bY3kZ/RoqjVw==}
+  prosemirror-view@1.43.0:
+    resolution: {integrity: sha512-MZOUuhD+Gv7Cp7UlgvyhptUfb920NkLBgymhyhaM8xp+JXQyLhkssS2EXZvMI3ZU3vRoz5z7mRC32udVgNYHqg==}
 
   protocols@2.0.2:
     resolution: {integrity: sha512-hHVTzba3wboROl0/aWRRG9dMytgH6ow//STBZh43l/wQgmMhYhOFi0EHWAPtoCz9IAUymsyP0TSBHkhgMEGNnQ==}
@@ -7082,11 +6939,6 @@ packages:
       rollup:
         optional: true
 
-  rollup@4.68.6:
-    resolution: {integrity: sha512-IUpi5I3j3DOcm9FwfIB4zpH2W943bEDHo8uhQddG37wglI6CaMXqk/YIr5Z+6WVh+QtnPU9gNiwCkSyoCtcdJQ==}
-    engines: {node: '>=18.0.0', npm: '>=8.0.0'}
-    hasBin: true
-
   rollup@4.68.7:
     resolution: {integrity: sha512-CxhzUIc+ocxPAWxHuff+PAluoW1otD6dHqqPK2h2Q38WA1VYk+3gizX6NEg5t2a8yNGQaiHM1R7V+qdwWuvp5Q==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -7145,8 +6997,8 @@ packages:
     resolution: {integrity: sha512-1gnZf7DFcoIcajTjTwjwuDjzuz4PPcY2StKPlsGAQ1+YH20IRVrBaXSWmdjowTJ6u8Rc01PoYOGHXfP1mYcZNQ==}
     engines: {node: '>= 18'}
 
-  serialize-javascript@7.0.5:
-    resolution: {integrity: sha512-F4LcB0UqUl1zErq+1nYEEzSHJnIwb3AF2XWB94b+afhrekOUijwooAYqFyRbjYkm2PAKBabx6oYv/xDxNi8IBw==}
+  serialize-javascript@7.1.4:
+    resolution: {integrity: sha512-FqlEuoTq/zRmA4Lg6aOqyH3lCHbUtCB0bmHCeFniX2GBdDqMJM3FwdvEhlE5Pim1dlt2FfBdVPmUNNiGhhKqpw==}
     engines: {node: '>=20.0.0'}
 
   seroval@1.8.2:
@@ -7189,8 +7041,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shell-quote@1.10.0:
-    resolution: {integrity: sha512-w1aiOKwKuRgtwAReIIj89puqg+I7GvX4IbLrvmhXbzQsj1+Zwi4VO3+fa6ZF91TWSjIxoEkKnMeHcLEODK5ZXA==}
+  shell-quote@1.12.0:
+    resolution: {integrity: sha512-PcByqNyT/38F2kDNi006HAMRJaULuBzq/FOsw3qdZvX/GA9W/jamDaRskgHjubHiftXK5sIFxLNkvrXUwcof6Q==}
     engines: {node: '>= 0.4'}
 
   shiki@4.6.0:
@@ -10182,7 +10034,7 @@ snapshots:
       rc9: 3.0.1
       std-env: 4.3.0
 
-  '@nuxt/ui@4.12.2(907f27d9467b807f5e6a5784aceebbf6)':
+  '@nuxt/ui@4.12.2(1ce1d4d181218895f7c97e53f62842c0)':
     dependencies:
       '@floating-ui/dom': 1.8.0
       '@iconify/vue': 5.0.5(vue@3.5.46(typescript@6.0.3))
@@ -10201,9 +10053,9 @@ snapshots:
       '@tiptap/core': 3.24.0(@tiptap/pm@3.24.0)
       '@tiptap/extension-bubble-menu': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)
       '@tiptap/extension-code': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))
-      '@tiptap/extension-collaboration': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28)
-      '@tiptap/extension-drag-handle': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))
-      '@tiptap/extension-drag-handle-vue-3': 3.24.0(@tiptap/extension-drag-handle@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)))(@tiptap/pm@3.24.0)(@tiptap/vue-3@3.24.0(@floating-ui/dom@1.8.0)(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(vue@3.5.46(typescript@6.0.3)))(vue@3.5.46(typescript@6.0.3))
+      '@tiptap/extension-collaboration': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28)
+      '@tiptap/extension-drag-handle': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))
+      '@tiptap/extension-drag-handle-vue-3': 3.24.0(@tiptap/extension-drag-handle@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)))(@tiptap/pm@3.24.0)(@tiptap/vue-3@3.24.0(@floating-ui/dom@1.8.0)(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(vue@3.5.46(typescript@6.0.3)))(vue@3.5.46(typescript@6.0.3))
       '@tiptap/extension-floating-menu': 3.24.0(@floating-ui/dom@1.8.0)(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)
       '@tiptap/extension-horizontal-rule': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)
       '@tiptap/extension-image': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))
@@ -10921,7 +10773,7 @@ snapshots:
 
   '@rollup/plugin-terser@1.0.2(rollup@4.68.7)':
     dependencies:
-      serialize-javascript: 7.0.5
+      serialize-javascript: 7.1.4
       smob: 1.6.2
       terser: 5.51.3
     optionalDependencies:
@@ -10935,157 +10787,79 @@ snapshots:
     optionalDependencies:
       rollup: 4.68.7
 
-  '@rollup/rollup-android-arm-eabi@4.68.6':
-    optional: true
-
   '@rollup/rollup-android-arm-eabi@4.68.7':
-    optional: true
-
-  '@rollup/rollup-android-arm64@4.68.6':
     optional: true
 
   '@rollup/rollup-android-arm64@4.68.7':
     optional: true
 
-  '@rollup/rollup-android-x64@4.68.6':
-    optional: true
-
   '@rollup/rollup-android-x64@4.68.7':
-    optional: true
-
-  '@rollup/rollup-darwin-arm64@4.68.6':
     optional: true
 
   '@rollup/rollup-darwin-arm64@4.68.7':
     optional: true
 
-  '@rollup/rollup-darwin-x64@4.68.6':
-    optional: true
-
   '@rollup/rollup-darwin-x64@4.68.7':
-    optional: true
-
-  '@rollup/rollup-freebsd-arm64@4.68.6':
     optional: true
 
   '@rollup/rollup-freebsd-arm64@4.68.7':
     optional: true
 
-  '@rollup/rollup-freebsd-x64@4.68.6':
-    optional: true
-
   '@rollup/rollup-freebsd-x64@4.68.7':
-    optional: true
-
-  '@rollup/rollup-linux-arm-gnueabihf@4.68.6':
     optional: true
 
   '@rollup/rollup-linux-arm-gnueabihf@4.68.7':
     optional: true
 
-  '@rollup/rollup-linux-arm-musleabihf@4.68.6':
-    optional: true
-
   '@rollup/rollup-linux-arm-musleabihf@4.68.7':
-    optional: true
-
-  '@rollup/rollup-linux-arm64-gnu@4.68.6':
     optional: true
 
   '@rollup/rollup-linux-arm64-gnu@4.68.7':
     optional: true
 
-  '@rollup/rollup-linux-arm64-musl@4.68.6':
-    optional: true
-
   '@rollup/rollup-linux-arm64-musl@4.68.7':
-    optional: true
-
-  '@rollup/rollup-linux-loong64-gnu@4.68.6':
     optional: true
 
   '@rollup/rollup-linux-loong64-gnu@4.68.7':
     optional: true
 
-  '@rollup/rollup-linux-loong64-musl@4.68.6':
-    optional: true
-
   '@rollup/rollup-linux-loong64-musl@4.68.7':
-    optional: true
-
-  '@rollup/rollup-linux-ppc64-gnu@4.68.6':
     optional: true
 
   '@rollup/rollup-linux-ppc64-gnu@4.68.7':
     optional: true
 
-  '@rollup/rollup-linux-ppc64-musl@4.68.6':
-    optional: true
-
   '@rollup/rollup-linux-ppc64-musl@4.68.7':
-    optional: true
-
-  '@rollup/rollup-linux-riscv64-gnu@4.68.6':
     optional: true
 
   '@rollup/rollup-linux-riscv64-gnu@4.68.7':
     optional: true
 
-  '@rollup/rollup-linux-riscv64-musl@4.68.6':
-    optional: true
-
   '@rollup/rollup-linux-riscv64-musl@4.68.7':
-    optional: true
-
-  '@rollup/rollup-linux-s390x-gnu@4.68.6':
     optional: true
 
   '@rollup/rollup-linux-s390x-gnu@4.68.7':
     optional: true
 
-  '@rollup/rollup-linux-x64-gnu@4.68.6':
-    optional: true
-
   '@rollup/rollup-linux-x64-gnu@4.68.7':
-    optional: true
-
-  '@rollup/rollup-linux-x64-musl@4.68.6':
     optional: true
 
   '@rollup/rollup-linux-x64-musl@4.68.7':
     optional: true
 
-  '@rollup/rollup-openbsd-x64@4.68.6':
-    optional: true
-
   '@rollup/rollup-openbsd-x64@4.68.7':
-    optional: true
-
-  '@rollup/rollup-openharmony-arm64@4.68.6':
     optional: true
 
   '@rollup/rollup-openharmony-arm64@4.68.7':
     optional: true
 
-  '@rollup/rollup-win32-arm64-msvc@4.68.6':
-    optional: true
-
   '@rollup/rollup-win32-arm64-msvc@4.68.7':
-    optional: true
-
-  '@rollup/rollup-win32-ia32-msvc@4.68.6':
     optional: true
 
   '@rollup/rollup-win32-ia32-msvc@4.68.7':
     optional: true
 
-  '@rollup/rollup-win32-x64-gnu@4.68.6':
-    optional: true
-
   '@rollup/rollup-win32-x64-gnu@4.68.7':
-    optional: true
-
-  '@rollup/rollup-win32-x64-msvc@4.68.6':
     optional: true
 
   '@rollup/rollup-win32-x64-msvc@4.68.7':
@@ -11551,32 +11325,32 @@ snapshots:
     dependencies:
       '@tiptap/core': 3.24.0(@tiptap/pm@3.24.0)
 
-  '@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28)':
+  '@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28)':
     dependencies:
       '@tiptap/core': 3.24.0(@tiptap/pm@3.24.0)
       '@tiptap/pm': 3.24.0
-      '@tiptap/y-tiptap': 3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)
+      '@tiptap/y-tiptap': 3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)
       yjs: 13.6.28
 
   '@tiptap/extension-document@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))':
     dependencies:
       '@tiptap/core': 3.24.0(@tiptap/pm@3.24.0)
 
-  '@tiptap/extension-drag-handle-vue-3@3.24.0(@tiptap/extension-drag-handle@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)))(@tiptap/pm@3.24.0)(@tiptap/vue-3@3.24.0(@floating-ui/dom@1.8.0)(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(vue@3.5.46(typescript@6.0.3)))(vue@3.5.46(typescript@6.0.3))':
+  '@tiptap/extension-drag-handle-vue-3@3.24.0(@tiptap/extension-drag-handle@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)))(@tiptap/pm@3.24.0)(@tiptap/vue-3@3.24.0(@floating-ui/dom@1.8.0)(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(vue@3.5.46(typescript@6.0.3)))(vue@3.5.46(typescript@6.0.3))':
     dependencies:
-      '@tiptap/extension-drag-handle': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))
+      '@tiptap/extension-drag-handle': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))
       '@tiptap/pm': 3.24.0
       '@tiptap/vue-3': 3.24.0(@floating-ui/dom@1.8.0)(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(vue@3.5.46(typescript@6.0.3))
       vue: 3.5.46(typescript@6.0.3)
 
-  '@tiptap/extension-drag-handle@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))':
+  '@tiptap/extension-drag-handle@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/extension-collaboration@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28))(@tiptap/extension-node-range@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))':
     dependencies:
       '@floating-ui/dom': 1.8.0
       '@tiptap/core': 3.24.0(@tiptap/pm@3.24.0)
-      '@tiptap/extension-collaboration': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28)
+      '@tiptap/extension-collaboration': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)(@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28))(yjs@13.6.28)
       '@tiptap/extension-node-range': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)
       '@tiptap/pm': 3.24.0
-      '@tiptap/y-tiptap': 3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)
+      '@tiptap/y-tiptap': 3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)
 
   '@tiptap/extension-dropcursor@3.24.0(@tiptap/extensions@3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0))':
     dependencies:
@@ -11687,12 +11461,12 @@ snapshots:
       prosemirror-history: 1.5.0
       prosemirror-inputrules: 1.5.1
       prosemirror-keymap: 1.2.3
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.13
       prosemirror-schema-list: 1.5.1
       prosemirror-state: 1.4.4
       prosemirror-tables: 1.8.5
       prosemirror-transform: 1.12.0
-      prosemirror-view: 1.42.1
+      prosemirror-view: 1.43.0
 
   '@tiptap/starter-kit@3.24.0':
     dependencies:
@@ -11736,12 +11510,12 @@ snapshots:
       '@tiptap/extension-bubble-menu': 3.24.0(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)
       '@tiptap/extension-floating-menu': 3.24.0(@floating-ui/dom@1.8.0)(@tiptap/core@3.24.0(@tiptap/pm@3.24.0))(@tiptap/pm@3.24.0)
 
-  '@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.1)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)':
+  '@tiptap/y-tiptap@3.0.7(prosemirror-model@1.25.13)(prosemirror-state@1.4.4)(prosemirror-view@1.43.0)(y-protocols@1.0.7(yjs@13.6.28))(yjs@13.6.28)':
     dependencies:
       lib0: 0.2.117
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.13
       prosemirror-state: 1.4.4
-      prosemirror-view: 1.42.1
+      prosemirror-view: 1.43.0
       y-protocols: 1.0.7(yjs@13.6.28)
       yjs: 13.6.28
 
@@ -14480,7 +14254,7 @@ snapshots:
   launch-editor@2.14.2:
     dependencies:
       picocolors: 1.1.1
-      shell-quote: 1.10.0
+      shell-quote: 1.12.0
 
   lazystream@1.0.1:
     dependencies:
@@ -15969,7 +15743,7 @@ snapshots:
 
   prosemirror-commands@1.7.1:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.13
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.0
 
@@ -15977,20 +15751,20 @@ snapshots:
     dependencies:
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.0
-      prosemirror-view: 1.42.1
+      prosemirror-view: 1.43.0
 
   prosemirror-gapcursor@1.4.1:
     dependencies:
       prosemirror-keymap: 1.2.3
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.13
       prosemirror-state: 1.4.4
-      prosemirror-view: 1.42.1
+      prosemirror-view: 1.43.0
 
   prosemirror-history@1.5.0:
     dependencies:
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.0
-      prosemirror-view: 1.42.1
+      prosemirror-view: 1.43.0
       rope-sequence: 1.3.4
 
   prosemirror-inputrules@1.5.1:
@@ -16003,37 +15777,37 @@ snapshots:
       prosemirror-state: 1.4.4
       w3c-keyname: 2.2.8
 
-  prosemirror-model@1.25.11:
+  prosemirror-model@1.25.13:
     dependencies:
       orderedmap: 2.1.1
 
   prosemirror-schema-list@1.5.1:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.13
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.0
 
   prosemirror-state@1.4.4:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.13
       prosemirror-transform: 1.12.0
-      prosemirror-view: 1.42.1
+      prosemirror-view: 1.43.0
 
   prosemirror-tables@1.8.5:
     dependencies:
       prosemirror-keymap: 1.2.3
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.13
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.0
-      prosemirror-view: 1.42.1
+      prosemirror-view: 1.43.0
 
   prosemirror-transform@1.12.0:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.13
 
-  prosemirror-view@1.42.1:
+  prosemirror-view@1.43.0:
     dependencies:
-      prosemirror-model: 1.25.11
+      prosemirror-model: 1.25.13
       prosemirror-state: 1.4.4
       prosemirror-transform: 1.12.0
 
@@ -16344,39 +16118,6 @@ snapshots:
       rolldown: 1.2.19
       rollup: 4.68.7
 
-  rollup@4.68.6:
-    dependencies:
-      '@types/estree': 1.0.10
-    optionalDependencies:
-      '@rollup/rollup-android-arm-eabi': 4.68.6
-      '@rollup/rollup-android-arm64': 4.68.6
-      '@rollup/rollup-android-x64': 4.68.6
-      '@rollup/rollup-darwin-arm64': 4.68.6
-      '@rollup/rollup-darwin-x64': 4.68.6
-      '@rollup/rollup-freebsd-arm64': 4.68.6
-      '@rollup/rollup-freebsd-x64': 4.68.6
-      '@rollup/rollup-linux-arm-gnueabihf': 4.68.6
-      '@rollup/rollup-linux-arm-musleabihf': 4.68.6
-      '@rollup/rollup-linux-arm64-gnu': 4.68.6
-      '@rollup/rollup-linux-arm64-musl': 4.68.6
-      '@rollup/rollup-linux-loong64-gnu': 4.68.6
-      '@rollup/rollup-linux-loong64-musl': 4.68.6
-      '@rollup/rollup-linux-ppc64-gnu': 4.68.6
-      '@rollup/rollup-linux-ppc64-musl': 4.68.6
-      '@rollup/rollup-linux-riscv64-gnu': 4.68.6
-      '@rollup/rollup-linux-riscv64-musl': 4.68.6
-      '@rollup/rollup-linux-s390x-gnu': 4.68.6
-      '@rollup/rollup-linux-x64-gnu': 4.68.6
-      '@rollup/rollup-linux-x64-musl': 4.68.6
-      '@rollup/rollup-openbsd-x64': 4.68.6
-      '@rollup/rollup-openharmony-arm64': 4.68.6
-      '@rollup/rollup-win32-arm64-msvc': 4.68.6
-      '@rollup/rollup-win32-ia32-msvc': 4.68.6
-      '@rollup/rollup-win32-x64-gnu': 4.68.6
-      '@rollup/rollup-win32-x64-msvc': 4.68.6
-      fsevents: 2.3.3
-    optional: true
-
   rollup@4.68.7:
     dependencies:
       '@types/estree': 1.0.10
@@ -16463,7 +16204,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  serialize-javascript@7.0.5: {}
+  serialize-javascript@7.1.4: {}
 
   seroval@1.8.2: {}
 
@@ -16537,7 +16278,7 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shell-quote@1.10.0: {}
+  shell-quote@1.12.0: {}
 
   shiki@4.6.0:
     dependencies:
@@ -17446,7 +17187,7 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.7)
       picomatch: 4.0.7
       postcss: 8.5.33
-      rollup: 4.68.6
+      rollup: 4.68.7
       tinyglobby: 0.2.17
     optionalDependencies:
       '@types/node': 24.9.1
