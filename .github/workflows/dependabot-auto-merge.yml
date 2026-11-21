@@ -69,5 +69,5 @@ jobs:
         if: steps.merge.outcome == 'success'
         run: gh workflow run github-pages.yml --repo "$GITHUB_REPOSITORY" --ref main
       - name: Refresh the dependency graph
-        if: '!cancelled() && steps.merge.outcome == "success"'
+        if: ${{ !cancelled() && steps.merge.outcome == 'success' }}
         run: gh workflow run dependency-submission.yml --repo "$GITHUB_REPOSITORY" --ref main
