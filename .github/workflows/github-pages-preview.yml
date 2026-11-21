@@ -1,0 +1,53 @@
+name: GitHub Pages preview
+
+on:
+  push:
+    branches: [github-pages-preview]
+
+concurrency:
+  group: github-pages-preview
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+      - name: Install pnpm and dependencies
+        run: |
+          npm install --global "$(node -p 'require("./package.json").packageManager')"
+          pnpm install --frozen-lockfile
+      - name: Generate the preview site
+        env:
+          NITRO_PRESET: github_pages
+          NUXT_APP_BASE_URL: /hadb.me/
+        run: pnpm generate
+      - name: Check the generated site
+        run: |
+          test -s .output/public/index.html
+          test -s .output/public/atom.xml
+          site_bytes=$(du -sb .output/public | cut -f1)
+          echo "Generated site: $site_bytes bytes" >> "$GITHUB_STEP_SUMMARY"
+          test "$site_bytes" -lt 1000000000
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the preview site
+        id: deployment
+        uses: actions/deploy-pages@v4
