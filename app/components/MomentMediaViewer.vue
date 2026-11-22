@@ -742,11 +742,11 @@ onBeforeUnmount(() => {
         <div
           class="flex shrink-0 items-center justify-end"
           :class="type === 'image'
-            ? 'pointer-events-none absolute inset-x-0 top-0 z-10 h-20 bg-linear-to-b from-black/65 to-transparent text-white/85'
+            ? 'pointer-events-none absolute inset-x-0 top-0 z-10 h-20 sm:bg-linear-to-b sm:from-black/65 sm:to-transparent sm:text-white/85'
             : 'h-12'"
         >
           <span role="status" class="sr-only">{{ mediaLabel }} {{ index + 1 }} / {{ items.length }}</span>
-          <div class="pointer-events-auto flex items-center gap-2" :class="type === 'image' ? 'pr-5' : 'pr-3'">
+          <div class="pointer-events-auto items-center gap-2" :class="type === 'image' ? 'hidden pr-5 sm:flex' : 'flex pr-3'">
             <template v-if="type === 'image'">
               <UButton
                 v-bind="viewerButton"
