@@ -1,9 +1,9 @@
-name: Dependabot auto-merge
+name: Pull request auto-merge
 
 on:
   pull_request_target:
     branches: [main]
-    types: [opened, reopened, synchronize, ready_for_review]
+    types: [opened, reopened, synchronize, ready_for_review, converted_to_draft, closed]
 
 concurrency:
   group: dependabot-auto-merge-${{ github.event.pull_request.number }}
@@ -12,9 +12,11 @@ concurrency:
 jobs:
   merge:
     if: >-
-      github.event.pull_request.user.login == 'dependabot[bot]' &&
       github.event.pull_request.head.repo.full_name == github.repository &&
-      !github.event.pull_request.draft
+      github.event.pull_request.state == 'open' &&
+      !github.event.pull_request.draft &&
+      (github.event.pull_request.user.id == github.event.repository.owner.id ||
+       github.event.pull_request.user.login == 'dependabot[bot]')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:
@@ -27,10 +29,12 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       PR_NUMBER: ${{ github.event.pull_request.number }}
       PR_HEAD: ${{ github.event.pull_request.head.sha }}
+      OWNER_PR: ${{ github.event.pull_request.user.id == github.event.repository.owner.id }}
     steps:
       # This workflow never checks out or runs code from the pull request.
       - name: Read signed Dependabot metadata
         id: metadata
+        if: github.event.pull_request.user.login == 'dependabot[bot]'
         uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
       - name: Check that every update is minor or patch
         id: eligible
@@ -46,7 +50,9 @@ jobs:
           fi
       - name: Wait for required checks and squash merge
         id: merge
-        if: steps.eligible.outputs.merge == 'true'
+        if: >-
+          github.event.pull_request.user.id == github.event.repository.owner.id ||
+          steps.eligible.outputs.merge == 'true'
         run: |
           # The build and this workflow are scheduled independently.
           for attempt in {1..12}; do
@@ -63,7 +69,38 @@ jobs:
           gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --watch --fail-fast --interval 15
           gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --json name,state \
             --jq 'any(.[]; .name == "Nuxt static build" and .state == "SUCCESS")' | grep -qx true
-          gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$PR_HEAD"
+
+          if [[ "$OWNER_PR" == 'false' ]]; then
+            gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$PR_HEAD"
+            exit
+          fi
+
+          # Code scanning rules can still block merging after required status checks pass.
+          for attempt in {1..40}; do
+            pr=$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json state,isDraft,baseRefName,headRefOid)
+            if ! jq -e --arg head "$PR_HEAD" \
+              '.state == "OPEN" and (.isDraft | not) and .baseRefName == "main" and .headRefOid == $head' \
+              <<< "$pr" > /dev/null; then
+              echo 'The PR is no longer eligible for this run.'
+              exit 1
+            fi
+            checks=$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json name,bucket,workflow)
+            other_checks=$(jq --arg workflow "$GITHUB_WORKFLOW" --arg job "$GITHUB_JOB" \
+              '[.[] | select(.workflow != $workflow or .name != $job) | .bucket]' <<< "$checks")
+            if jq -e 'any(.[]; . == "fail" or . == "cancel")' <<< "$other_checks" > /dev/null; then
+              echo 'A PR check failed or was canceled.'
+              exit 1
+            fi
+            if jq -e 'length > 0 and all(.[]; . == "pass" or . == "skipping")' <<< "$other_checks" > /dev/null; then
+              # GitHub enforces the repository rules on this merge request.
+              result=$(gh api --method PUT "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/merge" \
+                -f sha="$PR_HEAD" -f merge_method=squash) &&
+                jq -e '.merged == true' <<< "$result" > /dev/null && exit 0
+            fi
+            sleep 15
+          done
+          echo 'The PR did not pass all checks and merge within the waiting period.'
+          exit 1
       # A merge using GITHUB_TOKEN does not trigger the usual push workflows.
       - name: Start the production deployment
         if: steps.merge.outcome == 'success'
