@@ -32,9 +32,6 @@ useHead({
       <h1>动态详情</h1>
       <MomentInfo :moment="moment" />
       <MomentContent :moment="moment" class="my-5" />
-      <TextHr :class="{ hidden: moment.hideComments }">
-        评论区
-      </TextHr>
       <Artalk :path="moment.path" :title="moment.title" :class="{ hidden: moment.hideComments }" />
     </template>
     <ErrorPageNotFound v-else />
