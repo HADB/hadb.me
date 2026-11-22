@@ -88,6 +88,11 @@ def check_site(port):
         raise ValueError("/posts: missing the article archive title or article links")
     print("PASS /posts (HTTP 200, archive and article links)")
 
+    tag_path = "/posts/tag/.NET"
+    fetch(port, tag_path, html)
+    fetch(port, f"{tag_path}/_payload.json", ("application/json",))
+    print(f"PASS {tag_path} (HTTP 200, tag page and payload)")
+
     article_path, title = next(iter(posts.articles.items()))
     article = Page(fetch(port, article_path, html))
     if title not in article.headings["h1"]:
