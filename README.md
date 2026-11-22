@@ -2,9 +2,30 @@
   <img width="180px" src="https://raw.githubusercontent.com/HADB/hadb.me/main/public/favicon/favicon.svg" />
 </p>
 
-## [hadb.me](https://hadb.me) [![wakatime](https://wakatime.com/badge/user/018bf5fd-2090-4ec2-b163-49e238da63d6/project/d5cc23f6-dbbf-434c-8694-a7bd4a7a86d5.svg)](https://wakatime.com/@Bean/projects/lbcgcakepj)
+## [hadb.me](https://hadb.me)
 
 我的个人网站（第 4 代）
+
+[Atom 全文订阅](https://hadb.me/atom.xml) · [站点地图](https://hadb.me/sitemap_index.xml)
+
+### 本地开发
+
+Node.js 版本见 [`.nvmrc`](.nvmrc)，pnpm 版本见 [`package.json`](package.json) 的 `packageManager`。
+
+```sh
+nvm install
+npm install --global "$(node -p 'require("./package.json").packageManager')"
+pnpm install --frozen-lockfile
+pnpm dev
+```
+
+文章在 [`content/posts/`](content/posts/)，动态在 [`content/moments/`](content/moments/)，独立页面在 [`content/`](content/) 根目录。
+
+### 构建与部署
+
+运行 `NITRO_PRESET=github_pages pnpm generate` 生成静态站点，产物位于 `.output/public/`。
+
+合并到 `main` 后，GitHub Actions 会构建并发布到 GitHub Pages。面向 `main` 的 PR 会运行静态构建，并检查首页、文章列表、抽样文章和 Atom feed 的 HTTP 状态与内容。 [部署记录](https://github.com/HADB/hadb.me/actions/workflows/github-pages.yml)
 
 ### 博客框架折腾历史
 
@@ -21,11 +42,11 @@
 ### Checklist
 
 - [x] 支持标签搜索
-- [x] 生成 Sitemap 和 Feed 订阅
+- [x] 生成 Sitemap 和 Atom 全文订阅
 - [x] 导入全部历史文章
 - [x] 接入评论系统
-- [x] 接入 Cloudflare Pages
+- [x] 从 Cloudflare Pages 迁移到 GitHub Pages
 - [x] 接入 Plausible
 - [x] 导入 Disqus 评论至 Artalk
 - [x] 导入 Google Analytics PV 数据至 Artalk
-- [x] Nuxt 3 + Content 3 + Feed 生成全文 content
+- [x] 升级到 Nuxt 4 和 Nuxt Content 3
