@@ -45,9 +45,6 @@ useHead({
         {{ page.title }}
       </h1>
       <ContentRenderer :value="page" />
-      <TextHr :class="{ hidden: page.hideComments }">
-        评论区
-      </TextHr>
       <Artalk :path="page.path" :title="page.title" :class="{ hidden: page.hideComments }" />
     </template>
     <ErrorPageNotFound v-else />

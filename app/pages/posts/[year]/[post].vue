@@ -64,9 +64,6 @@ useHead({
       <div :class="post.class">
         <ContentRenderer :value="post" />
       </div>
-      <TextHr :class="{ hidden: post.hideComments }">
-        评论区
-      </TextHr>
       <Artalk :path="post.path" :title="post.title" :class="{ hidden: post.hideComments }" />
       <div class="grid gap-4 sm:gap-12 sm:grid-cols-2 mt-4">
         <SurroundPostLink :post="surroundPosts!![0]" type="prev" />
