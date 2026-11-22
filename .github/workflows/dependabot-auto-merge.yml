@@ -18,7 +18,7 @@ jobs:
       (github.event.pull_request.user.id == github.event.repository.owner.id ||
        github.event.pull_request.user.login == 'dependabot[bot]')
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     permissions:
       actions: write
       checks: read
@@ -54,50 +54,54 @@ jobs:
           github.event.pull_request.user.id == github.event.repository.owner.id ||
           steps.eligible.outputs.merge == 'true'
         run: |
-          # The build and this workflow are scheduled independently.
-          for attempt in {1..12}; do
-            if gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --json name 2>/dev/null \
-              | jq -e 'any(.[]; .name == "Nuxt static build")' > /dev/null; then
-              break
+          echo 'Waiting for PR checks to register and pass.'
+          for attempt in {0..99}; do
+            if (( attempt > 0 )); then
+              sleep 15
             fi
-            if [[ "$attempt" == 12 ]]; then
-              echo 'The required Nuxt static build has not registered for this PR.'
-              exit 1
-            fi
-            sleep 5
-          done
-          gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --watch --fail-fast --interval 15
-          gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --json name,state \
-            --jq 'any(.[]; .name == "Nuxt static build" and .state == "SUCCESS")' | grep -qx true
-
-          if [[ "$OWNER_PR" == 'false' ]]; then
-            gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$PR_HEAD"
-            exit
-          fi
-
-          # Code scanning rules can still block merging after required status checks pass.
-          for attempt in {1..40}; do
-            pr=$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json state,isDraft,baseRefName,headRefOid)
+            pr=$(gh pr view "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json state,isDraft,baseRefName,headRefOid) || continue
             if ! jq -e --arg head "$PR_HEAD" \
               '.state == "OPEN" and (.isDraft | not) and .baseRefName == "main" and .headRefOid == $head' \
               <<< "$pr" > /dev/null; then
               echo 'The PR is no longer eligible for this run.'
               exit 1
             fi
-            checks=$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json name,bucket,workflow)
-            other_checks=$(jq --arg workflow "$GITHUB_WORKFLOW" --arg job "$GITHUB_JOB" \
-              '[.[] | select(.workflow != $workflow or .name != $job) | .bucket]' <<< "$checks")
-            if jq -e 'any(.[]; . == "fail" or . == "cancel")' <<< "$other_checks" > /dev/null; then
-              echo 'A PR check failed or was canceled.'
+            required=$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --required --json name,state,bucket) || continue
+            checks=$required
+            if [[ "$OWNER_PR" == 'true' ]]; then
+              # CodeQL is enforced through a code scanning rule, separate from required status checks.
+              checks=$(gh pr checks "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --json name,state,bucket,workflow) || continue
+              checks=$(jq --arg workflow "$GITHUB_WORKFLOW" --arg job "$GITHUB_JOB" \
+                '[.[] | select(.workflow != $workflow or .name != $job)]' <<< "$checks")
+            fi
+
+            failed=$(jq -r '.[] | select(.bucket == "fail" or .bucket == "cancel") | .name' <<< "$checks")
+            if [[ -n "$failed" ]]; then
+              echo 'The following PR checks failed or were canceled:'
+              echo "$failed"
               exit 1
             fi
-            if jq -e 'length > 0 and all(.[]; . == "pass" or . == "skipping")' <<< "$other_checks" > /dev/null; then
-              # GitHub enforces the repository rules on this merge request.
-              result=$(gh api --method PUT "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/merge" \
-                -f sha="$PR_HEAD" -f merge_method=squash) &&
-                jq -e '.merged == true' <<< "$result" > /dev/null && exit 0
+            if ! jq -e 'any(.[]; .name == "Nuxt static build" and .state == "SUCCESS") and
+              all(.[]; .bucket == "pass" or .bucket == "skipping")' <<< "$required" > /dev/null; then
+              continue
             fi
-            sleep 15
+
+            if [[ "$OWNER_PR" == 'false' ]]; then
+              gh pr merge "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$PR_HEAD"
+              exit
+            fi
+
+            if ! jq -e 'any(.[]; .name == "Analyze (actions)" and .state == "SUCCESS") and
+              any(.[]; .name == "Analyze (javascript-typescript)" and .state == "SUCCESS") and
+              all(.[]; .bucket == "pass" or .bucket == "skipping")' <<< "$checks" > /dev/null; then
+              continue
+            fi
+
+            # GitHub enforces the repository rules and the expected head on this merge request.
+            if result=$(gh api --method PUT "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/merge" \
+              -f sha="$PR_HEAD" -f merge_method=squash) && jq -e '.merged == true' <<< "$result" > /dev/null; then
+              exit 0
+            fi
           done
           echo 'The PR did not pass all checks and merge within the waiting period.'
           exit 1
