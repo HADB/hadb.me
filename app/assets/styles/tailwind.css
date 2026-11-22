@@ -2,7 +2,6 @@
 @import '@nuxt/ui';
 @plugin '@tailwindcss/typography';
 @import './artalk.css';
-@import './lightgallery.css';
 
 @theme {
   --color-primary-50: oklch(0.979 0.021 166.113);
