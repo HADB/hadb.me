@@ -42,6 +42,8 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: .output/public
+          # The .NET tag generates a dot-prefixed page and payload directory.
+          include-hidden-files: true
 
   deploy:
     needs: build
